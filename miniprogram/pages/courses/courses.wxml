@@ -1,0 +1,72 @@
+<!-- 搜索 -->
+<view class="search-bar">
+  <input class="search-input" placeholder="搜索课程代码 / 中英文名称" value="{{keyword}}" bindinput="onSearch" confirm-type="search" />
+</view>
+
+<!-- 筛选 -->
+<view class="tabs">
+  <view class="tab {{listFilter === item.key ? 'active' : ''}}" wx:for="{{listTabs}}" wx:key="key" data-key="{{item.key}}" bindtap="onListTab">{{item.label}}</view>
+</view>
+<view class="tabs sub">
+  <view class="tab {{semFilter === item.key ? 'active' : ''}}" wx:for="{{semTabs}}" wx:key="key" data-key="{{item.key}}" bindtap="onSemTab">{{item.label}}</view>
+</view>
+
+<!-- 课程卡片 -->
+<view class="card course" wx:for="{{courses}}" wx:key="code" data-code="{{item.code}}" bindtap="goDetail">
+  <view class="course-head">
+    <text class="course-code">{{item.code}}</text>
+    <text class="tag" wx:if="{{item.list === 'A'}}">List A</text>
+    <text class="tag tag-gray" wx:elif="{{item.list === 'B'}}">List B</text>
+    <text class="tag tag-warn" wx:else>毕业设计</text>
+    <text class="tag tag-new" wx:if="{{item.isNew2026}}">26级新增</text>
+    <text class="tag tag-warn" wx:if="{{item.movedToB2026}}">26级转List B</text>
+  </view>
+  <view class="course-title">{{item.titleZh}}</view>
+  <view class="course-en">{{item.title}}</view>
+  <view class="course-meta">
+    <text>{{item.credits}} 学分</text>
+    <text class="sep">·</text>
+    <text>{{item.semText}}</text>
+    <block wx:if="{{item.cef}}">
+      <text class="sep">·</text>
+      <text class="cef">CEF 可报销</text>
+    </block>
+  </view>
+  <view class="course-foot">
+    <view class="rating" wx:if="{{item.ratingCount > 0}}">
+      <text class="star star-on">★</text>
+      <text class="rating-num">{{item.ratingAvg}}</text>
+      <text class="rating-count">({{item.ratingCount}} 条评价)</text>
+    </view>
+    <view class="rating-count" wx:else>暂无评价,去抢沙发</view>
+    <view class="select-btn {{item.selected ? 'selected' : ''}}" catchtap="toggleSelect" data-code="{{item.code}}">
+      {{item.selected ? '已选 ✓' : '+ 选课'}}
+    </view>
+  </view>
+</view>
+
+<view class="card empty" wx:if="{{courses.length === 0}}">没有匹配的课程,换个关键词试试</view>
+
+<!-- 底部学分进度条 -->
+<view class="credit-bar" wx:if="{{credit.count > 0}}">
+  <view class="credit-info">
+    <view class="credit-cell {{credit.listA >= rules.listAMin ? 'ok' : ''}}">
+      <text class="cc-num">{{credit.listA}}</text><text class="cc-req">/{{rules.listAMin}}</text>
+      <view class="cc-label">List A</view>
+    </view>
+    <view class="credit-cell {{credit.discipline >= rules.disciplineMin ? 'ok' : ''}}">
+      <text class="cc-num">{{credit.discipline}}</text><text class="cc-req">/{{rules.disciplineMin}}</text>
+      <view class="cc-label">学科课</view>
+    </view>
+    <view class="credit-cell {{credit.total >= rules.courseCredits ? 'ok' : ''}}">
+      <text class="cc-num">{{credit.total}}</text><text class="cc-req">/{{rules.courseCredits}}</text>
+      <view class="cc-label">课程学分</view>
+    </view>
+    <view class="credit-cell fixed">
+      <text class="cc-num">+{{rules.dissertation}}</text>
+      <view class="cc-label">毕业论文</view>
+    </view>
+  </view>
+  <view class="credit-action" catchtap="goSchedule">排课表 ›</view>
+</view>
+<view class="credit-bar-spacer" wx:if="{{credit.count > 0}}"></view>

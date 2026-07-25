@@ -1,0 +1,86 @@
+<block wx:if="{{course}}">
+  <!-- 课程头部 -->
+  <view class="hero">
+    <view class="hero-tags">
+      <text class="hero-tag" wx:if="{{course.list === 'A'}}">List A 核心课</text>
+      <text class="hero-tag" wx:elif="{{course.list === 'B'}}">List B 选修课</text>
+      <text class="hero-tag" wx:else>毕业设计 Capstone</text>
+      <text class="hero-tag" wx:if="{{course.isNew2026}}">26级新增</text>
+      <text class="hero-tag" wx:if="{{course.movedToB2026}}">26级转List B</text>
+    </view>
+    <view class="hero-code">{{course.code}}</view>
+    <view class="hero-title">{{course.titleZh}}</view>
+    <view class="hero-en">{{course.title}}</view>
+    <view class="hero-meta">
+      <text class="hero-chip">{{course.credits}} 学分</text>
+      <text class="hero-chip">{{semText}}</text>
+      <text class="hero-chip" wx:if="{{course.cef}}">CEF 可报销</text>
+      <text class="hero-chip" wx:if="{{ratingCount > 0}}">★ {{ratingAvg}}({{ratingCount}})</text>
+    </view>
+    <view class="hero-btn {{selected ? 'selected' : ''}}" bindtap="toggleSelect">
+      {{selected ? '已加入我的选课 ✓' : '+ 加入我的选课'}}
+    </view>
+  </view>
+
+  <!-- 课程简介 -->
+  <view class="card">
+    <view class="card-title">课程简介</view>
+    <view class="desc">{{course.desc}}</view>
+    <view class="meta-line" wx:if="{{course.prereq}}">
+      <text class="meta-label">先修要求</text>
+      <text>{{course.prereq}}</text>
+    </view>
+    <view class="meta-line" wx:if="{{course.exclusive}}">
+      <text class="meta-label">互斥课程</text>
+      <text>{{course.exclusive}}</text>
+    </view>
+    <view class="meta-line" wx:if="{{course.semester === 'TBD'}}">
+      <text class="meta-label">开课学期</text>
+      <text>以学院每学期公布的课表为准</text>
+    </view>
+  </view>
+
+  <!-- 评价列表 -->
+  <view class="section-title">课程评价({{ratingCount}})</view>
+  <view class="card review" wx:for="{{reviews}}" wx:key="id">
+    <view class="review-head">
+      <text class="review-nick">{{item.nickname}}</text>
+      <view class="review-stars">
+        <text class="star {{item.rating >= s ? 'star-on' : ''}}" wx:for="{{stars}}" wx:for-item="s" wx:key="*this">★</text>
+      </view>
+      <text class="review-date">{{item.dateText}}</text>
+    </view>
+    <view class="review-content">{{item.content}}</view>
+  </view>
+  <view class="card empty" wx:if="{{reviews.length === 0}}">还没有评价,分享你的上课体验吧</view>
+
+  <!-- 写评价 -->
+  <view class="section-title">写评价(仅保存在本机)</view>
+  <view class="card form">
+    <view class="form-row">
+      <text class="form-label">评分</text>
+      <view class="form-stars">
+        <text
+          class="star big {{form.rating >= item ? 'star-on' : ''}}"
+          wx:for="{{stars}}"
+          wx:key="*this"
+          data-v="{{item}}"
+          bindtap="setRating"
+        >★</text>
+      </view>
+    </view>
+    <view class="form-row">
+      <text class="form-label">昵称</text>
+      <input class="form-input" placeholder="匿名" value="{{form.nickname}}" bindinput="onNick" maxlength="12" />
+    </view>
+    <textarea
+      class="form-textarea"
+      placeholder="课程难度、作业量、给分、老师风格、对通勤党友好程度……"
+      value="{{form.content}}"
+      bindinput="onContent"
+      maxlength="500"
+    />
+    <button class="btn-primary submit" bindtap="submit">发布评价</button>
+  </view>
+  <view class="bottom-spacer"></view>
+</block>

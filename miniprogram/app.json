@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/calendar/calendar",
+    "pages/commute/commute",
+    "pages/courses/courses",
+    "pages/course-detail/course-detail",
+    "pages/schedule/schedule"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#00573F",
+    "navigationBarTitleText": "HKU IDT 指南",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f5f6f8",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#8a8f99",
+    "selectedColor": "#00573F",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      { "pagePath": "pages/home/home", "text": "首页" },
+      { "pagePath": "pages/calendar/calendar", "text": "校历" },
+      { "pagePath": "pages/commute/commute", "text": "通勤" },
+      { "pagePath": "pages/courses/courses", "text": "课程" },
+      { "pagePath": "pages/schedule/schedule", "text": "课表" }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

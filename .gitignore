@@ -1,0 +1,21 @@
+# 依赖与构建产物
+node_modules/
+dist/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 日志
+*.log
+
+# 编辑器配置
+.vscode/
+.idea/
+
+# 微信开发者工具本地私有配置
+project.private.config.json
+
+# IDE 工作区标记
+.aicoding-chat-workspace

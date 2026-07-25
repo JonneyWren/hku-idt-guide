@@ -1,0 +1,168 @@
+.hero {
+  background: linear-gradient(135deg, #00573f 0%, #0a7a56 100%);
+  border-radius: 0 0 32rpx 32rpx;
+  padding: 48rpx 32rpx 40rpx;
+  color: #ffffff;
+}
+
+.hero-program {
+  font-size: 22rpx;
+  opacity: 0.85;
+}
+
+.hero-date {
+  font-size: 40rpx;
+  font-weight: 700;
+  margin-top: 16rpx;
+}
+
+.hero-week {
+  font-size: 26rpx;
+  margin-top: 8rpx;
+  opacity: 0.95;
+}
+
+/* 入口 */
+.entry-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 8rpx 16rpx 0;
+}
+
+.entry {
+  width: calc(50% - 16rpx);
+  margin: 8rpx;
+  border-radius: 20rpx;
+  padding: 28rpx 24rpx;
+  color: #ffffff;
+}
+
+.entry-name {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+.entry-sub {
+  font-size: 22rpx;
+  opacity: 0.9;
+  margin-top: 6rpx;
+}
+
+.e1 { background: #2e6f5c; }
+.e2 { background: #31597f; }
+.e3 { background: #6b5b95; }
+.e4 { background: #8a6d3b; }
+
+/* 卡片标题 */
+.card-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #14312a;
+  margin-bottom: 16rpx;
+}
+
+/* 学分结构 */
+.credit-total {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 20rpx;
+}
+
+.credit-num {
+  font-size: 56rpx;
+  font-weight: 700;
+  color: #00573f;
+  margin-right: 12rpx;
+}
+
+.credit-unit {
+  font-size: 24rpx;
+  color: #6b7280;
+}
+
+.credit-items {
+  display: flex;
+  justify-content: space-between;
+  background: #f4f8f6;
+  border-radius: 16rpx;
+  padding: 20rpx 12rpx;
+}
+
+.credit-item {
+  flex: 1;
+  text-align: center;
+}
+
+.credit-item-num {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #00573f;
+}
+
+.credit-item-label {
+  font-size: 20rpx;
+  color: #6b7280;
+  margin-top: 4rpx;
+}
+
+.credit-btn {
+  margin-top: 20rpx;
+}
+
+/* 变更提示 */
+.notice {
+  border-left: 8rpx solid #e6a23c;
+}
+
+.notice-line {
+  font-size: 24rpx;
+  color: #5b5f66;
+  margin-bottom: 10rpx;
+}
+
+/* 事件 */
+.event-card {
+  display: flex;
+  align-items: center;
+  padding: 24rpx 28rpx;
+  margin-top: 0;
+}
+
+.event-dot {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+}
+
+.event-body {
+  flex: 1;
+}
+
+.event-title {
+  font-size: 26rpx;
+  color: #1f2430;
+}
+
+.event-date {
+  font-size: 22rpx;
+  color: #8a8f99;
+  margin-top: 2rpx;
+}
+
+.event-days {
+  font-size: 24rpx;
+  color: #00573f;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.event-days.today {
+  color: #c0392b;
+}
+
+.footer-note {
+  text-align: center;
+  padding: 24rpx 40rpx 48rpx;
+}

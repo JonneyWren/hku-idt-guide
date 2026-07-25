@@ -1,0 +1,88 @@
+<!-- 头部 -->
+<view class="sched-head">
+  <view class="sched-info">
+    <view class="sched-title">每周课表</view>
+    <view class="sched-sub" wx:if="{{weekInfo}}">{{weekInfo.name}} · 第 {{weekInfo.week}} 周</view>
+    <view class="sched-sub" wx:else>当前不在教学周内</view>
+  </view>
+  <view class="sched-actions">
+    <view class="act plain" wx:if="{{blocks.length > 0}}" bindtap="copyText">复制</view>
+    <view class="act plain" wx:if="{{blocks.length > 0}}" bindtap="syncCalendar">同步日历</view>
+    <view class="act primary" bindtap="openModal">+ 添加</view>
+  </view>
+</view>
+
+<!-- 星期表头 -->
+<view class="grid-head">
+  <view class="time-spacer"></view>
+  <view class="day-head {{index === 5 || index === 6 ? 'weekend' : ''}}" wx:for="{{days}}" wx:key="*this">{{item}}</view>
+</view>
+
+<!-- 网格 -->
+<scroll-view scroll-y class="sched-scroll" enhanced show-scrollbar="{{false}}">
+  <view class="grid">
+    <view class="time-col">
+      <view class="time-cell" wx:for="{{hours}}" wx:key="*this">{{item}}:00</view>
+    </view>
+    <view class="days-wrap" style="height: {{gridHeight}}rpx;">
+      <view class="day-col {{index === 5 || index === 6 ? 'weekend' : ''}}" wx:for="{{days}}" wx:key="*this"></view>
+      <view class="h-line" wx:for="{{hours}}" wx:key="*this" style="top: {{index * 60}}rpx;"></view>
+      <view
+        class="block"
+        wx:for="{{blocks}}"
+        wx:key="id"
+        style="left: {{item.leftPct}}%; top: {{item.top}}rpx; height: {{item.height}}rpx; background: {{item.color}};"
+        data-id="{{item.id}}"
+        bindtap="onBlockTap"
+      >
+        <view class="block-code">{{item.code}}</view>
+        <view class="block-time">{{item.timeText}}</view>
+        <view class="block-loc" wx:if="{{item.location}}">{{item.location}}</view>
+      </view>
+      <view class="empty-hint" wx:if="{{blocks.length === 0}}">
+        <view>课表还是空的</view>
+        <view class="empty-sub">点右上角「+ 添加」录入上课时间</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<view class="muted tip-line">点击课程块可删除时段;「同步日历」按周循环写入手机系统日历至学期结束</view>
+
+<!-- 添加时段弹层 -->
+<view class="modal-mask" wx:if="{{showModal}}" bindtap="closeModal">
+  <view class="modal" catchtap="noop">
+    <view class="modal-title">添加上课时段</view>
+    <picker mode="selector" range="{{selectionNames}}" value="{{form.courseIndex}}" bindchange="onCourseChange">
+      <view class="picker-row">
+        <text class="pk-label">课程</text>
+        <text class="pk-value">{{selectionNames[form.courseIndex]}}</text>
+      </view>
+    </picker>
+    <picker mode="selector" range="{{dayOptions}}" value="{{form.dayIndex}}" bindchange="onDayChange">
+      <view class="picker-row">
+        <text class="pk-label">星期</text>
+        <text class="pk-value">{{dayOptions[form.dayIndex]}}</text>
+      </view>
+    </picker>
+    <picker mode="time" value="{{form.startTime}}" start="08:00" end="22:00" bindchange="onStartChange">
+      <view class="picker-row">
+        <text class="pk-label">开始</text>
+        <text class="pk-value">{{form.startTime}}</text>
+      </view>
+    </picker>
+    <picker mode="time" value="{{form.endTime}}" start="08:00" end="22:00" bindchange="onEndChange">
+      <view class="picker-row">
+        <text class="pk-label">结束</text>
+        <text class="pk-value">{{form.endTime}}</text>
+      </view>
+    </picker>
+    <view class="picker-row">
+      <text class="pk-label">地点</text>
+      <input class="pk-input" placeholder="如 CB313 / 线上(选填)" value="{{form.location}}" bindinput="onLocation" />
+    </view>
+    <view class="modal-btns">
+      <view class="m-btn cancel" bindtap="closeModal">取消</view>
+      <view class="m-btn confirm" bindtap="saveSlot">保存</view>
+    </view>
+  </view>
+</view>

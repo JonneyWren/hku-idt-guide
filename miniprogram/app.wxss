@@ -1,0 +1,98 @@
+/* 全局样式:HKU 绿主题 */
+page {
+  background: #f5f6f8;
+  color: #1f2430;
+  font-size: 28rpx;
+  line-height: 1.6;
+  font-family: -apple-system, "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
+}
+
+view, text, scroll-view, input, textarea, button, picker {
+  box-sizing: border-box;
+}
+
+/* 通用卡片 */
+.card {
+  background: #ffffff;
+  border-radius: 20rpx;
+  padding: 28rpx;
+  margin: 20rpx 24rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 45, 32, 0.06);
+}
+
+/* 主按钮 */
+.btn-primary {
+  background: #00573f;
+  color: #ffffff;
+  border-radius: 999rpx;
+  font-size: 28rpx;
+  padding: 0 40rpx;
+  line-height: 72rpx;
+}
+
+.btn-primary::after {
+  border: none;
+}
+
+.btn-plain {
+  background: #eef5f1;
+  color: #00573f;
+  border-radius: 999rpx;
+  font-size: 26rpx;
+  padding: 0 32rpx;
+  line-height: 64rpx;
+}
+
+.btn-plain::after {
+  border: none;
+}
+
+/* 标签 */
+.tag {
+  display: inline-block;
+  font-size: 20rpx;
+  line-height: 36rpx;
+  padding: 0 16rpx;
+  border-radius: 8rpx;
+  margin-right: 12rpx;
+  background: #eef5f1;
+  color: #00573f;
+}
+
+.tag-warn {
+  background: #fdf3e3;
+  color: #b8741a;
+}
+
+.tag-new {
+  background: #e8f0fe;
+  color: #1a56b8;
+}
+
+.tag-gray {
+  background: #f0f1f4;
+  color: #6b7280;
+}
+
+/* 标题 */
+.section-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #14312a;
+  margin: 32rpx 24rpx 8rpx;
+}
+
+.muted {
+  color: #8a8f99;
+  font-size: 24rpx;
+}
+
+/* 星级 */
+.star {
+  color: #d8d8d8;
+  font-size: 28rpx;
+}
+
+.star-on {
+  color: #f5a623;
+}
