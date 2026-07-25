@@ -1,0 +1,42 @@
+<view class="page-head">
+  <view class="page-title">深圳 → 香港大学 通勤路线</view>
+  <view class="page-sub">耗时与费用为经验参考,以港铁/巴士公司/口岸公告为准</view>
+</view>
+
+<view class="card route" wx:for="{{routes}}" wx:key="id">
+  <view class="route-head" data-id="{{item.id}}" bindtap="toggle">
+    <view class="route-title-row">
+      <text class="route-name">{{item.name}}</text>
+      <text class="tag">{{item.badge}}</text>
+    </view>
+    <view class="route-summary">{{item.summary}}</view>
+    <view class="chips">
+      <text class="chip">{{item.totalTime}}</text>
+      <text class="chip">{{item.totalCost}}</text>
+    </view>
+    <view class="expand-hint">{{expandedId === item.id ? '收起步骤 ▲' : '查看详细步骤 ▼'}}</view>
+  </view>
+
+  <view class="route-body" wx:if="{{expandedId === item.id}}">
+    <view class="border-time">口岸时间:{{item.borderTime}}</view>
+    <view class="step" wx:for="{{item.steps}}" wx:for-item="step" wx:key="index">
+      <view class="step-left">
+        <view class="step-dot">{{index + 1}}</view>
+        <view class="step-line" wx:if="{{index < item.steps.length - 1}}"></view>
+      </view>
+      <view class="step-content">
+        <view class="step-text">{{step.text}}</view>
+        <view class="step-detail">{{step.detail}}</view>
+      </view>
+    </view>
+    <view class="route-tips">
+      <view class="route-tips-title">贴士</view>
+      <view class="tip" wx:for="{{item.tips}}" wx:for-item="tip" wx:key="index">· {{tip}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="section-title">通用贴士</view>
+<view class="card">
+  <view class="tip general" wx:for="{{tips}}" wx:key="index">· {{item}}</view>
+</view>

@@ -1,0 +1,66 @@
+<!-- 顶部状态卡 -->
+<view class="hero">
+  <view class="hero-program">MSc(Eng) Innovative Design & Technology · 26 级</view>
+  <view class="hero-date">{{todayText}}</view>
+  <view class="hero-week" wx:if="{{weekInfo}}">{{weekInfo.name}} · 第 {{weekInfo.week}} 周</view>
+  <view class="hero-week" wx:elif="{{nextEvent}}">距「{{nextEvent.title}}」还有 {{nextEvent.days}} 天</view>
+  <view class="hero-week" wx:else>假期中,好好充电</view>
+</view>
+
+<!-- 功能入口 -->
+<view class="entry-grid">
+  <view class="entry {{item.cls}}" wx:for="{{entries}}" wx:key="name" data-url="{{item.url}}" bindtap="goTab">
+    <view class="entry-name">{{item.name}}</view>
+    <view class="entry-sub">{{item.sub}}</view>
+  </view>
+</view>
+
+<!-- 毕业学分结构 -->
+<view class="card">
+  <view class="card-title">毕业学分结构(26 级起统一 72 学分)</view>
+  <view class="credit-total">
+    <text class="credit-num">{{rules.total}}</text>
+    <text class="credit-unit">学分 = 课程 {{rules.courseCredits}} + 毕业论文 {{rules.dissertation}}</text>
+  </view>
+  <view class="credit-items">
+    <view class="credit-item">
+      <view class="credit-item-num">≥ {{rules.listAMin}}</view>
+      <view class="credit-item-label">List A 核心课</view>
+    </view>
+    <view class="credit-item">
+      <view class="credit-item-num">≥ {{rules.disciplineMin}}</view>
+      <view class="credit-item-label">学科课(A+B)</view>
+    </view>
+    <view class="credit-item">
+      <view class="credit-item-num">≤ {{rules.electiveMax}}</view>
+      <view class="credit-item-label">外学科选修</view>
+    </view>
+    <view class="credit-item">
+      <view class="credit-item-num">{{rules.dissertation}}</view>
+      <view class="credit-item-label">毕业论文 IDAT7100</view>
+    </view>
+  </view>
+  <button class="btn-plain credit-btn" bindtap="goCourses">去选课,自动算学分</button>
+</view>
+
+<!-- 26 级课程变更 -->
+<view class="card notice">
+  <view class="card-title">26 级课程变更提示</view>
+  <view class="notice-line">· 新增 List A:IDAT7222 先进CADCAM与AI制造 / IDAT7223 人因设计与多媒体 / IDAT7224 深度学习工程技术 / IDAT7225 自主机器人与智能控制(待大学批准)</view>
+  <view class="notice-line">· MECH6034 / COMP7503 / COMP7506 自 26 级起转入 List B(待大学批准)</view>
+  <view class="notice-line">· 总学分要求统一为 72 学分(原为 72-84)</view>
+</view>
+
+<!-- 近期关键节点 -->
+<view class="section-title">近期关键节点</view>
+<view class="card event-card" wx:for="{{events}}" wx:key="title">
+  <view class="event-dot" style="background: {{item.color}}"></view>
+  <view class="event-body">
+    <view class="event-title">{{item.title}}</view>
+    <view class="event-date">{{item.dateText}}</view>
+  </view>
+  <view class="event-days" wx:if="{{item.days > 0}}">{{item.days}} 天后</view>
+  <view class="event-days today" wx:elif="{{item.days === 0}}">今天</view>
+  <view class="event-days" wx:else>进行中</view>
+</view>
+<view class="muted footer-note">数据来源:HKU 官方学年日历与课程大纲;暂定节点以官方最终公布为准</view>

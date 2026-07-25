@@ -1,0 +1,56 @@
+<!-- 月历 -->
+<view class="card cal-card">
+  <view class="cal-head">
+    <view class="cal-nav" bindtap="prevMonth">‹ 上月</view>
+    <view class="cal-title">{{year}} 年 {{month}} 月</view>
+    <view class="cal-nav" bindtap="nextMonth">下月 ›</view>
+  </view>
+  <view class="cal-row">
+    <view class="cal-cell head" wx:for="{{weekHeader}}" wx:key="*this">{{item}}</view>
+  </view>
+  <view class="cal-row" wx:for="{{weeks}}" wx:for-item="row" wx:key="index">
+    <view
+      class="cal-cell {{cell.inMonth ? '' : 'dim'}} {{cell.isToday ? 'today' : ''}} {{cell.isSelected ? 'selected' : ''}}"
+      wx:for="{{row}}"
+      wx:for-item="cell"
+      wx:key="key"
+      data-date="{{cell.key}}"
+      bindtap="onDayTap"
+    >
+      <view class="cal-day">{{cell.day}}</view>
+      <view class="cal-dots">
+        <view class="dot" wx:for="{{cell.dots}}" wx:for-item="dot" wx:key="index" style="background: {{dot}}"></view>
+      </view>
+    </view>
+  </view>
+  <view class="legend">
+    <view class="legend-item" wx:for="{{legendList}}" wx:key="label">
+      <view class="dot" style="background: {{item.color}}"></view>
+      <text>{{item.label}}</text>
+    </view>
+  </view>
+</view>
+
+<!-- 当日事件 -->
+<view class="section-title">{{selected}} 当日安排</view>
+<view class="card sel-card" wx:if="{{selectedEvents.length > 0}}">
+  <view class="sel-event" wx:for="{{selectedEvents}}" wx:key="title">
+    <view class="event-bar" style="background: {{item.color}}"></view>
+    <view class="sel-body">
+      <view class="sel-title">{{item.title}}</view>
+      <view class="sel-sub">{{item.label}} · {{item.rangeText}}</view>
+    </view>
+  </view>
+</view>
+<view class="card empty" wx:else>当日无校历事件</view>
+
+<!-- 本月事件一览 -->
+<view class="section-title">{{month}} 月事件一览</view>
+<view class="card month-event" wx:for="{{monthEvents}}" wx:key="title">
+  <view class="event-bar" style="background: {{item.color}}"></view>
+  <view class="sel-body">
+    <view class="sel-title">{{item.title}}{{item.tentative ? '(暂定)' : ''}}</view>
+    <view class="sel-sub">{{item.label}} · {{item.dateText}}</view>
+  </view>
+</view>
+<view class="muted footer-note">第一学期节点为官方公布;第二学期部分节点标注「暂定」,以大学最终公布为准</view>

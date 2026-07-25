@@ -1,0 +1,182 @@
+.search-bar {
+  padding: 20rpx 24rpx 0;
+}
+
+.search-input {
+  background: #ffffff;
+  border-radius: 999rpx;
+  padding: 16rpx 32rpx;
+  font-size: 26rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 45, 32, 0.06);
+}
+
+/* 筛选 tab */
+.tabs {
+  display: flex;
+  padding: 20rpx 24rpx 0;
+}
+
+.tabs.sub {
+  padding-top: 12rpx;
+}
+
+.tab {
+  font-size: 24rpx;
+  color: #4b5563;
+  background: #ffffff;
+  border-radius: 999rpx;
+  padding: 8rpx 24rpx;
+  margin-right: 16rpx;
+}
+
+.tab.active {
+  background: #00573f;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* 课程卡 */
+.course-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.course-code {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #00573f;
+  margin-right: 16rpx;
+}
+
+.course-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #1f2430;
+  margin-top: 10rpx;
+}
+
+.course-en {
+  font-size: 22rpx;
+  color: #8a8f99;
+  margin-top: 4rpx;
+}
+
+.course-meta {
+  font-size: 22rpx;
+  color: #6b7280;
+  margin-top: 12rpx;
+}
+
+.course-meta .sep {
+  margin: 0 10rpx;
+  color: #c4c8ce;
+}
+
+.cef {
+  color: #b8741a;
+}
+
+.course-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16rpx;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.rating-num {
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #f5a623;
+  margin: 0 8rpx;
+}
+
+.rating-count {
+  font-size: 22rpx;
+  color: #8a8f99;
+}
+
+.select-btn {
+  font-size: 24rpx;
+  color: #00573f;
+  background: #eef5f1;
+  border-radius: 999rpx;
+  padding: 8rpx 28rpx;
+  line-height: 1.4;
+}
+
+.select-btn.selected {
+  background: #00573f;
+  color: #ffffff;
+}
+
+.empty {
+  text-align: center;
+  color: #8a8f99;
+  font-size: 24rpx;
+}
+
+/* 底部学分条 */
+.credit-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  border-top: 1rpx solid #e8eaee;
+  display: flex;
+  align-items: center;
+  padding: 16rpx 24rpx;
+  padding-bottom: calc(16rpx + env(safe-area-inset-bottom));
+  z-index: 20;
+}
+
+.credit-info {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+}
+
+.credit-cell {
+  text-align: center;
+}
+
+.credit-cell .cc-num {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #c0392b;
+}
+
+.credit-cell .cc-req {
+  font-size: 20rpx;
+  color: #8a8f99;
+}
+
+.credit-cell.ok .cc-num {
+  color: #00573f;
+}
+
+.credit-cell.fixed .cc-num {
+  color: #6b7280;
+}
+
+.cc-label {
+  font-size: 20rpx;
+  color: #8a8f99;
+}
+
+.credit-action {
+  font-size: 26rpx;
+  color: #00573f;
+  font-weight: 600;
+  padding: 12rpx 0 12rpx 24rpx;
+}
+
+.credit-bar-spacer {
+  height: 140rpx;
+}

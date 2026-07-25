@@ -1,0 +1,173 @@
+.hero {
+  background: linear-gradient(135deg, #00573f 0%, #0a7a56 100%);
+  padding: 40rpx 32rpx;
+  color: #ffffff;
+  border-radius: 0 0 32rpx 32rpx;
+}
+
+.hero-tags {
+  margin-bottom: 16rpx;
+}
+
+.hero-tag {
+  display: inline-block;
+  font-size: 20rpx;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 8rpx;
+  padding: 4rpx 16rpx;
+  margin: 0 12rpx 8rpx 0;
+}
+
+.hero-code {
+  font-size: 40rpx;
+  font-weight: 700;
+}
+
+.hero-title {
+  font-size: 34rpx;
+  font-weight: 600;
+  margin-top: 8rpx;
+}
+
+.hero-en {
+  font-size: 22rpx;
+  opacity: 0.85;
+  margin-top: 6rpx;
+}
+
+.hero-meta {
+  margin-top: 20rpx;
+}
+
+.hero-chip {
+  display: inline-block;
+  font-size: 20rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.5);
+  border-radius: 999rpx;
+  padding: 4rpx 18rpx;
+  margin: 0 12rpx 8rpx 0;
+}
+
+.hero-btn {
+  margin-top: 24rpx;
+  background: #ffffff;
+  color: #00573f;
+  text-align: center;
+  border-radius: 999rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+  line-height: 76rpx;
+}
+
+.hero-btn.selected {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* 简介 */
+.card-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #14312a;
+  margin-bottom: 12rpx;
+}
+
+.desc {
+  font-size: 26rpx;
+  color: #3c414b;
+  line-height: 1.8;
+}
+
+.meta-line {
+  margin-top: 16rpx;
+  font-size: 24rpx;
+  color: #5b5f66;
+  background: #f4f8f6;
+  border-radius: 12rpx;
+  padding: 16rpx 20rpx;
+}
+
+.meta-label {
+  color: #00573f;
+  font-weight: 600;
+  margin-right: 16rpx;
+}
+
+/* 评价 */
+.review-head {
+  display: flex;
+  align-items: center;
+}
+
+.review-nick {
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #1f2430;
+  margin-right: 16rpx;
+}
+
+.review-stars {
+  flex: 1;
+}
+
+.review-date {
+  font-size: 20rpx;
+  color: #8a8f99;
+}
+
+.review-content {
+  font-size: 26rpx;
+  color: #3c414b;
+  margin-top: 10rpx;
+  line-height: 1.7;
+}
+
+.empty {
+  text-align: center;
+  color: #8a8f99;
+  font-size: 24rpx;
+}
+
+/* 表单 */
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.form-label {
+  width: 90rpx;
+  font-size: 26rpx;
+  color: #4b5563;
+}
+
+.star.big {
+  font-size: 44rpx;
+  margin-right: 12rpx;
+}
+
+.form-input {
+  flex: 1;
+  background: #f4f5f7;
+  border-radius: 12rpx;
+  padding: 12rpx 20rpx;
+  font-size: 26rpx;
+}
+
+.form-textarea {
+  width: 100%;
+  min-height: 180rpx;
+  background: #f4f5f7;
+  border-radius: 12rpx;
+  padding: 16rpx 20rpx;
+  font-size: 26rpx;
+  box-sizing: border-box;
+}
+
+.submit {
+  margin-top: 24rpx;
+}
+
+.bottom-spacer {
+  height: 60rpx;
+}

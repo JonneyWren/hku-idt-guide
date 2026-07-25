@@ -1,0 +1,147 @@
+.page-head {
+  padding: 32rpx 24rpx 8rpx;
+}
+
+.page-title {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #14312a;
+}
+
+.page-sub {
+  font-size: 22rpx;
+  color: #8a8f99;
+  margin-top: 6rpx;
+}
+
+.route {
+  padding-bottom: 20rpx;
+}
+
+.route-title-row {
+  display: flex;
+  align-items: center;
+}
+
+.route-name {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #14312a;
+  margin-right: 12rpx;
+}
+
+.route-summary {
+  font-size: 24rpx;
+  color: #5b5f66;
+  margin-top: 8rpx;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 14rpx;
+}
+
+.chip {
+  font-size: 20rpx;
+  background: #f0f1f4;
+  color: #4b5563;
+  border-radius: 999rpx;
+  padding: 4rpx 18rpx;
+  margin: 0 12rpx 8rpx 0;
+}
+
+.expand-hint {
+  font-size: 22rpx;
+  color: #00573f;
+  margin-top: 8rpx;
+}
+
+.route-body {
+  margin-top: 20rpx;
+  border-top: 1rpx solid #eef0f2;
+  padding-top: 20rpx;
+}
+
+.border-time {
+  display: inline-block;
+  font-size: 22rpx;
+  color: #b8741a;
+  background: #fdf3e3;
+  border-radius: 8rpx;
+  padding: 6rpx 16rpx;
+  margin-bottom: 20rpx;
+}
+
+/* 步骤时间轴 */
+.step {
+  display: flex;
+  margin-bottom: 4rpx;
+}
+
+.step-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 48rpx;
+  flex-shrink: 0;
+}
+
+.step-dot {
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 50%;
+  background: #00573f;
+  color: #ffffff;
+  font-size: 20rpx;
+  text-align: center;
+  line-height: 36rpx;
+}
+
+.step-line {
+  width: 2rpx;
+  flex: 1;
+  background: #cfe3da;
+  margin: 4rpx 0;
+}
+
+.step-content {
+  flex: 1;
+  padding: 0 0 24rpx 16rpx;
+}
+
+.step-text {
+  font-size: 26rpx;
+  color: #1f2430;
+  font-weight: 500;
+}
+
+.step-detail {
+  font-size: 22rpx;
+  color: #8a8f99;
+  margin-top: 4rpx;
+}
+
+.route-tips {
+  background: #f4f8f6;
+  border-radius: 12rpx;
+  padding: 16rpx 20rpx;
+}
+
+.route-tips-title {
+  font-size: 22rpx;
+  font-weight: 600;
+  color: #00573f;
+  margin-bottom: 8rpx;
+}
+
+.tip {
+  font-size: 22rpx;
+  color: #5b5f66;
+  margin-bottom: 6rpx;
+}
+
+.tip.general {
+  font-size: 24rpx;
+  margin-bottom: 12rpx;
+}
