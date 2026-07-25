@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.DS_Store
+*.local
+*.log
+Thumbs.db
+.vscode/
+.idea/
+project.private.config.json
+.aicoding-chat-workspace
+*.png
+!src/**/*.png
