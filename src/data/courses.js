@@ -1,6 +1,7 @@
 // 课程数据库
 // 来源:R363_REG.pdf(MSc(Eng) IDT 课程大纲,2025-26 起适用)
 //      + 学院官网 2026/27 课程列表更新(26 级适用)
+//      + Filtered_TPG_Courses_Timetable.xlsx(2026-27 官方课表,学期与开课安排依此更新)
 // 字段说明:
 //   list: 'A' = List A 学科核心课, 'B' = List B 学科选修课, 'capstone' = 毕业设计
 //   semester: '1' | '2' | '1&2' | 'full' | 'TBD'(待公布)
@@ -18,7 +19,7 @@ export const COURSES = [
   },
   {
     code: 'IDAT7212', title: 'Mechatronic Systems Engineering', titleZh: '机电一体化系统工程',
-    list: 'A', credits: 6, semester: '2',
+    list: 'A', credits: 6, semester: '1&2',
     desc: '融合机械、电子与软件工程:基于模型的机电系统设计、多域建模与仿真、鲁棒控制方法、性能分析评估、系统诊断与维护、IoT 应用。学生需通过迷你项目开发具体的机电一体化产品。',
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
@@ -27,6 +28,12 @@ export const COURSES = [
     list: 'A', credits: 6, semester: '1&2',
     desc: '探索小型无人机关键技术:传感器标定、GPS/IMU 导航、视觉-惯性导航、激光雷达导航、非线性动态逆与最优控制,并在真实无人机平台上开展前沿导航控制实验。',
     prereq: '良好的 MATLAB、C/C++ 编程能力与动手实践经验', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
+  },
+  {
+    code: 'IDAT7214', title: 'Advanced Technologies and Materials for Product Development', titleZh: '产品开发先进技术与材料',
+    list: 'A', credits: 6, semester: '2',
+    desc: '面向产品开发的先进制造技术与新型材料:2026-27 课表新增开课(第二学期,周五下午)。课程详情与 List 归属以学院最终公布大纲为准。',
+    prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
   {
     code: 'IDAT7215', title: 'Computer Programming for Product Development and Applications', titleZh: '产品开发计算机编程与应用',
@@ -42,7 +49,7 @@ export const COURSES = [
   },
   {
     code: 'IDAT7221', title: 'Data Analytics and Artificial Intelligence for Design Engineering and Business', titleZh: '设计工程与商业的数据分析与人工智能',
-    list: 'A', credits: 6, semester: '1',
+    list: 'A', credits: 6, semester: '2',
     desc: '涵盖 AI 与机器学习、价值工程与产品成本、产品分析与项目管理:项目管理作为战略工具的核心要素与实务方法论,并运用数据分析概念解读定量数据、支撑设计决策。',
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
@@ -80,13 +87,13 @@ export const COURSES = [
   },
   {
     code: 'COMP7503', title: 'Multimedia Technologies', titleZh: '多媒体技术',
-    list: 'B', credits: 6, semester: '2',
+    list: 'B', credits: 6, semester: '1&2',
     desc: '多媒体计算的基本概念与新兴技术:媒体数据获取、感知编码原理、媒体处理与操作、多媒体内容组织与分析,构建完整多媒体应用。',
     prereq: '', exclusive: '', cef: true, isNew2026: false, movedToB2026: true
   },
   {
     code: 'COMP7506', title: 'Smart Phone Apps Development', titleZh: '智能手机应用开发',
-    list: 'B', credits: 6, semester: '2',
+    list: 'B', credits: 6, semester: '1&2',
     desc: '智能手机 App 的设计与技术要点:小屏交互、硬件传感器运用,介绍 Android(Java)与 iOS(Swift)现代开发环境,指导学生开发自己的 App。',
     prereq: '具备基础编程知识', exclusive: 'COMP3330 交互式移动应用设计与编程', cef: true, isNew2026: false, movedToB2026: true
   },
@@ -100,7 +107,7 @@ export const COURSES = [
   },
   {
     code: 'IDAT7218', title: 'Advanced Topics in Innovative Design and Technology B', titleZh: '创新设计与科技高级专题 B',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '2',
     desc: '选取创新设计与科技前沿专题并应用于相关问题,具体题目于开课学期初公布。',
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
@@ -118,13 +125,13 @@ export const COURSES = [
   },
   {
     code: 'MECH6010', title: 'Service Behaviour of Materials', titleZh: '材料服役行为',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '1&2',
     desc: '蠕变、断裂、疲劳与腐蚀等材料服役行为的物理基础与预测;通过微观组织调控改善工程材料(含工程塑料与复合材料)服役性能。',
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
   {
     code: 'MECH6046', title: 'Microsystems for Energy, Biomedical and Consumer Electronics Applications', titleZh: '能源、生医与消费电子微系统',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '1&2',
     desc: 'MEMS 与微流控系统的工作原理、设计、材料、制造与封装,及其在能源、机械与生物医学工程中的应用,含丰富案例教学。',
     prereq: '', exclusive: '修过 MECH6032 者不可选', cef: false, isNew2026: false, movedToB2026: false
   },
@@ -136,7 +143,7 @@ export const COURSES = [
   },
   {
     code: 'MECH7010', title: 'Contemporary Robotics', titleZh: '当代机器人',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '1&2',
     desc: '现代机器人系统核心技术:系统组成与工作原理、传感与驱动单元、运动学建模、感知估计与实时控制,涵盖移动机器人、无人机、无人驾驶与软体机器人前沿。',
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
@@ -148,61 +155,67 @@ export const COURSES = [
   },
   {
     code: 'DASE7111', title: 'Data-driven Optimization', titleZh: '数据驱动优化',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '1',
     desc: '智能优化算法总览:遗传算法、模拟退火、禁忌搜索、粒子群、蚁群算法与动态系统优化策略,含供应链、物流、制造与服务业案例。',
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
   {
     code: 'DASE7139', title: 'Cyber-physical Systems', titleZh: '信息物理系统',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '1&2',
     desc: 'CPS 导论:传感器与传感网络、机器人与自动化、CPS 通信、数据分析、数字孪生、云计算与系统集成,以讲座+项目方式开展。',
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
   {
     code: 'DASE7034', title: 'Operational Research', titleZh: '运筹学',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '1&2',
     desc: '运筹学方法论:问题分析、建模与求解;数学规划在物流运输中的应用、设备更新模型、投资风险分析、排队论与事件仿真。',
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
   {
+    code: 'DASE7128', title: 'Human Factors Engineering', titleZh: '人因工程',
+    list: 'B', credits: 6, semester: '2',
+    desc: '人因工程学原理与应用:人体测量学、认知与感知特性、人机界面设计、工作环境与安全设计,提升产品与系统的可用性。2026-27 课表新增开课,详情以学院公布大纲为准。',
+    prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
+  },
+  {
     code: 'COMP7103', title: 'Data Mining', titleZh: '数据挖掘',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '1&2',
     desc: '数据挖掘主流方法与 OLAP:体系结构、数据预处理、关联规则、分类、聚类、数据挖掘系统与语言、Web/空间/时态高级挖掘。',
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
   {
     code: 'DASC7606', title: 'Deep Learning', titleZh: '深度学习',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '1&2',
     desc: '深度神经网络及其在 NLP、图像处理、金融预测、博弈与机器人中的应用:线性/逻辑回归、网络训练、RNN、CNN、生成模型、深度强化学习与伦理议题。',
     prereq: '建议具备算法、微积分、线性代数与编程基础', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
   {
     code: 'COMP7404', title: 'Computational Intelligence and Machine Learning', titleZh: '计算智能与机器学习',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '1&2',
     desc: 'AI/ML 的数学与算法框架:搜索与启发式搜索、约束满足、博弈、监督/非监督学习、降维、学习理论、强化学习、迁移学习与 AI 伦理。',
     prereq: '建议具备数据结构、概率、线代与编程基础', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
   {
     code: 'COMP7408', title: 'Distributed Ledger and Blockchain Technology', titleZh: '分布式账本与区块链技术',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '1&2',
     desc: '区块链核心技术要素与智能合约、许可链/非许可链变体与主流平台,探讨安全性、效率与可扩展性,以及加密货币与金融应用。',
     prereq: 'COMP7906 或 ICOM6045,并具备编程经验', exclusive: '', cef: true, isNew2026: false, movedToB2026: false
   },
   {
     code: 'COMP7802', title: 'Introduction to Financial Computing', titleZh: '金融计算导论',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '1',
     desc: '投资银行领域的金融计算:收益率曲线构建实务、金融建模与现代风险管理,结合金融产品知识、金融数学与计算技术。',
     prereq: '无需金融背景;需 Excel 操作能力,基础微积分与数值计算为佳', exclusive: '', cef: true, isNew2026: false, movedToB2026: false
   },
   {
     code: 'COMP7901', title: 'Legal Protection of Digital Property', titleZh: '数字产权法律保护',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '2',
     desc: '面向计算机专业人员的数字财产法律保护:软件与网站版权、软件与算法专利、个人数据保护等议题及法律解决方案。',
     prereq: '', exclusive: 'COMP3311 计算法律面面观 / ECOM6004 IT 与电商法律', cef: false, isNew2026: false, movedToB2026: false
   },
   {
     code: 'COMP7906', title: 'Introduction to Cyber Security', titleZh: '网络安全导论',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '1&2',
     desc: '网络世界中信息与数据的保护方法(含隐私议题):安全导论、网络攻击与威胁、密码算法及应用、网络安全与基础设施。',
     prereq: '建议具备 CS 数学、应用统计与 Python 基础', exclusive: 'ICOM6045 电子商务安全基础', cef: true, isNew2026: false, movedToB2026: false
   },
@@ -220,19 +233,19 @@ export const COURSES = [
   },
   {
     code: 'ELEC6603', title: 'Success in Industrial Entrepreneurship', titleZh: '工业创业成功之道',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '1',
     desc: '创业框架:识别资源/能力/环境与机会、商业计划书、新创企业融资、风险平衡与分阶段融资、组织创建,结合案例与项目实践。',
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
   {
     code: 'ELEC6604', title: 'Neural Networks, Fuzzy Systems and Genetic Algorithms', titleZh: '神经网络、模糊系统与遗传算法',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '1',
     desc: '应用人工智能三大主题导论:神经网络、模糊系统与遗传算法的基本概念、技术及在各类工程问题中的应用。',
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
   {
     code: 'ELEC6098', title: 'Electronic and Mobile Commerce', titleZh: '电子与移动商务',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '1&2',
     desc: '电商与移动商务的技术、商业与管理知识:B2C/B2B 模式、定位技术、RFID、GPS、移动网络、电子支付、NFC、二维码、AR 等前沿应用。',
     prereq: '', exclusive: 'ELEC6078 / ELEC6086', cef: false, isNew2026: false, movedToB2026: false
   },
@@ -334,7 +347,7 @@ export const COURSES = [
   },
   {
     code: 'RECO7605', title: 'Information Management', titleZh: '信息管理',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '1',
     desc: '信息化与供应链管理:信息/人力/资金/资源流、制造与建造供应链、效率与响应、IT 集成、跨组织文化与契约议题。',
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
