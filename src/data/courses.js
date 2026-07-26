@@ -1,7 +1,7 @@
 // 课程数据库
 // 来源:R363_REG.pdf(MSc(Eng) IDT 课程大纲,2025-26 起适用)
 //      + 学院官网 2026/27 课程列表更新(26 级适用)
-//      + Filtered_TPG_Courses_Timetable.xlsx(2026-27 官方课表,学期与开课安排依此更新)
+//      + 2026-27 FULLclass_timetable_20260722.xlsx(2026-27 官方全量课表,学期与开课安排依此更新)
 // 字段说明:
 //   list: 'A' = List A 学科核心课, 'B' = List B 学科选修课, 'capstone' = 毕业设计
 //   semester: '1' | '2' | '1&2' | 'full' | 'TBD'(待公布)
@@ -37,14 +37,8 @@ export const COURSES = [
   },
   {
     code: 'IDAT7215', title: 'Computer Programming for Product Development and Applications', titleZh: '产品开发计算机编程与应用',
-    list: 'A', credits: 6, semester: '1&2',
+    list: 'A', credits: 6, semester: '1',
     desc: '面向产品开发的实用编程技能:基础编程技术及其在软件控制、Web 应用与 IoT 中的应用;另涵盖 Excel 编程,释放其在数据挖掘与数据库集成等日常场景中的能力。',
-    prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
-  },
-  {
-    code: 'IDAT7216', title: 'Function Design, Aesthetics Design, Manufacturing and Intellectual Property Law', titleZh: '功能设计、美学设计、制造与知识产权法',
-    list: 'A', credits: 6, semester: '2',
-    desc: '功能设计与美学设计的基本原理,平衡实用因素与心理因素;面向量产的制造方法;以及保护产品发明人权益的知识产权法入门。',
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
   {
@@ -55,8 +49,8 @@ export const COURSES = [
   },
   {
     code: 'IDAT7222', title: 'Advanced CADCAM and AI Driven Manufacturing Systems', titleZh: '先进 CADCAM 与 AI 驱动制造系统',
-    list: 'A', credits: 6, semester: 'TBD',
-    desc: '26 级新增 List A 课程(待大学最终批准):先进计算机辅助设计/制造与人工智能驱动的智能制造系统。课程详情以学院公布大纲为准。',
+    list: 'A', credits: 6, semester: '1',
+    desc: '26 级新增 List A 课程:先进计算机辅助设计/制造与人工智能驱动的智能制造系统。2026-27 课表已排课(第一学期),课程详情以学院公布大纲为准。',
     prereq: '', exclusive: '', cef: false, isNew2026: true, movedToB2026: false
   },
   {
@@ -67,14 +61,14 @@ export const COURSES = [
   },
   {
     code: 'IDAT7224', title: 'Deep Learning in Engineering Technology', titleZh: '工程技术中的深度学习',
-    list: 'A', credits: 6, semester: 'TBD',
-    desc: '26 级新增 List A 课程(待大学最终批准):深度神经网络在工程技术场景中的应用。课程详情以学院公布大纲为准。',
+    list: 'A', credits: 6, semester: '1&2',
+    desc: '26 级新增 List A 课程:深度神经网络在工程技术场景中的应用。2026-27 课表两学期均排课,课程详情以学院公布大纲为准。',
     prereq: '', exclusive: '', cef: false, isNew2026: true, movedToB2026: false
   },
   {
-    code: 'IDAT7225', title: 'Autonomous Robots and Intelligent Control', titleZh: '自主机器人与智能控制',
-    list: 'A', credits: 6, semester: 'TBD',
-    desc: '26 级新增 List A 课程(待大学最终批准):自主机器人系统与智能控制方法。课程详情以学院公布大纲为准。',
+    code: 'IDAT7225', title: 'Fundamentals of AI for Object Detection and Classification', titleZh: '目标检测与分类的人工智能基础',
+    list: 'A', credits: 6, semester: '2',
+    desc: '26 级新增 List A 课程:面向目标检测与分类的人工智能基础(2026-27 官方课表课名,原拟题目为自主机器人与智能控制)。2026-27 课表已排课(第二学期),课程详情以学院公布大纲为准。',
     prereq: '', exclusive: '', cef: false, isNew2026: true, movedToB2026: false
   },
 
@@ -101,7 +95,7 @@ export const COURSES = [
   // ============ List B 学科选修课程 ============
   {
     code: 'IDAT7217', title: 'Advanced Topics in Innovative Design and Technology A', titleZh: '创新设计与科技高级专题 A',
-    list: 'B', credits: 6, semester: '1&2',
+    list: 'B', credits: 6, semester: '1',
     desc: '选取创新设计与科技前沿专题并应用于相关问题,具体题目于开课学期初公布。',
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
@@ -113,13 +107,13 @@ export const COURSES = [
   },
   {
     code: 'IDAT7219', title: 'Smart Building Technology', titleZh: '智能建筑技术',
-    list: 'B', credits: 6, semester: '1',
-    desc: '应用 IoT 技术(硬件、软件与连接)管理 HVAC、照明与安防系统;实时采集并分析楼宇运营数据,改善楼宇运维与保养。',
+    list: 'B', credits: 6, semester: 'TBD',
+    desc: '应用 IoT 技术(硬件、软件与连接)管理 HVAC、照明与安防系统;实时采集并分析楼宇运营数据,改善楼宇运维与保养。2026-27 全量课表未见排课。',
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
   {
     code: 'IDAT7220', title: 'STEM Education', titleZh: 'STEM 教育',
-    list: 'B', credits: 6, semester: '2',
+    list: 'B', credits: 6, semester: '1&2',
     desc: 'STEM 整合式、项目式教学理念:通过阅读、视频、教学设计与系列迷你项目,学习课程整合实践与学生自主学习的最佳做法。',
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
@@ -251,7 +245,7 @@ export const COURSES = [
   },
   {
     code: 'MEDD8860', title: 'Emerging Technologies in STEM Education', titleZh: 'STEM 教育新兴技术',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '1',
     desc: '纵览 STEM 教育中当前与新兴的工具、实践与主题,回顾跨学科整合的历史发展,展望未来课堂的数字技术趋势。',
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
@@ -263,43 +257,43 @@ export const COURSES = [
   },
   {
     code: 'TDLL6024', title: 'Teaching and Learning with Digital Technology', titleZh: '数字技术与教学',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '1',
     desc: '信息技术教学应用总览:从计算机辅助教程到学习对象、认知工具与协作技术,强调支撑技术整合的学习理论与教育情境。',
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
   {
     code: 'TDLL6333', title: 'Mobile and Ubiquitous Technology in Education', titleZh: '教育中的移动与泛在技术',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '2',
     desc: '移动/泛在技术对教育与培训的影响:次世代学习系统潜力,并实践设计开发简单的移动教育应用(面向对象编程+云端集成)。',
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
   {
     code: 'TDLL7341', title: 'Game-based Learning Environments', titleZh: '游戏化学习环境',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '1',
     desc: '数字游戏化学习(DGBL)理念:商业游戏与专用教育游戏的教育学考量,教育游戏的现状趋势及设计、实施与评估方法。',
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
   {
     code: 'TDLL7349', title: 'Data Science and Learning Analytics', titleZh: '数据科学与学习分析',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '1',
     desc: '数据科学核心概念与学习分析/教育数据挖掘:数据预处理与存储、推断与预测分析、机器学习、文本与网络分析、可视化、数据伦理。',
     prereq: '建议具备本科统计学基础', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
   {
     code: 'CIVL6054', title: 'Engineering for Transport Systems', titleZh: '运输系统工程',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '1',
     desc: '运输系统的工程视角:交通基础设施发展、运输方式选型、固定轨道系统、运输领域技术应用。',
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
   {
     code: 'CIVL6061', title: 'Special Topic in Environmental Engineering A', titleZh: '环境工程专题 A',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '1',
     desc: '提供环境工程热点方向的深入学习机会,具体题目于开课学期初公布。',
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
   {
     code: 'CIVL6062', title: 'Special Topic in Environmental Engineering B', titleZh: '环境工程专题 B',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '2',
     desc: '提供环境工程热点方向的深入学习机会,具体题目于开课学期初公布。',
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
@@ -311,7 +305,7 @@ export const COURSES = [
   },
   {
     code: 'CIVL7006', title: 'Optimization Techniques for Transportation Applications', titleZh: '交通应用优化技术',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '2',
     desc: '求解交通问题的优化方法:线性规划、非线性规划、网络优化与整数规划。',
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
@@ -329,19 +323,19 @@ export const COURSES = [
   },
   {
     code: 'URBA6002', title: 'Urban Big Data Analytics', titleZh: '城市大数据分析',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '2',
     desc: '城市大数据处理、分析与建模进阶:概念框架、方法论与软件工具,应用城市模型解释现状并预测未来变化。',
     prereq: 'URBA6011 城市数据分析编程基础', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
   {
     code: 'URBA6009', title: 'Artificial Intelligence for Future Cities', titleZh: '未来城市的人工智能',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '2',
     desc: '编程、计算思维与 AI 导论:关键算法与数据结构、编程技能,以及如何用软件与智能技术解决城市问题。',
     prereq: 'URBA6011 城市数据分析编程基础', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
   {
     code: 'URBA6011', title: 'Programming and Foundations in Urban Data Analysis', titleZh: '城市数据分析编程基础',
-    list: 'B', credits: 6, semester: 'TBD',
+    list: 'B', credits: 6, semester: '1',
     desc: '城市数据分析的编程与基础知识:空间数据获取、GIS/BIM 分析技术,为 URBA6002/URBA6009 的先修课。',
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },

@@ -53,7 +53,8 @@ export default function homePage() {
     <div class="card" style="border-left:4px solid #e6a23c">
       <div class="card-title">26 级课程变更提示</div>
       <div style="font-size:12px;color:#5b5f66;line-height:1.8">
-        · 新增 List A:IDAT7222 先进CADCAM与AI制造 / IDAT7223 人因设计与多媒体 / IDAT7224 深度学习工程技术 / IDAT7225 自主机器人与智能控制(待大学批准)<br>
+        · 新增 List A:IDAT7222 先进CADCAM与AI制造 / IDAT7223 人因设计与多媒体 / IDAT7224 深度学习工程技术 / IDAT7225 目标检测与分类AI基础<br>
+        · IDAT7216 功能设计与知识产权法已从课程列表移除(2026-27 课表不再开设)<br>
         · MECH6034 / COMP7503 / COMP7506 自 26 级起转入 List B(待大学批准)<br>
         · 总学分要求统一为 72 学分(原为 72-84)
       </div>
