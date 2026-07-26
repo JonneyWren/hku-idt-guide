@@ -1,4 +1,5 @@
 import { getCourse, semesterText } from '../data/courses.js';
+import { getSections, dayText } from '../data/timetable.js';
 import { fmtDate } from '../utils/date.js';
 import * as store from '../utils/store.js';
 import { getQuery, navigate } from '../router.js';
@@ -22,6 +23,7 @@ function render(code) {
   const sum = store.getRatingSummary(code);
   const selected = store.isSelected(code);
   const semText = semesterText(course.semester);
+  const sections = getSections(code);
   const stars = [1, 2, 3, 4, 5];
 
   // Update nav title
@@ -48,6 +50,14 @@ function render(code) {
       .form-label{font-size:13px;color:#14312a;width:40px;flex-shrink:0}
       .form-input{flex:1;border:1px solid #e8eaee;border-radius:8px;padding:8px 12px;font-size:13px;outline:none}
       .form-textarea{width:100%;border:1px solid #e8eaee;border-radius:8px;padding:10px 12px;font-size:13px;min-height:80px;resize:vertical;outline:none;margin-bottom:12px}
+      .sec-row{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid #f0f1f4;font-size:12px}
+      .sec-row:last-child{border-bottom:none}
+      .sec-term{flex-shrink:0;font-size:10px;font-weight:600;border-radius:4px;padding:2px 6px}
+      .sec-term.t1{background:#e8f3ef;color:#00573f}
+      .sec-term.t2{background:#e9effa;color:#1a56b8}
+      .sec-name{flex-shrink:0;font-weight:600;color:#14312a}
+      .sec-time{color:#5b5f66}
+      .sec-venue{margin-left:auto;flex-shrink:0;color:#8a8f99;font-size:11px}
     </style>
     <div class="detail-hero">
       <div>
@@ -72,6 +82,19 @@ function render(code) {
       ${course.prereq ? `<div style="margin-top:8px;font-size:11px"><span style="color:#00573f;font-weight:600">先修要求</span> ${course.prereq}</div>` : ''}
       ${course.exclusive ? `<div style="margin-top:4px;font-size:11px"><span style="color:#c0392b;font-weight:600">互斥课程</span> ${course.exclusive}</div>` : ''}
     </div>
+    ${sections.length ? `
+    <div class="section-title">2026-27 开课安排</div>
+    <div class="card">
+      ${sections.map(s => `
+        <div class="sec-row">
+          <span class="sec-term ${s.term === 1 ? 't1' : 't2'}">Sem ${s.term}</span>
+          <span class="sec-name">${s.section}</span>
+          <span class="sec-time">${s.day ? `${dayText(s.day)} ${s.start}-${s.end}` : '时间地点待定'}</span>
+          <span class="sec-venue">${s.venue || ''}${s.venue && s.instructor ? ' · ' : ''}${s.instructor || ''}</span>
+        </div>
+      `).join('')}
+      <div style="margin-top:8px;font-size:10px;color:#8a8f99">来源于 2026-27 官方课表,部分班次含补课/调整,以选课系统实时信息为准</div>
+    </div>` : ''}
     <div class="section-title">课程评价(${sum.count})</div>
     ${reviews.length ? `<div class="card">${reviews.map(r => `
       <div class="review">
