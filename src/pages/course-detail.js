@@ -2,6 +2,7 @@ import { getCourse, semesterText } from '../data/courses.js';
 import { getSections, dayText } from '../data/timetable.js';
 import { fmtDate } from '../utils/date.js';
 import * as store from '../utils/store.js';
+import { enrollCourse, unenrollCourse } from '../utils/enroll.js';
 import { getQuery, navigate } from '../router.js';
 import { showToast } from '../components/toast.js';
 import { renderTabbar } from '../components/tabbar.js';
@@ -126,9 +127,8 @@ function render(code) {
 
   // Events
   document.getElementById('toggle-select').onclick = () => {
-    const added = store.toggleCourse(code);
-    showToast(added ? '已加入选课' : '已移出选课');
-    render(code);
+    if (store.isSelected(code)) unenrollCourse(code, () => render(code));
+    else enrollCourse(code, () => render(code));
   };
   document.getElementById('rating-stars').onclick = (e) => {
     const v = e.target.dataset.v;

@@ -1,7 +1,7 @@
 import { COURSES, DEGREE_RULES, semesterText } from '../data/courses.js';
 import * as store from '../utils/store.js';
+import { enrollCourse, unenrollCourse, timeSummary } from '../utils/enroll.js';
 import { navigate } from '../router.js';
-import { showToast } from '../components/toast.js';
 import { renderTabbar } from '../components/tabbar.js';
 
 let keyword = '';
@@ -33,7 +33,7 @@ function render() {
   }).map(c => {
     const rs = ratings[c.code] || [];
     const avg = rs.length ? Math.round((rs.reduce((s, r) => s + (r.rating || 0), 0) / rs.length) * 10) / 10 : 0;
-    return { ...c, semText: semesterText(c.semester), ratingAvg: avg, ratingCount: rs.length, selected: selection.indexOf(c.code) >= 0 };
+    return { ...c, semText: semesterText(c.semester), timeText: timeSummary(c.code), ratingAvg: avg, ratingCount: rs.length, selected: selection.indexOf(c.code) >= 0 };
   });
 
   const listTabs = [{ key: 'all', label: '全部' }, { key: 'A', label: 'List A 核心' }, { key: 'B', label: 'List B 选修' }, { key: 'capstone', label: '毕业设计' }];
@@ -52,6 +52,7 @@ function render() {
       .course-title{font-size:15px;font-weight:600;color:#1f2430;margin-top:6px}
       .course-en{font-size:11px;color:#8a8f99;margin-top:2px}
       .course-meta{font-size:11px;color:#6b7280;margin-top:8px}
+      .course-time{font-size:11px;color:#00573f;margin-top:4px}
       .course-foot{display:flex;align-items:center;justify-content:space-between;margin-top:10px}
       .select-btn{font-size:12px;color:#00573f;background:#eef5f1;border-radius:999px;padding:5px 14px;cursor:pointer}
       .select-btn.selected{background:#00573f;color:#fff}
@@ -79,6 +80,7 @@ function render() {
         <div class="course-title">${c.titleZh}</div>
         <div class="course-en">${c.title}</div>
         <div class="course-meta">${c.credits} 学分 · ${c.semText}${c.cef ? ' · <span style="color:#b8741a">CEF 可报销</span>' : ''}</div>
+        <div class="course-time">${c.timeText ? '🕒 ' + c.timeText : '🕒 时间待定'}</div>
         <div class="course-foot">
           <div>${c.ratingCount > 0 ? `<span class="star star-on">★</span> <span style="font-size:13px;font-weight:600;color:#f5a623;margin:0 4px">${c.ratingAvg}</span><span style="font-size:11px;color:#8a8f99">(${c.ratingCount} 条评价)</span>` : '<span style="font-size:11px;color:#8a8f99">暂无评价,去抢沙发</span>'}</div>
           <div class="select-btn ${c.selected ? 'selected' : ''}" data-toggle="${c.code}">${c.selected ? '已选 ✓' : '+ 选课'}</div>
@@ -106,9 +108,9 @@ function render() {
   container.querySelectorAll('[data-toggle]').forEach(el => {
     el.onclick = (e) => {
       e.stopPropagation();
-      const added = store.toggleCourse(el.dataset.toggle);
-      showToast(added ? '已加入选课' : '已移出选课');
-      render();
+      const code = el.dataset.toggle;
+      if (store.isSelected(code)) unenrollCourse(code, render);
+      else enrollCourse(code, render);
     };
   });
   container.querySelectorAll('.course-card').forEach(el => {

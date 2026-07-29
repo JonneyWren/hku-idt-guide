@@ -12,12 +12,13 @@ const DAY_END = 22 * 60;
 const COLORS = ['#00573f', '#31597f', '#6b5b95', '#8a6d3b', '#7a5195', '#9c4f4f', '#2e6f5c', '#3d6e9e'];
 
 let showAddModal = false;
+let termFilter = 'all';
 let form = { courseIndex: 0, dayIndex: 0, startTime: '18:30', endTime: '21:30', location: '' };
 
 function render() {
   const container = document.getElementById('page-container');
   const weekInfo = getSemesterWeek(todayStr());
-  const slots = store.getSlots();
+  const slots = store.getSlots().filter(s => termFilter === 'all' || !s.term || s.term === Number(termFilter));
   const selection = store.getSelection().map(code => getCourse(code)).filter(Boolean);
   const selectionNames = selection.map(c => `${c.code} ${c.titleZh}`);
 
@@ -28,6 +29,7 @@ function render() {
     if (!(s.code in colorMap)) { colorMap[s.code] = COLORS[ci % COLORS.length]; ci++; }
     return {
       id: s.id, code: s.code, name: c ? c.titleZh : '', location: s.location,
+      instructor: s.instructor || '', term: s.term || 0, section: s.section || '',
       leftPct: Math.round(((s.day - 1) * 100) / 7 * 1000) / 1000,
       top: s.startMin - DAY_START, height: Math.max(s.endMin - s.startMin, 40),
       color: colorMap[s.code], timeText: `${minToTime(s.startMin)}-${minToTime(s.endMin)}`
@@ -59,8 +61,12 @@ function render() {
       .h-line{position:absolute;left:0;right:0;height:1px;background:#f5f6f8}
       .block{position:absolute;width:calc(100%/7 - 2px);border-radius:6px;padding:3px 4px;overflow:hidden;cursor:pointer;color:#fff;font-size:10px}
       .block-code{font-weight:600;font-size:11px}
+      .block-name{font-size:9px;opacity:0.9;line-height:1.3}
       .block-time{opacity:0.85;font-size:9px}
       .block-loc{opacity:0.8;font-size:9px}
+      .term-tabs{display:flex;gap:8px;padding:0 16px 8px}
+      .term-tab{font-size:12px;color:#4b5563;background:#fff;border-radius:999px;padding:4px 14px;cursor:pointer}
+      .term-tab.active{background:#00573f;color:#fff;font-weight:600}
       .empty-hint{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#8a8f99;font-size:13px}
       .empty-sub{font-size:11px;margin-top:4px}
       .pk-row{display:flex;align-items:center;padding:10px 0;border-bottom:1px solid #f0f1f4}
@@ -76,6 +82,7 @@ function render() {
         <div class="act primary" id="add-btn">+ 添加</div>
       </div>
     </div>
+    <div class="term-tabs">${[{ k: 'all', l: '全部' }, { k: '1', l: '第一学期' }, { k: '2', l: '第二学期' }].map(t => `<span class="term-tab ${termFilter === t.k ? 'active' : ''}" data-term="${t.k}">${t.l}</span>`).join('')}</div>
     <div class="grid-head">${WEEKDAYS_ZH.map((d, i) => `<div class="day-head ${i >= 5 ? 'weekend' : ''}">${d}</div>`).join('')}</div>
     <div class="sched-scroll">
       <div class="grid">
@@ -83,8 +90,8 @@ function render() {
         <div class="days-wrap" style="height:${gridHeight}px">
           ${WEEKDAYS_ZH.map((_, i) => `<div class="day-col" style="left:${(i*100/7)}%;width:${100/7}%"></div>`).join('')}
           ${hours.map((_, i) => `<div class="h-line" style="top:${i * 60}px"></div>`).join('')}
-          ${blocks.map(b => `<div class="block" data-id="${b.id}" style="left:${b.leftPct}%;top:${b.top}px;height:${b.height}px;background:${b.color}"><div class="block-code">${b.code}</div><div class="block-time">${b.timeText}</div>${b.location ? `<div class="block-loc">${b.location}</div>` : ''}</div>`).join('')}
-          ${blocks.length === 0 ? '<div class="empty-hint"><div>课表还是空的</div><div class="empty-sub">点右上角「+ 添加」录入上课时间</div></div>' : ''}
+          ${blocks.map(b => `<div class="block" data-id="${b.id}" style="left:${b.leftPct}%;top:${b.top}px;height:${b.height}px;background:${b.color}"><div class="block-code">${b.code}${b.term ? ` · S${b.term}` : ''}</div>${b.name ? `<div class="block-name">${b.name}</div>` : ''}<div class="block-time">${b.timeText}</div>${b.location ? `<div class="block-loc">${b.location}</div>` : ''}${b.instructor ? `<div class="block-loc">${b.instructor}</div>` : ''}</div>`).join('')}
+          ${blocks.length === 0 ? '<div class="empty-hint"><div>课表还是空的</div><div class="empty-sub">在「课程」页点「+ 选课」自动同步,或点右上角「+ 添加」手动录入</div></div>' : ''}
         </div>
       </div>
     </div>
@@ -107,6 +114,7 @@ function render() {
   `;
 
   // Events
+  container.querySelectorAll('[data-term]').forEach(el => { el.onclick = () => { termFilter = el.dataset.term; render(); }; });
   document.getElementById('add-btn').onclick = () => { showAddModal = true; render(); };
   const addCancel = document.getElementById('add-cancel');
   if (addCancel) addCancel.onclick = () => { showAddModal = false; render(); };
@@ -168,5 +176,6 @@ function render() {
 
 export default function schedulePage() {
   showAddModal = false;
+  termFilter = 'all';
   render();
 }
