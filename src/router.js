@@ -1,4 +1,6 @@
 // Hash-based SPA Router
+import { reportView } from './utils/views.js';
+
 const routes = {};
 let currentCleanup = null;
 
@@ -33,6 +35,7 @@ export function start() {
     if (handler) {
       currentCleanup = handler() || null;
     }
+    reportView(path);
   };
   window.addEventListener('hashchange', render);
   render();
