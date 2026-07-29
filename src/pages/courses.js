@@ -65,7 +65,24 @@ function render() {
       .cc.fixed .cc-num{color:#6b7280}
       .cc-label{font-size:10px;color:#8a8f99}
       .credit-action{font-size:13px;color:#00573f;font-weight:600;padding:8px 0 8px 12px;cursor:pointer}
+      .tt-card{margin:12px 16px 0;background:#fff;border-radius:12px;padding:14px 16px;box-shadow:0 2px 8px rgba(0,45,32,0.06)}
+      .tt-title{font-size:14px;font-weight:700;color:#14312a}
+      .tt-title-en{font-size:11px;color:#8a8f99;font-weight:400;margin-left:6px}
+      .tt-note{font-size:11px;color:#6b7280;line-height:1.6;margin-top:6px}
+      .tt-note-zh{font-size:11px;color:#8a8f99;line-height:1.6;margin-top:4px}
+      .tt-dl{display:block;margin-top:10px;text-align:center;background:#00573f;color:#fff;border-radius:10px;padding:9px 12px;text-decoration:none}
+      .tt-dl-en{font-size:12px;font-weight:600}
+      .tt-dl-zh{font-size:11px;opacity:0.85;margin-top:2px}
     </style>
+    <div class="tt-card">
+      <div class="tt-title">课程时间表<span class="tt-title-en">Class Timetable</span></div>
+      <div class="tt-note">Instructor information provided herein (mainly for UG courses) are for reference only and subject to changes. Students should consult the offering department(s) concerned for the latest update.</div>
+      <div class="tt-note-zh">本表所列教师信息（主要针对本科课程）仅供参考，可能随时调整；请以开课院系发布的最新信息为准。</div>
+      <a class="tt-dl" href="${import.meta.env.BASE_URL}class_timetable_2026-27_20260727.xlsx" download="2026-27 class_timetable_20260727.xlsx">
+        <div class="tt-dl-en">⭳ Download Class Timetable (for 2026-27) (updated on 20260727 07:46)</div>
+        <div class="tt-dl-zh">下载 2026-27 学年课程时间表（更新于 2026-07-27 07:46）</div>
+      </a>
+    </div>
     <div class="search-bar"><input class="search-input" id="course-search" placeholder="搜索课程代码 / 中英文名称" value="${keyword}" /></div>
     <div class="tabs">${listTabs.map(t => `<span class="ftab ${listFilter === t.key ? 'active' : ''}" data-list="${t.key}">${t.label}</span>`).join('')}</div>
     <div class="tabs">${semTabs.map(t => `<span class="ftab ${semFilter === t.key ? 'active' : ''}" data-sem="${t.key}">${t.label}</span>`).join('')}</div>
