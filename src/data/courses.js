@@ -352,6 +352,12 @@ export const COURSES = [
     list: 'capstone', credits: 24, semester: 'full',
     desc: '24 学分毕业设计:在工学院或相关学院导师指导下,个人或小组完成设计、实验或分析研究课题;需参加研讨会并提交完整书面报告。适用于 2025/26 及以后入学者。',
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
+  },
+  {
+    code: 'IDAT7101', title: 'Capstone project', titleZh: '顶点项目(毕业项目)',
+    list: 'capstone', credits: 24, semester: 'full',
+    desc: '毕业项目:在导师指导下完成综合性项目研究与实践,无固定上课时间。据 0727 版官方课表新增,两学期均开设;学分与适用入学年级待官方确认(暂按与 IDAT7100 一致处理)。',
+    prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   }
 ];
 

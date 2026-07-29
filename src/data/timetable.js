@@ -1,5 +1,5 @@
 // 2026-27 学年 TPG 开课安排
-// 来源:2026-27 FULLclass_timetable_20260722.xlsx(官方全量课表)
+// 来源:2026-27 class_timetable_20260727.xlsx(官方课表 2026-07-27 版)
 // 同一班次的多个日期区间已合并,单日补课/换场不单独列出;day 为空表示无固定上课时间(时间地点待定/自学安排)
 // term: 1 = 第一学期, 2 = 第二学期
 
@@ -65,7 +65,7 @@ export const TIMETABLE = {
     { term: 2, section: '2A', day: 'FRI', start: '14:00', end: '16:50', venue: '', instructor: 'Or,Ka Lun' }
   ],
   DASE7139: [
-    { term: 1, section: '1A', day: 'WED', start: '19:00', end: '21:50', venue: 'HW106', instructor: 'Chen,Jiangcheng' },
+    { term: 1, section: '1A', day: 'WED', start: '19:00', end: '21:50', venue: 'HW103', instructor: 'Chen,Jiangcheng' },
     { term: 2, section: '2B', day: 'WED', start: '19:00', end: '21:50', venue: 'HW103', instructor: 'Chen,Jiangcheng' }
   ],
   ELEC6098: [
@@ -82,6 +82,10 @@ export const TIMETABLE = {
     { term: 1, section: '1B', day: 'FRI', start: '13:00', end: '15:50', venue: '', instructor: 'Pang,Kwok Hung Grantham' }
   ],
   IDAT7100: [
+    { term: 1, section: '1A', day: '', start: '', end: '', venue: '', instructor: '' },
+    { term: 2, section: '2A', day: '', start: '', end: '', venue: '', instructor: '' }
+  ],
+  IDAT7101: [
     { term: 1, section: '1A', day: '', start: '', end: '', venue: '', instructor: '' },
     { term: 2, section: '2A', day: '', start: '', end: '', venue: '', instructor: '' }
   ],
