@@ -60,7 +60,7 @@ function render() {
       .day-col{position:absolute;top:0;bottom:0;border-right:1px solid #f5f6f8}
       .h-line{position:absolute;left:0;right:0;height:1px;background:#f5f6f8}
       .block{position:absolute;width:calc(100%/7 - 2px);border-radius:6px;padding:3px 4px;overflow:hidden;cursor:pointer;color:#fff;font-size:10px}
-      .block-code{font-weight:600;font-size:11px}
+      .block-code{font-weight:600;font-size:10px;word-break:break-all;line-height:1.25}
       .block-name{font-size:9px;opacity:0.9;line-height:1.3}
       .block-time{opacity:0.85;font-size:9px}
       .block-loc{opacity:0.8;font-size:9px}
@@ -90,7 +90,7 @@ function render() {
         <div class="days-wrap" style="height:${gridHeight}px">
           ${WEEKDAYS_ZH.map((_, i) => `<div class="day-col" style="left:${(i*100/7)}%;width:${100/7}%"></div>`).join('')}
           ${hours.map((_, i) => `<div class="h-line" style="top:${i * 60}px"></div>`).join('')}
-          ${blocks.map(b => `<div class="block" data-id="${b.id}" style="left:${b.leftPct}%;top:${b.top}px;height:${b.height}px;background:${b.color}"><div class="block-code">${b.code}${b.term ? ` · S${b.term}` : ''}</div>${b.name ? `<div class="block-name">${b.name}</div>` : ''}<div class="block-time">${b.timeText}</div>${b.location ? `<div class="block-loc">${b.location}</div>` : ''}${b.instructor ? `<div class="block-loc">${b.instructor}</div>` : ''}</div>`).join('')}
+          ${blocks.map(b => `<div class="block" data-id="${b.id}" style="left:${b.leftPct}%;top:${b.top}px;height:${b.height}px;background:${b.color}"><div class="block-code">${b.code}</div>${b.name ? `<div class="block-name">${b.name}</div>` : ''}<div class="block-time">${b.term ? `S${b.term} ` : ''}${b.timeText}</div>${b.location ? `<div class="block-loc">${b.location}</div>` : ''}${b.instructor ? `<div class="block-loc">${b.instructor}</div>` : ''}</div>`).join('')}
           ${blocks.length === 0 ? '<div class="empty-hint"><div>课表还是空的</div><div class="empty-sub">在「课程」页点「+ 选课」自动同步,或点右上角「+ 添加」手动录入</div></div>' : ''}
         </div>
       </div>
