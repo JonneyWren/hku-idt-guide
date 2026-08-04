@@ -1,0 +1,1108 @@
+[
+ {
+  "code": "IDAT7100",
+  "list": "diss",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 24,
+  "title": "Dissertation"
+ },
+ {
+  "code": "IDAT7211",
+  "list": "A",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Innovation and R & D principle"
+ },
+ {
+  "code": "IDAT7212",
+  "list": "A",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Mechatronic systems engineering"
+ },
+ {
+  "code": "IDAT7213",
+  "list": "A",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "UAV design, navigation and control"
+ },
+ {
+  "code": "IDAT7215",
+  "list": "A",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Computer programming for product development and applications"
+ },
+ {
+  "code": "IDAT7222",
+  "list": "A",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Advanced CADCAM and AI driven manufacturing systems"
+ },
+ {
+  "code": "IDAT7224",
+  "list": "A",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Deep learning in engineering technology"
+ },
+ {
+  "code": "CIVL6054",
+  "list": "B",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Engineering for transport systems"
+ },
+ {
+  "code": "CIVL6061",
+  "list": "B",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Special topic in environmental engineering A"
+ },
+ {
+  "code": "DASE7034",
+  "list": "B",
+  "semester": "1",
+  "sections": [
+   "A",
+   "B"
+  ],
+  "credits": 6,
+  "title": "Operational research"
+ },
+ {
+  "code": "DASE7111",
+  "list": "B",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Data-driven optimization"
+ },
+ {
+  "code": "DASE7139",
+  "list": "B",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Cyber-physical systems"
+ },
+ {
+  "code": "ELEC6098",
+  "list": "B",
+  "semester": "1",
+  "sections": [
+   "A",
+   "B"
+  ],
+  "credits": 6,
+  "title": "Electronic and mobile commerce"
+ },
+ {
+  "code": "ELEC6603",
+  "list": "B",
+  "semester": "1",
+  "sections": [
+   "A",
+   "B"
+  ],
+  "credits": 6,
+  "title": "Success in industrial entrepreneurship"
+ },
+ {
+  "code": "ELEC6604",
+  "list": "B",
+  "semester": "1",
+  "sections": [
+   "A",
+   "B"
+  ],
+  "credits": 6,
+  "title": "Neural networks, fuzzy systems and genetic algorithms"
+ },
+ {
+  "code": "IDAT7217",
+  "list": "B",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Advanced topics in innovative design and technology A"
+ },
+ {
+  "code": "IDAT7220",
+  "list": "B",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "STEM education"
+ },
+ {
+  "code": "MECH6010",
+  "list": "B",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Service behaviour of materials"
+ },
+ {
+  "code": "MECH6034",
+  "list": "B",
+  "semester": "1",
+  "sections": [
+   "A",
+   "B"
+  ],
+  "credits": 6,
+  "title": "Computer-aided product development (CAPD)"
+ },
+ {
+  "code": "MECH6046",
+  "list": "B",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Microsystems for energy, biomedical and consumer electronics applications"
+ },
+ {
+  "code": "MECH7010",
+  "list": "B",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Contemporary robotics"
+ },
+ {
+  "code": "RECO7605",
+  "list": "B",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Information management"
+ },
+ {
+  "code": "TDLL6024",
+  "list": "B",
+  "semester": "1",
+  "sections": [
+   "A",
+   "B",
+   "C"
+  ],
+  "credits": 6,
+  "title": "Teaching and learning with digital technology"
+ },
+ {
+  "code": "TDLL6334",
+  "list": "B",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Educational video and storytelling"
+ },
+ {
+  "code": "URBA6011",
+  "list": "B",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Programming and foundations in urban data analysis"
+ },
+ {
+  "code": "LATX7513",
+  "list": "XC",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Fundamentals of aircraft and aviation"
+ },
+ {
+  "code": "LATX7517",
+  "list": "XC",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Aviation economics: business model and entrepreneurship"
+ },
+ {
+  "code": "LATX7518",
+  "list": "XC",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Fundamentals of wireless communications and sensing in space"
+ },
+ {
+  "code": "MECH6019",
+  "list": "XC",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Sources and control of air pollution"
+ },
+ {
+  "code": "MECH6045",
+  "list": "XC",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Nanotechnology: fundamentals and applications"
+ },
+ {
+  "code": "MECH7014",
+  "list": "XC",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Railway engineering - metro and high-speed rail"
+ },
+ {
+  "code": "MECH7016",
+  "list": "XC",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Railway project management"
+ },
+ {
+  "code": "MECH7020",
+  "list": "XC",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Autonomous Drones with AI"
+ },
+ {
+  "code": "MECH7029",
+  "list": "XC",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Aeroacoustics and noise control with machine learning"
+ },
+ {
+  "code": "MECH7030",
+  "list": "XC",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Intelligent computation for aerodynamics and structural mechanics"
+ },
+ {
+  "code": "MEST7412",
+  "list": "XC",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Solid-state materials and physics"
+ },
+ {
+  "code": "MEST7418",
+  "list": "XC",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Nanophotonics"
+ },
+ {
+  "code": "MEST7419",
+  "list": "XC",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Safety training and microelectronics process"
+ },
+ {
+  "code": "MEST7420",
+  "list": "XC",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "CMOS IC analog circuit design: basic circuits"
+ },
+ {
+  "code": "MEST7421",
+  "list": "XC",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Thin film transistor technology and applications"
+ },
+ {
+  "code": "CIVL6004",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Advanced soil mechanics"
+ },
+ {
+  "code": "CIVL6006",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Advanced water and wastewater treatment"
+ },
+ {
+  "code": "CIVL6007",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Behavioural travel demand modelling"
+ },
+ {
+  "code": "CIVL6013",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Concrete technology"
+ },
+ {
+  "code": "CIVL6026",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Finite element method"
+ },
+ {
+  "code": "CIVL6053",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Wind engineering"
+ },
+ {
+  "code": "CIVL7019",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Statistical methods for civil engineering"
+ },
+ {
+  "code": "CIVL7023",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Industrialized construction with automation and robotics"
+ },
+ {
+  "code": "CIVL7024",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Computer vision for infrastructure construction and management"
+ },
+ {
+  "code": "DASE7015",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A",
+   "B"
+  ],
+  "credits": 6,
+  "title": "Engineering economics and finance"
+ },
+ {
+  "code": "DASE7020",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A",
+   "B"
+  ],
+  "credits": 6,
+  "title": "Supply chain management"
+ },
+ {
+  "code": "DASE7113",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Optimization methods for intelligent systems"
+ },
+ {
+  "code": "DASE7119",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Digital enterprises and e-commerce"
+ },
+ {
+  "code": "DASE7137",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A",
+   "B"
+  ],
+  "credits": 6,
+  "title": "Virtual reality and applications"
+ },
+ {
+  "code": "DASE7138",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Healthcare systems engineering"
+ },
+ {
+  "code": "DASE7140",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A",
+   "B"
+  ],
+  "credits": 6,
+  "title": "Machine learning and applications"
+ },
+ {
+  "code": "DASE7141",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Advanced digital twin and applications"
+ },
+ {
+  "code": "DASE7142",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Advanced computational methods"
+ },
+ {
+  "code": "DASE7143",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "The internet of things"
+ },
+ {
+  "code": "DASE7154",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Intelligent technologies for systems engineering A"
+ },
+ {
+  "code": "DASE7155",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Intelligent technologies for systems engineering B"
+ },
+ {
+  "code": "DASE7212",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Physical internet"
+ },
+ {
+  "code": "DASE7310",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Financial engineering"
+ },
+ {
+  "code": "DASE7341",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Technology innovation and entrepreneurship"
+ },
+ {
+  "code": "DASE7501",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "B"
+  ],
+  "credits": 6,
+  "title": "Robot modelling, planning and control"
+ },
+ {
+  "code": "DASE7502",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "B"
+  ],
+  "credits": 6,
+  "title": "Robot sensing and intelligence"
+ },
+ {
+  "code": "DASE7503",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "B"
+  ],
+  "credits": 6,
+  "title": "Robotic systems integration"
+ },
+ {
+  "code": "DASE7506",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Advanced machine learning methods"
+ },
+ {
+  "code": "DASE7507",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Frontiers in robotics and intelligent systems"
+ },
+ {
+  "code": "DASE7508",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Security in intelligent systems"
+ },
+ {
+  "code": "DASE7509",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Artificial intelligence for system automation"
+ },
+ {
+  "code": "DASE7902",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Project management"
+ },
+ {
+  "code": "ELEC6008",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Pattern recognition and machine learning"
+ },
+ {
+  "code": "ELEC6026",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Digital signal processing"
+ },
+ {
+  "code": "ELEC6027",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Integrated circuit systems design"
+ },
+ {
+  "code": "ELEC6036",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "High-performance computer architecture"
+ },
+ {
+  "code": "ELEC6063",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Optoelectronics and lightwave technology"
+ },
+ {
+  "code": "ELEC6080",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A",
+   "B"
+  ],
+  "credits": 6,
+  "title": "Telecommunications systems and management"
+ },
+ {
+  "code": "ELEC6081",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Biomedical signals and systems"
+ },
+ {
+  "code": "ELEC6085",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "The role of a computerized SCADA system in power system operation"
+ },
+ {
+  "code": "ELEC6095",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Smart grid"
+ },
+ {
+  "code": "ELEC6097",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "IP networks"
+ },
+ {
+  "code": "ELEC6099",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Wireless communications and networking"
+ },
+ {
+  "code": "ELEC6103",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Satellite communications"
+ },
+ {
+  "code": "ELEC7011",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A",
+   "B"
+  ],
+  "credits": 6,
+  "title": "Energy Internet"
+ },
+ {
+  "code": "ELEC7013",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Leadership in future energy industry"
+ },
+ {
+  "code": "ELEC7029",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A",
+   "B"
+  ],
+  "credits": 6,
+  "title": "Analog IC design computing and memories"
+ },
+ {
+  "code": "ELEC7043",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A",
+   "C"
+  ],
+  "credits": 6,
+  "title": "Digital image processing and computer vision"
+ },
+ {
+  "code": "ELEC7082",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Artificial intelligence in finance"
+ },
+ {
+  "code": "ELEC7084",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Advanced database"
+ },
+ {
+  "code": "ELEC7402",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Advanced electric vehicle technology"
+ },
+ {
+  "code": "ELEC7403",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Advanced power electronics"
+ },
+ {
+  "code": "ELEC7404",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Advanced railway engineering"
+ },
+ {
+  "code": "ELEC7467",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Power system protection"
+ },
+ {
+  "code": "ELEC7469",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Advanced electrical energy and power conversion systems"
+ },
+ {
+  "code": "EMEE6002",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A",
+   "B"
+  ],
+  "credits": 6,
+  "title": "Sustainability and climate change"
+ },
+ {
+  "code": "EMEE6005",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Renewable energy technology I: Fundamental"
+ },
+ {
+  "code": "EMEE6007",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Energy and carbon audit"
+ },
+ {
+  "code": "EMEE6011",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Energy saving lighting"
+ },
+ {
+  "code": "EMEE7013",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Leadership in future energy industry"
+ },
+ {
+  "code": "ICES7001",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Advanced semiconductor device"
+ },
+ {
+  "code": "ICES7008",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Advanced electronic packaging and integration"
+ },
+ {
+  "code": "ICES7009",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Integrated silicon photonics"
+ },
+ {
+  "code": "MEBS6001",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Electrical installations"
+ },
+ {
+  "code": "MEBS6002",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Lighting engineering"
+ },
+ {
+  "code": "MEBS6014",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Computer modelling and simulation"
+ },
+ {
+  "code": "MEBS6015",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Natural and hybrid ventilation of buildings"
+ },
+ {
+  "code": "MEBS6019",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Extra-low-voltage electrical systems in buildings"
+ },
+ {
+  "code": "MEBS7013",
+  "list": "XD",
+  "semester": "1",
+  "sections": [
+   "A"
+  ],
+  "credits": 6,
+  "title": "Fire service installations"
+ }
+]
