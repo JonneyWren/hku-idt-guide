@@ -137,6 +137,8 @@ html, body {
 .tag-gray { background: #6b7280; }
 .tag-warn { background: var(--warning); }
 .tag-new { background: #7a5195; }
+.tag-xc { background: #6b5b95; }
+.tag-xd { background: #8a6d3b; }
 
 .muted {
   font-size: 12px;

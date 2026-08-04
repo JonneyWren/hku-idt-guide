@@ -27,7 +27,9 @@ function toSlot(code, sec) {
 }
 
 function secText(s) {
-  return `Sem ${s.term} · ${s.section} · ${dayText(s.day)} ${s.start}-${s.end}${s.venue ? ' · ' + s.venue : ''}${s.instructor ? ' · ' + s.instructor : ''}`;
+  const sec = s.section ? ` · 班次 ${s.section}` : '';
+  const dn = s.dateNote ? ` · 指定日期 ${s.dateNote}` : '';
+  return `Sem ${s.term}${sec} · ${dayText(s.day)} ${s.start}-${s.end}${s.venue ? ' · ' + s.venue : ''}${s.instructor ? ' · ' + s.instructor : ''}${dn}`;
 }
 
 // 与已有课表时段的冲突:同一天时间重叠,且学期兼容(手动添加的时段无 term,视为两学期都占用)

@@ -1,5 +1,5 @@
 import { TYPE_META } from '../data/calendar.js';
-import { DEGREE_RULES } from '../data/courses.js';
+import { COURSES, DEGREE_RULES } from '../data/courses.js';
 import { upcomingEvents, getSemesterWeek, todayStr, daysUntil } from '../utils/date.js';
 import { navigate } from '../router.js';
 import { renderTabbar } from '../components/tabbar.js';
@@ -12,6 +12,10 @@ export default function homePage() {
   const todayText = `${t} 星期${weekDays[d.getDay()]}`;
   const weekInfo = getSemesterWeek(t);
   const rules = DEGREE_RULES;
+
+  const sem1 = COURSES.filter(c => c.semester === '1');
+  const cnt = (list) => sem1.filter(c => c.list === list).length;
+  const sem2Count = COURSES.filter(c => c.semester !== '1').length;
 
   const ups = upcomingEvents(3).map(ev => ({
     title: ev.title + (ev.tentative ? '(暂定)' : ''),
@@ -33,7 +37,7 @@ export default function homePage() {
     <div style="display:flex;flex-wrap:wrap;padding:8px 8px 0">
       <div class="entry-card" data-path="/calendar" style="background:#2e6f5c"><div class="ec-name">校历</div><div class="ec-sub">2026-27 学期节点</div></div>
       <div class="entry-card" data-path="/commute" style="background:#31597f"><div class="ec-name">港深通勤</div><div class="ec-sub">6 条路线攻略</div></div>
-      <div class="entry-card" data-path="/courses" style="background:#6b5b95"><div class="ec-name">选课评价</div><div class="ec-sub">List A/B 课程库</div></div>
+      <div class="entry-card" data-path="/courses" style="background:#6b5b95"><div class="ec-name">选课评价</div><div class="ec-sub">${sem1.length} 门官方课程</div></div>
       <div class="entry-card" data-path="/schedule" style="background:#8a6d3b"><div class="ec-name">每周课表</div><div class="ec-sub">同步手机日历</div></div>
     </div>
     <div class="card">
@@ -51,13 +55,14 @@ export default function homePage() {
       <div style="margin-top:12px;text-align:center"><span class="btn-plain" id="go-courses">去选课,自动算学分</span></div>
     </div>
     <div class="card" style="border-left:4px solid #e6a23c">
-      <div class="card-title">26 级课程变更提示</div>
+      <div class="card-title">课程数据说明(2026-27 第一学期)</div>
       <div style="font-size:12px;color:#5b5f66;line-height:1.8">
-        · 新增 List A:IDAT7222 先进CADCAM与AI制造 / IDAT7223 人因设计与多媒体 / IDAT7224 深度学习工程技术 / IDAT7225 目标检测与分类AI基础<br>
-        · IDAT7216 功能设计与知识产权法已从课程列表移除(2026-27 课表不再开设)<br>
-        · MECH6034 / COMP7503 / COMP7506 自 26 级起转入 List B(待大学批准)<br>
-        · 总学分要求统一为 72 学分(原为 72-84)
+        · 课程库与排课全部取自两份官方文件:MSc(Eng) & MSc 选课课程清单(第一学期共 ${sem1.length} 门)与全院第一学期课程时间表(27 页)<br>
+        · 第一学期清单分五类:List A 学科核心课 ${cnt('A')} 门、List B 学科选修课 ${cnt('B')} 门、跨课程选修 ${cnt('XC')} 门、跨系选修 ${cnt('XD')} 门、毕业论文 ${cnt('capstone')} 门<br>
+        · 另保留 ${sem2Count} 门本专业课程(第二学期 / 全年),其 List 归属与排课待官方第二学期文件公布后再核对<br>
+        · 总学分要求统一为 72 学分(课程 48 + 毕业论文 24)
       </div>
+      <div style="margin-top:10px;text-align:center"><span class="btn-plain" id="go-courses-2">查看课程库 / 下载官方 PDF</span></div>
     </div>
     <div class="section-title">近期关键节点</div>
     ${ups.map(ev => `
@@ -67,7 +72,7 @@ export default function homePage() {
         <div style="font-size:12px;color:#00573f;font-weight:600;flex-shrink:0">${ev.days > 0 ? ev.days + ' 天后' : ev.days === 0 ? '今天' : '进行中'}</div>
       </div>
     `).join('')}
-    <div class="muted" style="text-align:center;padding:16px 20px 24px">数据来源:HKU 官方学年日历与课程大纲;暂定节点以官方最终公布为准</div>
+    <div class="muted" style="text-align:center;padding:16px 20px 24px">数据来源:HKU 官方学年日历、MSc(Eng) 选课课程清单与第一学期课程时间表;暂定节点以官方最终公布为准</div>
   `;
 
   // Styles for entry cards
@@ -79,8 +84,13 @@ export default function homePage() {
   container.querySelectorAll('.entry-card').forEach(el => {
     el.onclick = () => navigate(el.dataset.path);
   });
-  const goBtn = document.getElementById('go-courses');
-  if (goBtn) goBtn.onclick = () => navigate('/courses');
+  ['go-courses', 'go-courses-2'].forEach(id => {
+    const btn = document.getElementById(id);
+    if (btn) btn.onclick = () => navigate('/courses');
+  });
 
   renderTabbar();
+  const disc=document.createElement('div');
+  disc.innerHTML='    <div style="background:#fafbfc;border-top:1px solid #e8eaee;padding:12px 16px;margin-top:16px;font-size:10px;color:#8a8f99;line-height:1.7;text-align:center">\\n      📋 所有信息均来自 2026.8.4 的 HKU 官方数据。本站仅作为公益开放工具。使用时如有出入请登录官方系统并以官方最新公布信息为准。\\n    </div>';
+  container.appendChild(disc);
 }

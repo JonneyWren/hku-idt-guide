@@ -1,4 +1,4 @@
-import { COURSES, DEGREE_RULES, semesterText } from '../data/courses.js';
+import { COURSES, DEGREE_RULES, LIST_META, semesterText, isElective } from '../data/courses.js';
 import * as store from '../utils/store.js';
 import { enrollCourse, unenrollCourse, timeSummary } from '../utils/enroll.js';
 import { navigate } from '../router.js';
@@ -8,26 +8,30 @@ let keyword = '';
 let listFilter = 'all';
 let semFilter = 'all';
 
+const TAG_CLASS = { A: '', B: 'tag-gray', XC: 'tag-xc', XD: 'tag-xd', capstone: 'tag-warn' };
+const countOf = (k) => COURSES.filter((c) => c.list === k).length;
+
 function render() {
   const container = document.getElementById('page-container');
   const selection = store.getSelection();
   const ratings = store.getAllReviews();
 
   // Credit calc
-  let listA = 0, discipline = 0, total = 0;
+  let listA = 0, discipline = 0, elective = 0, total = 0;
   selection.forEach(code => {
     const c = COURSES.find(x => x.code === code);
     if (!c || c.list === 'capstone') return;
     total += c.credits;
     if (c.list === 'A') listA += c.credits;
     if (c.list === 'A' || c.list === 'B') discipline += c.credits;
+    if (isElective(c.list)) elective += c.credits;
   });
 
   // Filter
   const kw = keyword.trim().toLowerCase();
   const courses = COURSES.filter(c => {
     if (listFilter !== 'all' && c.list !== listFilter) return false;
-    if (semFilter !== 'all' && c.semester !== '1&2' && c.semester !== semFilter) return false;
+    if (semFilter !== 'all' && c.semester !== '1&2' && c.semester !== 'full' && c.semester !== semFilter) return false;
     if (kw) { const hay = (c.code + c.title + c.titleZh).toLowerCase(); if (hay.indexOf(kw) < 0) return false; }
     return true;
   }).map(c => {
@@ -36,9 +40,17 @@ function render() {
     return { ...c, semText: semesterText(c.semester), timeText: timeSummary(c.code), ratingAvg: avg, ratingCount: rs.length, selected: selection.indexOf(c.code) >= 0 };
   });
 
-  const listTabs = [{ key: 'all', label: '全部' }, { key: 'A', label: 'List A 核心' }, { key: 'B', label: 'List B 选修' }, { key: 'capstone', label: '毕业设计' }];
+  const listTabs = [
+    { key: 'all', label: `全部 ${COURSES.length}` },
+    { key: 'A', label: `List A 核心 ${countOf('A')}` },
+    { key: 'B', label: `List B 选修 ${countOf('B')}` },
+    { key: 'XC', label: `跨课程选修 ${countOf('XC')}` },
+    { key: 'XD', label: `跨系选修 ${countOf('XD')}` },
+    { key: 'capstone', label: `毕业论文 ${countOf('capstone')}` }
+  ];
   const semTabs = [{ key: 'all', label: '全部学期' }, { key: '1', label: '第一学期' }, { key: '2', label: '第二学期' }];
   const rules = DEGREE_RULES;
+  const base = import.meta.env.BASE_URL;
 
   container.innerHTML = `
     <style>
@@ -71,16 +83,21 @@ function render() {
       .tt-note{font-size:11px;color:#6b7280;line-height:1.6;margin-top:6px}
       .tt-note-zh{font-size:11px;color:#8a8f99;line-height:1.6;margin-top:4px}
       .tt-dl{display:block;margin-top:10px;text-align:center;background:#00573f;color:#fff;border-radius:10px;padding:9px 12px;text-decoration:none}
+      .tt-dl.alt{background:#31597f}
       .tt-dl-en{font-size:12px;font-weight:600}
       .tt-dl-zh{font-size:11px;opacity:0.85;margin-top:2px}
     </style>
     <div class="tt-card">
-      <div class="tt-title">课程时间表<span class="tt-title-en">Class Timetable</span></div>
+      <div class="tt-title">官方文件<span class="tt-title-en">Official Documents (2026-27 Semester 1)</span></div>
       <div class="tt-note">Instructor information provided herein (mainly for UG courses) are for reference only and subject to changes. Students should consult the offering department(s) concerned for the latest update.</div>
-      <div class="tt-note-zh">本表所列教师信息（主要针对本科课程）仅供参考，可能随时调整；请以开课院系发布的最新信息为准。</div>
-      <a class="tt-dl" href="${import.meta.env.BASE_URL}class_timetable_2026-27_20260727.xlsx" download="2026-27 class_timetable_20260727.xlsx">
-        <div class="tt-dl-en">⭳ Download Class Timetable (for 2026-27) (updated on 20260727 07:46)</div>
-        <div class="tt-dl-zh">下载 2026-27 学年课程时间表（更新于 2026-07-27 07:46）</div>
+      <div class="tt-note-zh">本站课程与排课数据全部取自以下两份官方文件（2026-27 第一学期）。文件所载教师信息仅供参考，可能随时调整；请以开课院系发布的最新信息为准。</div>
+      <a class="tt-dl" href="${base}MSc-Eng-Course-List-2026-27-Sem1.pdf" download="MSc(Eng) & MSc Course Enrolment List 2026-27 Sem1.pdf">
+        <div class="tt-dl-en">⭳ Course Enrolment List (2026-27 Sem 1)</div>
+        <div class="tt-dl-zh">下载第一学期选课课程清单（共 109 门）</div>
+      </a>
+      <a class="tt-dl alt" href="${base}MSc-Eng-Timetable-2026-27-Sem1.pdf" download="MSc(Eng) Class Timetable 2026-27 Sem1.pdf">
+        <div class="tt-dl-en">⭳ MSc(Eng) Class Timetable (2026-27 Sem 1)</div>
+        <div class="tt-dl-zh">下载第一学期课程时间表（共 27 页）</div>
       </a>
     </div>
     <div class="search-bar"><input class="search-input" id="course-search" placeholder="搜索课程代码 / 中英文名称" value="${keyword}" /></div>
@@ -90,14 +107,14 @@ function render() {
       <div class="card course-card" data-code="${c.code}">
         <div style="display:flex;align-items:center;flex-wrap:wrap">
           <span class="course-code">${c.code}</span>
-          ${c.list === 'A' ? '<span class="tag">List A</span>' : c.list === 'B' ? '<span class="tag tag-gray">List B</span>' : '<span class="tag tag-warn">毕业设计</span>'}
+          <span class="tag ${TAG_CLASS[c.list] || ''}">${(LIST_META[c.list] || {}).label || ''}</span>
           ${c.isNew2026 ? '<span class="tag tag-new">26级新增</span>' : ''}
           ${c.movedToB2026 ? '<span class="tag tag-warn">26级转List B</span>' : ''}
         </div>
         <div class="course-title">${c.titleZh}</div>
         <div class="course-en">${c.title}</div>
-        <div class="course-meta">${c.credits} 学分 · ${c.semText}${c.cef ? ' · <span style="color:#b8741a">CEF 可报销</span>' : ''}</div>
-        <div class="course-time">${c.timeText ? '🕒 ' + c.timeText : '🕒 时间待定'}</div>
+        <div class="course-meta">${c.credits} 学分 · ${c.semText}${c.sections && c.sections.length ? ' · 班次 ' + c.sections.join('/') : ''}${c.cef ? ' · <span style="color:#b8741a">CEF 可报销</span>' : ''}</div>
+        <div class="course-time">${c.timeText ? '🕒 ' + c.timeText : c.semester === '1' ? '🕒 官方课表未列出排课' : '🕒 排课待官方公布'}</div>
         <div class="course-foot">
           <div>${c.ratingCount > 0 ? `<span class="star star-on">★</span> <span style="font-size:13px;font-weight:600;color:#f5a623;margin:0 4px">${c.ratingAvg}</span><span style="font-size:11px;color:#8a8f99">(${c.ratingCount} 条评价)</span>` : '<span style="font-size:11px;color:#8a8f99">暂无评价,去抢沙发</span>'}</div>
           <div class="select-btn ${c.selected ? 'selected' : ''}" data-toggle="${c.code}">${c.selected ? '已选 ✓' : '+ 选课'}</div>
@@ -109,6 +126,7 @@ function render() {
         <div class="credit-info">
           <div class="cc ${listA >= rules.listAMin ? 'ok' : ''}"><span class="cc-num">${listA}</span><span class="cc-req">/${rules.listAMin}</span><div class="cc-label">List A</div></div>
           <div class="cc ${discipline >= rules.disciplineMin ? 'ok' : ''}"><span class="cc-num">${discipline}</span><span class="cc-req">/${rules.disciplineMin}</span><div class="cc-label">学科课</div></div>
+          <div class="cc ${elective <= rules.electiveMax ? 'ok' : ''}"><span class="cc-num">${elective}</span><span class="cc-req">/${rules.electiveMax}</span><div class="cc-label">外学科选修</div></div>
           <div class="cc ${total >= rules.courseCredits ? 'ok' : ''}"><span class="cc-num">${total}</span><span class="cc-req">/${rules.courseCredits}</span><div class="cc-label">课程学分</div></div>
           <div class="cc fixed"><span class="cc-num">+${rules.dissertation}</span><div class="cc-label">毕业论文</div></div>
         </div>
@@ -137,6 +155,9 @@ function render() {
   if (goSched) goSched.onclick = () => navigate('/schedule');
 
   renderTabbar();
+  const disc=document.createElement('div');
+  disc.innerHTML='    <div style="background:#fafbfc;border-top:1px solid #e8eaee;padding:12px 16px;margin-top:16px;font-size:10px;color:#8a8f99;line-height:1.7;text-align:center">\\n      📋 所有信息均来自 2026.8.4 的 HKU 官方数据。本站仅作为公益开放工具。使用时如有出入请登录官方系统并以官方最新公布信息为准。\\n    </div>';
+  container.appendChild(disc);
 }
 
 export default function coursesPage() {

@@ -1,4 +1,4 @@
-import { getCourse, semesterText } from '../data/courses.js';
+import { getCourse, semesterText, LIST_META, NO_DESC_TEXT } from '../data/courses.js';
 import { getSections, dayText } from '../data/timetable.js';
 import { fmtDate } from '../utils/date.js';
 import * as store from '../utils/store.js';
@@ -26,6 +26,7 @@ function render(code) {
   const semText = semesterText(course.semester);
   const sections = getSections(code);
   const stars = [1, 2, 3, 4, 5];
+  const meta = LIST_META[course.list] || {};
 
   // Update nav title
   document.querySelector('.nav-title').textContent = course.code;
@@ -36,6 +37,7 @@ function render(code) {
       .hero-tag{display:inline-block;font-size:10px;background:rgba(255,255,255,0.2);border-radius:999px;padding:2px 10px;margin-right:6px;margin-bottom:6px}
       .hero-code{font-size:20px;font-weight:700;margin-top:8px}
       .hero-title-zh{font-size:16px;font-weight:600;margin-top:4px}
+      .hero-zh-note{font-size:10px;font-weight:400;opacity:0.75;margin-left:6px}
       .hero-en{font-size:11px;opacity:0.85;margin-top:4px}
       .hero-chips{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
       .hero-chip{font-size:11px;background:rgba(255,255,255,0.15);border-radius:999px;padding:3px 12px}
@@ -51,27 +53,31 @@ function render(code) {
       .form-label{font-size:13px;color:#14312a;width:40px;flex-shrink:0}
       .form-input{flex:1;border:1px solid #e8eaee;border-radius:8px;padding:8px 12px;font-size:13px;outline:none}
       .form-textarea{width:100%;border:1px solid #e8eaee;border-radius:8px;padding:10px 12px;font-size:13px;min-height:80px;resize:vertical;outline:none;margin-bottom:12px}
-      .sec-row{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid #f0f1f4;font-size:12px}
-      .sec-row:last-child{border-bottom:none}
+      .sec-item{padding:10px 0;border-bottom:1px solid #f0f1f4}
+      .sec-item:last-of-type{border-bottom:none}
+      .sec-head{display:flex;align-items:center;flex-wrap:wrap;gap:8px}
       .sec-term{flex-shrink:0;font-size:10px;font-weight:600;border-radius:4px;padding:2px 6px}
       .sec-term.t1{background:#e8f3ef;color:#00573f}
       .sec-term.t2{background:#e9effa;color:#1a56b8}
-      .sec-name{flex-shrink:0;font-weight:600;color:#14312a}
-      .sec-time{color:#5b5f66}
-      .sec-venue{margin-left:auto;flex-shrink:0;color:#8a8f99;font-size:11px}
+      .sec-name{flex-shrink:0;font-size:10px;font-weight:600;border-radius:4px;padding:2px 6px;background:#f2eef8;color:#5b4b86}
+      .sec-time{font-size:12px;font-weight:600;color:#14312a}
+      .sec-line{font-size:11px;color:#6b7280;line-height:1.6;margin-top:4px;word-break:break-word}
+      .sec-date{font-size:11px;color:#b8741a;line-height:1.6;margin-top:4px;word-break:break-word}
+      .note-box{background:#fdf6e9;border-radius:8px;padding:10px 12px;margin-top:10px;font-size:11px;color:#8a6d3b;line-height:1.7}
     </style>
     <div class="detail-hero">
       <div>
-        ${course.list === 'A' ? '<span class="hero-tag">List A 核心课</span>' : course.list === 'B' ? '<span class="hero-tag">List B 选修课</span>' : '<span class="hero-tag">毕业设计 Capstone</span>'}
+        ${meta.label ? `<span class="hero-tag">${meta.full || meta.label}</span>` : ''}
         ${course.isNew2026 ? '<span class="hero-tag">26级新增</span>' : ''}
         ${course.movedToB2026 ? '<span class="hero-tag">26级转List B</span>' : ''}
       </div>
       <div class="hero-code">${course.code}</div>
-      <div class="hero-title-zh">${course.titleZh}</div>
+      <div class="hero-title-zh">${course.titleZh}${course.zhOfficial ? '' : '<span class="hero-zh-note">非官方译名</span>'}</div>
       <div class="hero-en">${course.title}</div>
       <div class="hero-chips">
         <span class="hero-chip">${course.credits} 学分</span>
         <span class="hero-chip">${semText}</span>
+        ${course.sections && course.sections.length ? `<span class="hero-chip">班次 ${course.sections.join('/')}</span>` : ''}
         ${course.cef ? '<span class="hero-chip">CEF 可报销</span>' : ''}
         ${sum.count > 0 ? `<span class="hero-chip">★ ${sum.avg}(${sum.count})</span>` : ''}
       </div>
@@ -79,23 +85,34 @@ function render(code) {
     </div>
     <div class="card">
       <div class="card-title">课程简介</div>
-      <div style="font-size:12px;color:#5b5f66;line-height:1.8">${course.desc}</div>
+      <div style="font-size:12px;color:#5b5f66;line-height:1.8">${course.desc || NO_DESC_TEXT}</div>
       ${course.prereq ? `<div style="margin-top:8px;font-size:11px"><span style="color:#00573f;font-weight:600">先修要求</span> ${course.prereq}</div>` : ''}
       ${course.exclusive ? `<div style="margin-top:4px;font-size:11px"><span style="color:#c0392b;font-weight:600">互斥课程</span> ${course.exclusive}</div>` : ''}
+      ${course.zhOfficial ? '' : '<div style="margin-top:8px;font-size:10px;color:#8a8f99">中文课名为本站译名（非官方），选课与成绩单请以英文原名为准。</div>'}
     </div>
     ${sections.length ? `
-    <div class="section-title">2026-27 开课安排</div>
+    <div class="section-title">2026-27 第一学期开课安排(官方课表)</div>
     <div class="card">
       ${sections.map(s => `
-        <div class="sec-row">
-          <span class="sec-term ${s.term === 1 ? 't1' : 't2'}">Sem ${s.term}</span>
-          <span class="sec-name">${s.section}</span>
-          <span class="sec-time">${s.day ? `${dayText(s.day)} ${s.start}-${s.end}` : '时间地点待定'}</span>
-          <span class="sec-venue">${s.venue || ''}${s.venue && s.instructor ? ' · ' : ''}${s.instructor || ''}</span>
+        <div class="sec-item">
+          <div class="sec-head">
+            <span class="sec-term ${s.term === 1 ? 't1' : 't2'}">Sem ${s.term}</span>
+            ${s.section ? `<span class="sec-name">班次 ${s.section}</span>` : ''}
+            <span class="sec-time">${s.day ? `${dayText(s.day)} ${s.start}-${s.end}` : '时间待定'}</span>
+          </div>
+          ${s.venue ? `<div class="sec-line">📍 ${s.venue}</div>` : ''}
+          ${s.instructor ? `<div class="sec-line">👤 ${s.instructor}</div>` : ''}
+          ${s.dateNote ? `<div class="sec-date">🗓 指定日期:${s.dateNote}</div>` : ''}
         </div>
       `).join('')}
-      <div style="margin-top:8px;font-size:10px;color:#8a8f99">来源于 2026-27 官方课表,部分班次含补课/调整,以选课系统实时信息为准</div>
-    </div>` : ''}
+      ${course.note ? `<div class="note-box">${course.note}</div>` : ''}
+      <div style="margin-top:8px;font-size:10px;color:#8a8f99">数据取自官方《MSc(Eng) Class Timetable 2026-27 Sem 1》,教师信息仅供参考且可能调整,以选课系统与开课院系公布为准</div>
+    </div>` : `
+    <div class="section-title">2026-27 开课安排</div>
+    <div class="card">
+      <div style="font-size:12px;color:#5b5f66;line-height:1.8">${course.semester === '1' ? '官方第一学期课表未列出本课程的固定上课时段,请咨询开课院系。' : '第二学期排课待官方文件公布。'}</div>
+      ${course.note ? `<div class="note-box">${course.note}</div>` : ''}
+    </div>`}
     <div class="section-title">课程评价(${sum.count})</div>
     ${reviews.length ? `<div class="card">${reviews.map(r => `
       <div class="review">
@@ -147,8 +164,10 @@ function render(code) {
   };
   document.getElementById('back-btn').onclick = () => navigate('/courses');
 
-  // Don't show tabbar on detail page, or show it - let's show for consistency
   renderTabbar();
+  const disc=document.createElement('div');
+  disc.innerHTML='    <div style="background:#fafbfc;border-top:1px solid #e8eaee;padding:12px 16px;margin-top:16px;font-size:10px;color:#8a8f99;line-height:1.7;text-align:center">\\n      📋 所有信息均来自 2026.8.4 的 HKU 官方数据。本站仅作为公益开放工具。使用时如有出入请登录官方系统并以官方最新公布信息为准。\\n    </div>';
+  container.appendChild(disc);
 }
 
 export default function courseDetailPage() {
