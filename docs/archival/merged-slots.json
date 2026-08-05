@@ -1,0 +1,3321 @@
+[
+ {
+  "code": "CIVL6006",
+  "day": 1,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "KKLG102",
+  "instructor": "Prof. H.R. Duan",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Advanced water and wastewater treatment",
+  "pages": [
+   1
+  ],
+  "n": 1,
+  "rooms": [
+   "KKLG102"
+  ],
+  "instructors": [
+   "Prof. H.R. Duan"
+  ],
+  "sections": []
+ },
+ {
+  "code": "CIVL6007",
+  "day": 1,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "LE7",
+  "instructor": "Ir Dr. C.P. Wong",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Behavioural travel demand modelling",
+  "pages": [
+   1
+  ],
+  "n": 1,
+  "rooms": [
+   "LE7"
+  ],
+  "instructors": [
+   "Ir Dr. C.P. Wong"
+  ],
+  "sections": []
+ },
+ {
+  "code": "CIVL6061",
+  "day": 2,
+  "start": "10:00",
+  "end": "12:30",
+  "timeText": "10:00am-12:30pm",
+  "room": "Lecture Rooms 801A & 801B, MSc Student Commons, 8/F, Pacific Plaza, 418 Des Voeux Road West, Shek Tong Tsui, Hong Kong.",
+  "instructor": "Prof. T.F.M. Chui / Ir Prof. K. Shih / Ir Prof. T. Zhang",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Special topic in environmental engineering A: Research and practice",
+  "pages": [
+   1
+  ],
+  "n": 1,
+  "rooms": [
+   "Lecture Rooms 801A & 801B, MSc Student Commons, 8/F, Pacific Plaza, 418 Des Voeux Road West, Shek Tong Tsui, Hong Kong."
+  ],
+  "instructors": [
+   "Prof. T.F.M. Chui / Ir Prof. K. Shih / Ir Prof. T. Zhang"
+  ],
+  "sections": []
+ },
+ {
+  "code": "CIVL6004",
+  "day": 3,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "Lecture Rooms 601A & 601B, MSc Student Commons, 6/F, Pacific Plaza, 418 Des Voeux Road West, Shek Tong Tsui, Hong Kong.",
+  "instructor": "Ir Prof. J. Yang / Prof. Y. Zhao",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Advanced soil mechanics",
+  "pages": [
+   1
+  ],
+  "n": 1,
+  "rooms": [
+   "Lecture Rooms 601A & 601B, MSc Student Commons, 6/F, Pacific Plaza, 418 Des Voeux Road West, Shek Tong Tsui, Hong Kong."
+  ],
+  "instructors": [
+   "Ir Prof. J. Yang / Prof. Y. Zhao"
+  ],
+  "sections": []
+ },
+ {
+  "code": "CIVL6013",
+  "day": 3,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "Lecture Rooms 801A & 801B, MSc Student Commons, 8/F, Pacific Plaza, 418 Des Voeux Road West, Shek Tong Tsui, Hong Kong.",
+  "instructor": "Ir Prof. A.K.H. Kwan",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Concrete technology",
+  "pages": [
+   1
+  ],
+  "n": 1,
+  "rooms": [
+   "Lecture Rooms 801A & 801B, MSc Student Commons, 8/F, Pacific Plaza, 418 Des Voeux Road West, Shek Tong Tsui, Hong Kong."
+  ],
+  "instructors": [
+   "Ir Prof. A.K.H. Kwan"
+  ],
+  "sections": []
+ },
+ {
+  "code": "CIVL6026",
+  "day": 4,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "LE7",
+  "instructor": "Ir Prof. S.H. Lo",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Finite element method",
+  "pages": [
+   1
+  ],
+  "n": 1,
+  "rooms": [
+   "LE7"
+  ],
+  "instructors": [
+   "Ir Prof. S.H. Lo"
+  ],
+  "sections": []
+ },
+ {
+  "code": "CIVL6054",
+  "day": 4,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "LE9",
+  "instructor": "Prof. X.T. Yan / Ir Prof. M.K.R. Luk / Prof. C.K. Mak",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Engineering for transport systems",
+  "pages": [
+   1,
+   3
+  ],
+  "n": 2,
+  "rooms": [
+   "LE9"
+  ],
+  "instructors": [
+   "Prof. X.T. Yan / Ir Prof. M.K.R. Luk / Prof. C.K. Mak"
+  ],
+  "sections": []
+ },
+ {
+  "code": "CIVL6053",
+  "day": 5,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "CYPP2",
+  "instructor": "Prof. X.W. Deng / Dr. Neptune Yu",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Wind engineering",
+  "pages": [
+   1
+  ],
+  "n": 1,
+  "rooms": [
+   "CYPP2"
+  ],
+  "instructors": [
+   "Prof. X.W. Deng / Dr. Neptune Yu"
+  ],
+  "sections": []
+ },
+ {
+  "code": "CIVL7019",
+  "day": 5,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "LE8",
+  "instructor": "Prof. J.T. Ke",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Statistical methods for civil engineering",
+  "pages": [
+   1,
+   3
+  ],
+  "n": 2,
+  "rooms": [
+   "LE8"
+  ],
+  "instructors": [
+   "Prof. J.T. Ke"
+  ],
+  "sections": []
+ },
+ {
+  "code": "CIVL7024",
+  "day": 1,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "LE8",
+  "instructor": "Prof. X.G. Wang",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Computer vision for infrastructure construction and management",
+  "pages": [
+   3
+  ],
+  "n": 1,
+  "rooms": [
+   "LE8"
+  ],
+  "instructors": [
+   "Prof. X.G. Wang"
+  ],
+  "sections": []
+ },
+ {
+  "code": "CIVL7023",
+  "day": 4,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "KKLG102",
+  "instructor": "Prof. X. Li",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Industrialized construction with automation and robotics",
+  "pages": [
+   3
+  ],
+  "n": 1,
+  "rooms": [
+   "KKLG102"
+  ],
+  "instructors": [
+   "Prof. X. Li"
+  ],
+  "sections": []
+ },
+ {
+  "code": "MEBS6002",
+  "day": 1,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "CYCP1",
+  "instructor": "Ir KF Chan / Dr Edward WC Lo",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Lighting engineering",
+  "pages": [
+   4
+  ],
+  "n": 1,
+  "rooms": [
+   "CYCP1"
+  ],
+  "instructors": [
+   "Ir KF Chan / Dr Edward WC Lo"
+  ],
+  "sections": []
+ },
+ {
+  "code": "MEBS6015",
+  "day": 2,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "KB223",
+  "instructor": "Prof Y Li",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Natural & hybrid ventilation of buildings",
+  "pages": [
+   4
+  ],
+  "n": 1,
+  "rooms": [
+   "KB223"
+  ],
+  "instructors": [
+   "Prof Y Li"
+  ],
+  "sections": []
+ },
+ {
+  "code": "MEBS6001",
+  "day": 3,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "CYPP3",
+  "instructor": "Dr Tsz Wood Ching",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Electrical installations",
+  "pages": [
+   4
+  ],
+  "n": 1,
+  "rooms": [
+   "CYPP3"
+  ],
+  "instructors": [
+   "Dr Tsz Wood Ching"
+  ],
+  "sections": []
+ },
+ {
+  "code": "MEBS6019",
+  "day": 4,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "CPD-2.42",
+  "instructor": "Dr KH Lam",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "ELV electrical system in buildings",
+  "pages": [
+   4
+  ],
+  "n": 1,
+  "rooms": [
+   "CPD-2.42"
+  ],
+  "instructors": [
+   "Dr KH Lam"
+  ],
+  "sections": []
+ },
+ {
+  "code": "MEBS7013",
+  "day": 5,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "Lecture room 1, MSc Student Commons, 6/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun",
+  "instructor": "Dr MY Ng",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Fire Service Installations",
+  "pages": [
+   4
+  ],
+  "n": 1,
+  "rooms": [
+   "Lecture room 1, MSc Student Commons, 6/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun"
+  ],
+  "instructors": [
+   "Dr MY Ng"
+  ],
+  "sections": []
+ },
+ {
+  "code": "MEBS6014",
+  "day": 6,
+  "start": "10:00",
+  "end": "13:00",
+  "timeText": "10:00am-1:00pm",
+  "room": "KB223",
+  "instructor": "Ir YW Lam",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Computer modelling and simulation (hybrid mode)",
+  "pages": [
+   4
+  ],
+  "n": 1,
+  "rooms": [
+   "KB223"
+  ],
+  "instructors": [
+   "Ir YW Lam"
+  ],
+  "sections": []
+ },
+ {
+  "code": "ELEC7011",
+  "day": 1,
+  "start": "11:00",
+  "end": "13:30",
+  "timeText": "11:00am-1:30pm",
+  "room": "TBC",
+  "instructor": "Prof Yi Wang",
+  "dateNote": "",
+  "section": "A",
+  "titleEn": "Energy internet",
+  "pages": [
+   5
+  ],
+  "n": 1,
+  "rooms": [
+   "TBC"
+  ],
+  "instructors": [
+   "Prof Yi Wang"
+  ],
+  "sections": [
+   "A"
+  ]
+ },
+ {
+  "code": "ELEC6081",
+  "day": 2,
+  "start": "09:00",
+  "end": "12:00",
+  "timeText": "9:00am-12:00pm",
+  "room": "RHT",
+  "instructor": "Dr Andrew HC Wu",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Biomedical Signals and Systems",
+  "pages": [
+   5
+  ],
+  "n": 1,
+  "rooms": [
+   "RHT"
+  ],
+  "instructors": [
+   "Dr Andrew HC Wu"
+  ],
+  "sections": []
+ },
+ {
+  "code": "ELEC7084",
+  "day": 3,
+  "start": "09:00",
+  "end": "11:30",
+  "timeText": "9:00am-11:30am",
+  "room": "MW325",
+  "instructor": "Dr Victor CS Lee",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Advanced database",
+  "pages": [
+   5
+  ],
+  "n": 1,
+  "rooms": [
+   "MW325"
+  ],
+  "instructors": [
+   "Dr Victor CS Lee"
+  ],
+  "sections": []
+ },
+ {
+  "code": "ELEC6026",
+  "day": 4,
+  "start": "09:00",
+  "end": "12:00",
+  "timeText": "9:00am-12:00pm",
+  "room": "CPD-3.04",
+  "instructor": "Prof SC Chan",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Digital signal processing",
+  "pages": [
+   5
+  ],
+  "n": 1,
+  "rooms": [
+   "CPD-3.04"
+  ],
+  "instructors": [
+   "Prof SC Chan"
+  ],
+  "sections": []
+ },
+ {
+  "code": "ELEC6036",
+  "day": 6,
+  "start": "09:00",
+  "end": "12:00",
+  "timeText": "9:00am-12:00pm",
+  "room": "CYPP3",
+  "instructor": "Dr Vincent WL Tam",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "High-performance computer architecture",
+  "pages": [
+   5
+  ],
+  "n": 1,
+  "rooms": [
+   "CYPP3"
+  ],
+  "instructors": [
+   "Dr Vincent WL Tam"
+  ],
+  "sections": []
+ },
+ {
+  "code": "ELEC7013",
+  "day": 6,
+  "start": "09:00",
+  "end": "12:00",
+  "timeText": "9:00am-12:00pm",
+  "room": "CPD-3.15",
+  "instructor": "Ir Prof Paul WY Poon / Ir CC Ngan",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Leadership in future energy industry",
+  "pages": [
+   5,
+   12
+  ],
+  "n": 2,
+  "rooms": [
+   "CPD-3.15"
+  ],
+  "instructors": [
+   "Ir Prof Paul WY Poon / Ir CC Ngan"
+  ],
+  "sections": []
+ },
+ {
+  "code": "EMEE7013",
+  "day": 6,
+  "start": "09:00",
+  "end": "12:00",
+  "timeText": "9:00am-12:00pm",
+  "room": "CPD-3.15",
+  "instructor": "Ir Prof Paul WY Poon / Ir CC Ngan",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Leadership in future energy industry",
+  "pages": [
+   5,
+   12
+  ],
+  "n": 2,
+  "rooms": [
+   "CPD-3.15"
+  ],
+  "instructors": [
+   "Ir Prof Paul WY Poon / Ir CC Ngan"
+  ],
+  "sections": []
+ },
+ {
+  "code": "ELEC6604",
+  "day": 1,
+  "start": "13:00",
+  "end": "16:00",
+  "timeText": "1:00pm-4:00pm",
+  "room": "Lecture room 1, MSc Student Commons, 8/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun",
+  "instructor": "Dr Grantham KH Pang",
+  "dateNote": "",
+  "section": "A",
+  "titleEn": "(EEE*) Neural networks, fuzzy systems and genetic algorithms",
+  "pages": [
+   6,
+   15
+  ],
+  "n": 2,
+  "rooms": [
+   "Lecture room 1, MSc Student Commons, 8/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun"
+  ],
+  "instructors": [
+   "Dr Grantham KH Pang"
+  ],
+  "sections": [
+   "A"
+  ]
+ },
+ {
+  "code": "ELEC7043",
+  "day": 2,
+  "start": "13:00",
+  "end": "16:00",
+  "timeText": "1:00pm-4:00pm",
+  "room": "Lecture room 1, MSc Student Commons, 8/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun",
+  "instructor": "Prof Xiaojuan Qi",
+  "dateNote": "",
+  "section": "A",
+  "titleEn": "Digital image processing and computer vision",
+  "pages": [
+   6
+  ],
+  "n": 1,
+  "rooms": [
+   "Lecture room 1, MSc Student Commons, 8/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun"
+  ],
+  "instructors": [
+   "Prof Xiaojuan Qi"
+  ],
+  "sections": [
+   "A"
+  ]
+ },
+ {
+  "code": "ELEC7043",
+  "day": 2,
+  "start": "13:00",
+  "end": "16:00",
+  "timeText": "1:00pm-4:00pm",
+  "room": "Lecture room 1&2, MSc Student Commons, 6/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun",
+  "instructor": "TBC",
+  "dateNote": "",
+  "section": "C",
+  "titleEn": "Digital image processing and computer vision",
+  "pages": [
+   6
+  ],
+  "n": 1,
+  "rooms": [
+   "Lecture room 1&2, MSc Student Commons, 6/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun"
+  ],
+  "instructors": [
+   "TBC"
+  ],
+  "sections": [
+   "C"
+  ]
+ },
+ {
+  "code": "ELEC6008",
+  "day": 3,
+  "start": "13:00",
+  "end": "16:00",
+  "timeText": "1:00pm-4:00pm",
+  "room": "Lecture room 1&2, MSc Student Commons, 8/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun",
+  "instructor": "Dr Andrew HC Wu",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Pattern recognition and machine learning",
+  "pages": [
+   6
+  ],
+  "n": 1,
+  "rooms": [
+   "Lecture room 1&2, MSc Student Commons, 8/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun"
+  ],
+  "instructors": [
+   "Dr Andrew HC Wu"
+  ],
+  "sections": []
+ },
+ {
+  "code": "ELEC6063",
+  "day": 4,
+  "start": "13:00",
+  "end": "15:30",
+  "timeText": "1:00pm-3:30pm",
+  "room": "Lecture room 1, MSc Student Commons, 6/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun",
+  "instructor": "Prof. Wallace CH Choy",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Optoelectronics and lightwave technology",
+  "pages": [
+   6,
+   26
+  ],
+  "n": 2,
+  "rooms": [
+   "Lecture room 1, MSc Student Commons, 6/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun",
+   "Lecture room 1, MSc Student Commons"
+  ],
+  "instructors": [
+   "Prof Wallace CH Choy",
+   "Prof. Wallace CH Choy"
+  ],
+  "sections": []
+ },
+ {
+  "code": "ELEC6604",
+  "day": 5,
+  "start": "13:00",
+  "end": "16:00",
+  "timeText": "1:00pm-4:00pm",
+  "room": "Lecture room 1, MSc Student Commons, 8/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun",
+  "instructor": "Dr Grantham KH Pang",
+  "dateNote": "",
+  "section": "B",
+  "titleEn": "(ICES*) Neural networks, fuzzy systems and genetic algorithms",
+  "pages": [
+   6,
+   15
+  ],
+  "n": 2,
+  "rooms": [
+   "Lecture room 1, MSc Student Commons, 8/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun"
+  ],
+  "instructors": [
+   "Dr Grantham KH Pang"
+  ],
+  "sections": [
+   "B"
+  ]
+ },
+ {
+  "code": "ELEC7467",
+  "day": 6,
+  "start": "12:00",
+  "end": "15:00",
+  "timeText": "12:00pm-3:00pm",
+  "room": "CPD-2.45",
+  "instructor": "Ir Prof FC Chan",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Power system protection",
+  "pages": [
+   6
+  ],
+  "n": 1,
+  "rooms": [
+   "CPD-2.45"
+  ],
+  "instructors": [
+   "Ir Prof FC Chan"
+  ],
+  "sections": []
+ },
+ {
+  "code": "ELEC6080",
+  "day": 5,
+  "start": "13:00",
+  "end": "16:00",
+  "timeText": "1:00pm-4:00pm",
+  "room": "CBA",
+  "instructor": "Mr Vincent Wong",
+  "dateNote": "",
+  "section": "A",
+  "titleEn": "Telecommunications systems and management",
+  "pages": [
+   7
+  ],
+  "n": 1,
+  "rooms": [
+   "CBA"
+  ],
+  "instructors": [
+   "Mr Vincent Wong"
+  ],
+  "sections": [
+   "A"
+  ]
+ },
+ {
+  "code": "ELEC6099",
+  "day": 1,
+  "start": "16:00",
+  "end": "18:30",
+  "timeText": "4:00pm-6:30pm",
+  "room": "MBG07",
+  "instructor": "Dr Qunsong Zeng",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Wireless communications and networking",
+  "pages": [
+   8
+  ],
+  "n": 1,
+  "rooms": [
+   "MBG07"
+  ],
+  "instructors": [
+   "Dr Qunsong Zeng"
+  ],
+  "sections": []
+ },
+ {
+  "code": "ELEC6098",
+  "day": 3,
+  "start": "16:00",
+  "end": "19:00",
+  "timeText": "4:00pm-7:00pm",
+  "room": "Lecture room 1, MSc Student Commons, 8/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun",
+  "instructor": "Dr Victor Ng / Dr Andrew HC Wu",
+  "dateNote": "",
+  "section": "B",
+  "titleEn": "Electronic and mobile commerce",
+  "pages": [
+   8
+  ],
+  "n": 1,
+  "rooms": [
+   "Lecture room 1, MSc Student Commons, 8/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun"
+  ],
+  "instructors": [
+   "Dr Victor Ng / Dr Andrew HC Wu"
+  ],
+  "sections": [
+   "B"
+  ]
+ },
+ {
+  "code": "ELEC6603",
+  "day": 4,
+  "start": "15:00",
+  "end": "18:00",
+  "timeText": "3:00pm-6:00pm",
+  "room": "Lecture room 1&2, MSc Student Commons, 8/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun",
+  "instructor": "Mr Vincent Wong",
+  "dateNote": "",
+  "section": "A",
+  "titleEn": "Success in industrial entrepreneurship",
+  "pages": [
+   8
+  ],
+  "n": 1,
+  "rooms": [
+   "Lecture room 1&2, MSc Student Commons, 8/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun"
+  ],
+  "instructors": [
+   "Mr Vincent Wong"
+  ],
+  "sections": [
+   "A"
+  ]
+ },
+ {
+  "code": "ELEC6097",
+  "day": 4,
+  "start": "16:00",
+  "end": "18:30",
+  "timeText": "4:00pm-6:30pm",
+  "room": "MW103",
+  "instructor": "Prof Lawrence K Yeung",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "IP Networks",
+  "pages": [
+   8
+  ],
+  "n": 1,
+  "rooms": [
+   "MW103"
+  ],
+  "instructors": [
+   "Prof Lawrence K Yeung"
+  ],
+  "sections": []
+ },
+ {
+  "code": "ELEC6103",
+  "day": 5,
+  "start": "16:00",
+  "end": "19:00",
+  "timeText": "4:00pm-7:00pm",
+  "room": "CBA",
+  "instructor": "Mr Richard CK Pang",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Satellite communications",
+  "pages": [
+   8
+  ],
+  "n": 1,
+  "rooms": [
+   "CBA"
+  ],
+  "instructors": [
+   "Mr Richard CK Pang"
+  ],
+  "sections": []
+ },
+ {
+  "code": "ELEC7403",
+  "day": 6,
+  "start": "15:00",
+  "end": "18:00",
+  "timeText": "3:00pm-6:00pm",
+  "room": "CPD3.15",
+  "instructor": "Dr Jason Chow",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Advanced power electronics",
+  "pages": [
+   8
+  ],
+  "n": 1,
+  "rooms": [
+   "CPD3.15"
+  ],
+  "instructors": [
+   "Dr Jason Chow"
+  ],
+  "sections": []
+ },
+ {
+  "code": "ELEC6095",
+  "day": 1,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "LE5",
+  "instructor": "Dr KH Lam / Prof Jin Zhong",
+  "dateNote": "",
+  "section": "A",
+  "titleEn": "Smart Grid",
+  "pages": [
+   9
+  ],
+  "n": 1,
+  "rooms": [
+   "LE5"
+  ],
+  "instructors": [
+   "Dr KH Lam / Prof Jin Zhong"
+  ],
+  "sections": [
+   "A"
+  ]
+ },
+ {
+  "code": "ELEC7029",
+  "day": 2,
+  "start": "19:30",
+  "end": "22:00",
+  "timeText": "7:30pm-10:00pm",
+  "room": "CBA",
+  "instructor": "Dr David CW Ng",
+  "dateNote": "",
+  "section": "A",
+  "titleEn": "Analog IC Design, computing & memories",
+  "pages": [
+   9,
+   16
+  ],
+  "n": 2,
+  "rooms": [
+   "CBA"
+  ],
+  "instructors": [
+   "Dr David CW Ng"
+  ],
+  "sections": [
+   "A"
+  ]
+ },
+ {
+  "code": "ELEC6085",
+  "day": 3,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "KB132",
+  "instructor": "Ir Patrick YC Yeung",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "The role of a computerized SCADA system in power system operation",
+  "pages": [
+   9
+  ],
+  "n": 1,
+  "rooms": [
+   "KB132"
+  ],
+  "instructors": [
+   "Ir Patrick YC Yeung"
+  ],
+  "sections": []
+ },
+ {
+  "code": "ELEC6603",
+  "day": 4,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "KB223",
+  "instructor": "Mr Vincent Wong",
+  "dateNote": "",
+  "section": "B",
+  "titleEn": "Success in industrial entrepreneurship",
+  "pages": [
+   9
+  ],
+  "n": 1,
+  "rooms": [
+   "KB223"
+  ],
+  "instructors": [
+   "Mr Vincent Wong"
+  ],
+  "sections": [
+   "B"
+  ]
+ },
+ {
+  "code": "ELEC6080",
+  "day": 5,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "CBA",
+  "instructor": "Mr Vincent Wong",
+  "dateNote": "",
+  "section": "B",
+  "titleEn": "Telecommunications systems and management",
+  "pages": [
+   9
+  ],
+  "n": 1,
+  "rooms": [
+   "CBA"
+  ],
+  "instructors": [
+   "Mr Vincent Wong"
+  ],
+  "sections": [
+   "B"
+  ]
+ },
+ {
+  "code": "ELEC6098",
+  "day": 1,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "TT404",
+  "instructor": "Dr Victor Ng / Dr Andrew HC Wu",
+  "dateNote": "",
+  "section": "A",
+  "titleEn": "Electronic and Mobile Commerce",
+  "pages": [
+   10
+  ],
+  "n": 1,
+  "rooms": [
+   "TT404"
+  ],
+  "instructors": [
+   "Dr Victor Ng / Dr Andrew HC Wu"
+  ],
+  "sections": [
+   "A"
+  ]
+ },
+ {
+  "code": "ELEC7082",
+  "day": 1,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "CPD-LG.10",
+  "instructor": "Dr Joch Z Lin",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Artificial intelligence in finance",
+  "pages": [
+   10
+  ],
+  "n": 1,
+  "rooms": [
+   "CPD-LG.10"
+  ],
+  "instructors": [
+   "Dr Joch Z Lin"
+  ],
+  "sections": []
+ },
+ {
+  "code": "ELEC7402",
+  "day": 2,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "MB142",
+  "instructor": "Dr Herman TW Ching",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Advanced electric vehicle technology",
+  "pages": [
+   10
+  ],
+  "n": 1,
+  "rooms": [
+   "MB142"
+  ],
+  "instructors": [
+   "Dr Herman TW Ching"
+  ],
+  "sections": []
+ },
+ {
+  "code": "ELEC7011",
+  "day": 2,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "CYPP3",
+  "instructor": "Prof Yi Wang",
+  "dateNote": "",
+  "section": "B",
+  "titleEn": "Energy internet",
+  "pages": [
+   10
+  ],
+  "n": 1,
+  "rooms": [
+   "CYPP3"
+  ],
+  "instructors": [
+   "Prof Yi Wang"
+  ],
+  "sections": [
+   "B"
+  ]
+ },
+ {
+  "code": "ELEC6027",
+  "day": 3,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "CYCP1",
+  "instructor": "Dr Albert TL Lee",
+  "dateNote": "",
+  "section": "A",
+  "titleEn": "Integrated circuit systems design",
+  "pages": [
+   10,
+   16
+  ],
+  "n": 2,
+  "rooms": [
+   "CYCP1"
+  ],
+  "instructors": [
+   "Dr Albert TL Lee"
+  ],
+  "sections": [
+   "A"
+  ]
+ },
+ {
+  "code": "ELEC7404",
+  "day": 4,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "KB132",
+  "instructor": "Dr KM Leung",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Advanced railway engineering",
+  "pages": [
+   10
+  ],
+  "n": 1,
+  "rooms": [
+   "KB132"
+  ],
+  "instructors": [
+   "Dr KM Leung"
+  ],
+  "sections": []
+ },
+ {
+  "code": "ELEC7029",
+  "day": 5,
+  "start": "19:30",
+  "end": "22:00",
+  "timeText": "7:30pm-10:00pm",
+  "room": "Lecture room 1, MSc Student Commons, 8/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun",
+  "instructor": "Dr David CW Ng",
+  "dateNote": "",
+  "section": "B",
+  "titleEn": "Analog IC Design, computing & memories",
+  "pages": [
+   10,
+   16
+  ],
+  "n": 2,
+  "rooms": [
+   "Lecture room 1, MSc Student Commons, 8/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun"
+  ],
+  "instructors": [
+   "Dr David CW Ng"
+  ],
+  "sections": [
+   "B"
+  ]
+ },
+ {
+  "code": "ELEC7469",
+  "day": 5,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "CYPP3",
+  "instructor": "Dr Daniel YC Cheng",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Advanced electrical energy and power conversion systems",
+  "pages": [
+   10
+  ],
+  "n": 1,
+  "rooms": [
+   "CYPP3"
+  ],
+  "instructors": [
+   "Dr Daniel YC Cheng"
+  ],
+  "sections": []
+ },
+ {
+  "code": "EMEE6002",
+  "day": 5,
+  "start": "14:00",
+  "end": "18:00",
+  "timeText": "2:00pm-6:00pm",
+  "room": "TBC (HKU Shenzhen Qianhai campus) MSc Student Commons, 8/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun",
+  "instructor": "Dr Wilton WT Fok / Dr Albert TL Lee",
+  "dateNote": "23.10.2026, 30.10.2026, 06.11.2026, 13.11.2026, 20.11.2026",
+  "section": "B",
+  "titleEn": "Sustainability and climate change",
+  "pages": [
+   12
+  ],
+  "n": 1,
+  "rooms": [
+   "TBC (HKU Shenzhen Qianhai campus) MSc Student Commons, 8/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun"
+  ],
+  "instructors": [
+   "Dr Wilton WT Fok / Dr Albert TL Lee"
+  ],
+  "sections": [
+   "B"
+  ]
+ },
+ {
+  "code": "EMEE6002",
+  "day": 6,
+  "start": "09:00",
+  "end": "13:00",
+  "timeText": "9:00am-1:00pm",
+  "room": "TBC (HKU Shenzhen Qianhai campus)",
+  "instructor": "Dr Wilton WT Fok / Dr Albert TL Lee",
+  "dateNote": "24.10.2026, 31.10.2026, 14.11.2026",
+  "section": "B",
+  "titleEn": "Sustainability and climate change",
+  "pages": [
+   12
+  ],
+  "n": 1,
+  "rooms": [
+   "TBC (HKU Shenzhen Qianhai campus)"
+  ],
+  "instructors": [
+   "Dr Wilton WT Fok / Dr Albert TL Lee"
+  ],
+  "sections": [
+   "B"
+  ]
+ },
+ {
+  "code": "EMEE6011",
+  "day": 1,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "CPD-4.17",
+  "instructor": "Prof Anthony HW Choi",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Energy saving lighting",
+  "pages": [
+   13
+  ],
+  "n": 1,
+  "rooms": [
+   "CPD-4.17"
+  ],
+  "instructors": [
+   "Prof Anthony HW Choi"
+  ],
+  "sections": []
+ },
+ {
+  "code": "EMEE6002",
+  "day": 2,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "CYCC501",
+  "instructor": "Dr Wilton WT Fok / Dr Albert TL Lee",
+  "dateNote": "",
+  "section": "A",
+  "titleEn": "Sustainability and climate change",
+  "pages": [
+   13
+  ],
+  "n": 1,
+  "rooms": [
+   "CYCC501"
+  ],
+  "instructors": [
+   "Dr Wilton WT Fok / Dr Albert TL Lee"
+  ],
+  "sections": [
+   "A"
+  ]
+ },
+ {
+  "code": "EMEE6005",
+  "day": 5,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "MB217",
+  "instructor": "Dr Match WL Ko",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Renewable energy technology I: Fundamental",
+  "pages": [
+   13
+  ],
+  "n": 1,
+  "rooms": [
+   "MB217"
+  ],
+  "instructors": [
+   "Dr Match WL Ko"
+  ],
+  "sections": []
+ },
+ {
+  "code": "EMEE6007",
+  "day": 2,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "Lecture room 1&2, MSc Student Commons, 6/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun",
+  "instructor": "Dr WWH Ching / Dr Raymond CL Fong",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Energy and carbon audit",
+  "pages": [
+   14
+  ],
+  "n": 1,
+  "rooms": [
+   "Lecture room 1&2, MSc Student Commons, 6/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun"
+  ],
+  "instructors": [
+   "Dr WWH Ching / Dr Raymond CL Fong"
+  ],
+  "sections": []
+ },
+ {
+  "code": "ICES7001",
+  "day": 1,
+  "start": "09:00",
+  "end": "12:00",
+  "timeText": "9:00am-12:00pm",
+  "room": "Lecture room 1, MSc Student Commons, 8/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun",
+  "instructor": "Prof Tianshuo Zhao",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Advanced semiconductor device",
+  "pages": [
+   15
+  ],
+  "n": 1,
+  "rooms": [
+   "Lecture room 1, MSc Student Commons, 8/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun"
+  ],
+  "instructors": [
+   "Prof Tianshuo Zhao"
+  ],
+  "sections": []
+ },
+ {
+  "code": "ICES7009",
+  "day": 2,
+  "start": "13:00",
+  "end": "16:00",
+  "timeText": "1:00pm-4:00pm",
+  "room": "Lecture room 2, MSc Student Commons, 8/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun",
+  "instructor": "Prof Chao Xiang",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Integrated silicon photonics",
+  "pages": [
+   15
+  ],
+  "n": 1,
+  "rooms": [
+   "Lecture room 2, MSc Student Commons, 8/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun"
+  ],
+  "instructors": [
+   "Prof Chao Xiang"
+  ],
+  "sections": []
+ },
+ {
+  "code": "ICES7008",
+  "day": 6,
+  "start": "09:00",
+  "end": "12:00",
+  "timeText": "9:00am-12:00pm",
+  "room": "KKLG103",
+  "instructor": "Prof Ziyang Gao",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Advanced electronic packaging and integration",
+  "pages": [
+   15
+  ],
+  "n": 1,
+  "rooms": [
+   "KKLG103"
+  ],
+  "instructors": [
+   "Prof Ziyang Gao"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7143",
+  "day": 1,
+  "start": "10:00",
+  "end": "13:00",
+  "timeText": "10:00am-1:00pm",
+  "room": "HW101",
+  "instructor": "Prof. SY Hu",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "The internet of things",
+  "pages": [
+   17,
+   21
+  ],
+  "n": 2,
+  "rooms": [
+   "HW101"
+  ],
+  "instructors": [
+   "Prof. SY Hu"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7138",
+  "day": 1,
+  "start": "15:00",
+  "end": "18:00",
+  "timeText": "3:00pm-6:00pm",
+  "room": "LE5",
+  "instructor": "Prof. Calvin Or",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Healthcare systems engineering",
+  "pages": [
+   17,
+   21
+  ],
+  "n": 2,
+  "rooms": [
+   "LE5"
+  ],
+  "instructors": [
+   "Prof. CKL Or",
+   "Prof. Calvin Or"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7015",
+  "day": 1,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "KK201",
+  "instructor": "Mr. Wilson Chow",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Engineering economics and finance",
+  "pages": [
+   17
+  ],
+  "n": 1,
+  "rooms": [
+   "KK201"
+  ],
+  "instructors": [
+   "Mr. Wilson Chow"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7310",
+  "day": 1,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "KK102",
+  "instructor": "Prof. PC Chen",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Financial engineering",
+  "pages": [
+   17
+  ],
+  "n": 1,
+  "rooms": [
+   "KK102"
+  ],
+  "instructors": [
+   "Prof. PC Chen"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7137",
+  "day": 2,
+  "start": "10:00",
+  "end": "13:00",
+  "timeText": "10:00am-1:00pm",
+  "room": "HW106",
+  "instructor": "Dr. Leith Chan",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Virtual reality and applications",
+  "pages": [
+   17,
+   21
+  ],
+  "n": 2,
+  "rooms": [
+   "HW106"
+  ],
+  "instructors": [
+   "Dr Leith Chan",
+   "Dr. Leith Chan"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7020",
+  "day": 2,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "MB237",
+  "instructor": "Dr JWC Ng",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Supply chain management",
+  "pages": [
+   17
+  ],
+  "n": 1,
+  "rooms": [
+   "MB237"
+  ],
+  "instructors": [
+   "Dr JWC Ng"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7119",
+  "day": 3,
+  "start": "14:00",
+  "end": "17:00",
+  "timeText": "2:00pm-5:00pm",
+  "room": "HW106",
+  "instructor": "Dr SH Choi",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Digital enterprises and e-Commerce",
+  "pages": [
+   17
+  ],
+  "n": 1,
+  "rooms": [
+   "HW106"
+  ],
+  "instructors": [
+   "Dr SH Choi"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7142",
+  "day": 3,
+  "start": "14:00",
+  "end": "17:00",
+  "timeText": "2:00pm-5:00pm",
+  "room": "HW103",
+  "instructor": "Prof. SC Lin",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Advanced computational methods",
+  "pages": [
+   17,
+   21
+  ],
+  "n": 2,
+  "rooms": [
+   "HW103"
+  ],
+  "instructors": [
+   "Prof. SC Lin"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7139",
+  "day": 3,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "HW103, HW104A, HW104B, HW105 & HW106",
+  "instructor": "Dr JC Chen",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Cyber-physical systems",
+  "pages": [
+   17
+  ],
+  "n": 1,
+  "rooms": [
+   "HW103, HW104A, HW104B, HW105 & HW106"
+  ],
+  "instructors": [
+   "Dr JC Chen"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7506",
+  "day": 3,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "LE2",
+  "instructor": "Prof. JY Chen",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Advanced machine learning methods",
+  "pages": [
+   17,
+   21
+  ],
+  "n": 2,
+  "rooms": [
+   "LE2"
+  ],
+  "instructors": [
+   "Prof. JY Chen"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7141",
+  "day": 4,
+  "start": "10:00",
+  "end": "13:00",
+  "timeText": "10:00am-1:00pm",
+  "room": "HW103 & HW101 (lab session)",
+  "instructor": "Prof. RY Zhong",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Advanced digital twin technologies",
+  "pages": [
+   17
+  ],
+  "n": 1,
+  "rooms": [
+   "HW103 & HW101 (lab session)"
+  ],
+  "instructors": [
+   "Prof. RY Zhong"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7015",
+  "day": 4,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "LE4",
+  "instructor": "Mr. Wilson Chow",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Engineering economics and finance",
+  "pages": [
+   17
+  ],
+  "n": 1,
+  "rooms": [
+   "LE4"
+  ],
+  "instructors": [
+   "Mr. Wilson Chow"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7902",
+  "day": 4,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "MB201",
+  "instructor": "Mr. Bill Chan",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Project management",
+  "pages": [
+   17
+  ],
+  "n": 1,
+  "rooms": [
+   "MB201"
+  ],
+  "instructors": [
+   "Mr. Bill Chan"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7020",
+  "day": 5,
+  "start": "10:00",
+  "end": "13:00",
+  "timeText": "10:00am-1:00pm",
+  "room": "HW103",
+  "instructor": "Dr JWC Ng",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Supply chain management",
+  "pages": [
+   17
+  ],
+  "n": 1,
+  "rooms": [
+   "HW103"
+  ],
+  "instructors": [
+   "Dr JWC Ng"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7034",
+  "day": 5,
+  "start": "15:00",
+  "end": "18:00",
+  "timeText": "3:00pm-6:00pm",
+  "room": "MWT7",
+  "instructor": "Dr JW Wang",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Operational research",
+  "pages": [
+   17,
+   18
+  ],
+  "n": 2,
+  "rooms": [
+   "MWT7"
+  ],
+  "instructors": [
+   "Dr JW Wang"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7137",
+  "day": 5,
+  "start": "15:00",
+  "end": "18:00",
+  "timeText": "3:00pm-6:00pm",
+  "room": "HW106",
+  "instructor": "Dr. Leith Chan",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Virtual reality and applications",
+  "pages": [
+   17,
+   21
+  ],
+  "n": 2,
+  "rooms": [
+   "HW106"
+  ],
+  "instructors": [
+   "Dr Leith Chan",
+   "Dr. Leith Chan"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7111",
+  "day": 5,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "KKLG109 & HW101 (lab sessions)",
+  "instructor": "Dr JW Wang",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Data-driven optimization",
+  "pages": [
+   17,
+   18
+  ],
+  "n": 2,
+  "rooms": [
+   "KKLG109 & HW101 (lab sessions)",
+   "KKLG109"
+  ],
+  "instructors": [
+   "Dr JW Wang"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7341",
+  "day": 5,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "LE4",
+  "instructor": "Mr. N Xu",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Technology innovation and entrepreneurship",
+  "pages": [
+   17
+  ],
+  "n": 1,
+  "rooms": [
+   "LE4"
+  ],
+  "instructors": [
+   "Mr. N Xu"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7140",
+  "day": 6,
+  "start": "10:00",
+  "end": "13:00",
+  "timeText": "10:00am-1:00pm",
+  "room": "KK202",
+  "instructor": "Dr. SJ Qin",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Machine learning and applications",
+  "pages": [
+   17,
+   21
+  ],
+  "n": 2,
+  "rooms": [
+   "KK202"
+  ],
+  "instructors": [
+   "Dr SJ Qin",
+   "Dr. SJ Qin"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7034",
+  "day": 6,
+  "start": "14:30",
+  "end": "17:30",
+  "timeText": "2:30pm-5:30pm",
+  "room": "KK202",
+  "instructor": "Dr JW Wang",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Operational research",
+  "pages": [
+   17,
+   18
+  ],
+  "n": 2,
+  "rooms": [
+   "KK202"
+  ],
+  "instructors": [
+   "Dr JW Wang"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7212",
+  "day": 1,
+  "start": "14:00",
+  "end": "17:00",
+  "timeText": "2:00pm-5:00pm",
+  "room": "CYPP3",
+  "instructor": "Prof. E Ballot",
+  "dateNote": "January 4 & 11, 2027",
+  "section": "",
+  "titleEn": "Physical Internet",
+  "pages": [
+   19,
+   20
+  ],
+  "n": 2,
+  "rooms": [
+   "CYPP3"
+  ],
+  "instructors": [
+   "Prof. E Ballot"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7212",
+  "day": 2,
+  "start": "14:00",
+  "end": "17:00",
+  "timeText": "2:00pm-5:00pm",
+  "room": "CYPP1",
+  "instructor": "Prof. E Ballot",
+  "dateNote": "January 5 & 12, 2027",
+  "section": "",
+  "titleEn": "Physical Internet",
+  "pages": [
+   19,
+   20
+  ],
+  "n": 2,
+  "rooms": [
+   "CYPP1"
+  ],
+  "instructors": [
+   "Prof. E Ballot"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7212",
+  "day": 3,
+  "start": "14:00",
+  "end": "17:00",
+  "timeText": "2:00pm-5:00pm",
+  "room": "CYPP3",
+  "instructor": "Prof. E Ballot",
+  "dateNote": "January 6 & 13, 2027",
+  "section": "",
+  "titleEn": "Physical Internet",
+  "pages": [
+   19,
+   20
+  ],
+  "n": 2,
+  "rooms": [
+   "CYPP3"
+  ],
+  "instructors": [
+   "Prof. E Ballot"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7212",
+  "day": 4,
+  "start": "14:00",
+  "end": "17:00",
+  "timeText": "2:00pm-5:00pm",
+  "room": "CYPP3",
+  "instructor": "Prof. E Ballot",
+  "dateNote": "January 7 & 14, 2027",
+  "section": "",
+  "titleEn": "Physical Internet",
+  "pages": [
+   19,
+   20
+  ],
+  "n": 2,
+  "rooms": [
+   "CYPP3"
+  ],
+  "instructors": [
+   "Prof. E Ballot"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7212",
+  "day": 5,
+  "start": "14:00",
+  "end": "17:00",
+  "timeText": "2:00pm-5:00pm",
+  "room": "CYPP3",
+  "instructor": "Prof. E Ballot",
+  "dateNote": "January 8 & 15, 2027",
+  "section": "",
+  "titleEn": "Physical Internet",
+  "pages": [
+   19,
+   20
+  ],
+  "n": 2,
+  "rooms": [
+   "CYPP3"
+  ],
+  "instructors": [
+   "Prof. E Ballot"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7503",
+  "day": 1,
+  "start": "15:00",
+  "end": "18:00",
+  "timeText": "3:00pm-6:00pm",
+  "room": "HW104A & B, HW105 & HW106",
+  "instructor": "Dr. HH Cheung",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Robotic systems integration",
+  "pages": [
+   21
+  ],
+  "n": 1,
+  "rooms": [
+   "HW104A & B, HW105 & HW106"
+  ],
+  "instructors": [
+   "Dr. HH Cheung"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7113",
+  "day": 1,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "KK202",
+  "instructor": "Prof. JY Li",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Optimization methods for intelligent systems",
+  "pages": [
+   21
+  ],
+  "n": 1,
+  "rooms": [
+   "KK202"
+  ],
+  "instructors": [
+   "Prof. JY Li"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7509",
+  "day": 2,
+  "start": "10:00",
+  "end": "13:00",
+  "timeText": "10:00am-1:00pm",
+  "room": "HW103 & HW104A & B",
+  "instructor": "Prof. Y Xu",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Artificial intelligence for system automation",
+  "pages": [
+   21
+  ],
+  "n": 1,
+  "rooms": [
+   "HW103 & HW104A & B"
+  ],
+  "instructors": [
+   "Prof. Y Xu"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7502",
+  "day": 2,
+  "start": "15:00",
+  "end": "18:00",
+  "timeText": "3:00pm-6:00pm",
+  "room": "HW101 & HW104A & B",
+  "instructor": "Prof. J Liu",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Advanced robot sensing and intelligence",
+  "pages": [
+   21
+  ],
+  "n": 1,
+  "rooms": [
+   "HW101 & HW104A & B"
+  ],
+  "instructors": [
+   "Prof. J Liu"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7508",
+  "day": 2,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "KK202",
+  "instructor": "Prof. SN Liu",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Security of intelligent systems",
+  "pages": [
+   21
+  ],
+  "n": 1,
+  "rooms": [
+   "KK202"
+  ],
+  "instructors": [
+   "Prof. SN Liu"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7507",
+  "day": 3,
+  "start": "10:00",
+  "end": "13:00",
+  "timeText": "10:00am-1:00pm",
+  "room": "MWT7",
+  "instructor": "Dr X Ma",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Frontiers in robotics and intelligent systems",
+  "pages": [
+   21
+  ],
+  "n": 1,
+  "rooms": [
+   "MWT7"
+  ],
+  "instructors": [
+   "Dr X Ma"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7503",
+  "day": 4,
+  "start": "10:00",
+  "end": "13:00",
+  "timeText": "10:00am-1:00pm",
+  "room": "HW104 A & B, HW105 & HW106",
+  "instructor": "Dr. HH Cheung",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Robotic systems integration",
+  "pages": [
+   21
+  ],
+  "n": 1,
+  "rooms": [
+   "HW104 A & B, HW105 & HW106"
+  ],
+  "instructors": [
+   "Dr. HH Cheung"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7501",
+  "day": 4,
+  "start": "14:00",
+  "end": "17:00",
+  "timeText": "2:00pm-5:00pm",
+  "room": "HW103, HW104B, HW105 & HW106",
+  "instructor": "Prof. HP Chen",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Robot modelling, planning and control",
+  "pages": [
+   21
+  ],
+  "n": 1,
+  "rooms": [
+   "HW103, HW104B, HW105 & HW106"
+  ],
+  "instructors": [
+   "Prof. HP Chen"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7501",
+  "day": 4,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "HW103, HW104B, HW105 & HW106",
+  "instructor": "Prof. HP Chen",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Robot modelling, planning and control",
+  "pages": [
+   21
+  ],
+  "n": 1,
+  "rooms": [
+   "HW103, HW104B, HW105 & HW106"
+  ],
+  "instructors": [
+   "Prof. HP Chen"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7502",
+  "day": 5,
+  "start": "10:00",
+  "end": "13:00",
+  "timeText": "10:00am-1:00pm",
+  "room": "HW101 & HW104A & B",
+  "instructor": "Prof. J Liu",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Advanced robot sensing and intelligence",
+  "pages": [
+   21
+  ],
+  "n": 1,
+  "rooms": [
+   "HW101 & HW104A & B"
+  ],
+  "instructors": [
+   "Prof. J Liu"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7140",
+  "day": 6,
+  "start": "14:30",
+  "end": "17:30",
+  "timeText": "2:30pm-5:30pm",
+  "room": "KK201",
+  "instructor": "Dr. SJ Qin",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Machine learning and applications",
+  "pages": [
+   21
+  ],
+  "n": 1,
+  "rooms": [
+   "KK201"
+  ],
+  "instructors": [
+   "Dr. SJ Qin"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7155",
+  "day": 1,
+  "start": "14:00",
+  "end": "17:00",
+  "timeText": "2:00pm-5:00pm",
+  "room": "CYCP1",
+  "instructor": "Prof. Abdullah Konak and Prof. Sadan Kulturel-Konak",
+  "dateNote": "January 4 & 11, 2027",
+  "section": "",
+  "titleEn": "Intelligent technologies for systems engineering B",
+  "pages": [
+   22
+  ],
+  "n": 1,
+  "rooms": [
+   "CYCP1"
+  ],
+  "instructors": [
+   "Prof. Abdullah Konak and Prof. Sadan Kulturel-Konak"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7155",
+  "day": 2,
+  "start": "14:00",
+  "end": "17:00",
+  "timeText": "2:00pm-5:00pm",
+  "room": "CYCP4",
+  "instructor": "Prof. Abdullah Konak and Prof. Sadan Kulturel-Konak",
+  "dateNote": "January 5 & 12, 2027",
+  "section": "",
+  "titleEn": "Intelligent technologies for systems engineering B",
+  "pages": [
+   22
+  ],
+  "n": 1,
+  "rooms": [
+   "CYCP4"
+  ],
+  "instructors": [
+   "Prof. Abdullah Konak and Prof. Sadan Kulturel-Konak"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7155",
+  "day": 3,
+  "start": "14:00",
+  "end": "17:00",
+  "timeText": "2:00pm-5:00pm",
+  "room": "CYCP1",
+  "instructor": "Prof. Abdullah Konak and Prof. Sadan Kulturel-Konak",
+  "dateNote": "January 6 & 13, 2027",
+  "section": "",
+  "titleEn": "Intelligent technologies for systems engineering B",
+  "pages": [
+   22
+  ],
+  "n": 1,
+  "rooms": [
+   "CYCP1"
+  ],
+  "instructors": [
+   "Prof. Abdullah Konak and Prof. Sadan Kulturel-Konak"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7155",
+  "day": 4,
+  "start": "14:00",
+  "end": "17:00",
+  "timeText": "2:00pm-5:00pm",
+  "room": "CYCP1",
+  "instructor": "Prof. Abdullah Konak and Prof. Sadan Kulturel-Konak",
+  "dateNote": "January 7 & 14, 2027",
+  "section": "",
+  "titleEn": "Intelligent technologies for systems engineering B",
+  "pages": [
+   22
+  ],
+  "n": 1,
+  "rooms": [
+   "CYCP1"
+  ],
+  "instructors": [
+   "Prof. Abdullah Konak and Prof. Sadan Kulturel-Konak"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7155",
+  "day": 5,
+  "start": "14:00",
+  "end": "17:00",
+  "timeText": "2:00pm-5:00pm",
+  "room": "CYCP1",
+  "instructor": "Prof. Abdullah Konak and Prof. Sadan Kulturel-Konak",
+  "dateNote": "January 8, 2027",
+  "section": "",
+  "titleEn": "Intelligent technologies for systems engineering B",
+  "pages": [
+   22
+  ],
+  "n": 1,
+  "rooms": [
+   "CYCP1"
+  ],
+  "instructors": [
+   "Prof. Abdullah Konak and Prof. Sadan Kulturel-Konak"
+  ],
+  "sections": []
+ },
+ {
+  "code": "DASE7155",
+  "day": 6,
+  "start": "14:00",
+  "end": "17:00",
+  "timeText": "2:00pm-5:00pm",
+  "room": "CYCP3",
+  "instructor": "Prof. Abdullah Konak and Prof. Sadan Kulturel-Konak",
+  "dateNote": "January 9, 2027",
+  "section": "",
+  "titleEn": "Intelligent technologies for systems engineering B",
+  "pages": [
+   22
+  ],
+  "n": 1,
+  "rooms": [
+   "CYCP3"
+  ],
+  "instructors": [
+   "Prof. Abdullah Konak and Prof. Sadan Kulturel-Konak"
+  ],
+  "sections": []
+ },
+ {
+  "code": "IDAT7211",
+  "day": 1,
+  "start": "16:00",
+  "end": "18:30",
+  "timeText": "4:00pm-6:30pm",
+  "room": "MWT2",
+  "instructor": "Dr. Carman Xiaoyan Yu",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Innovation and R&D principle",
+  "pages": [
+   23
+  ],
+  "n": 1,
+  "rooms": [
+   "MWT2"
+  ],
+  "instructors": [
+   "Dr. Carman Xiaoyan Yu"
+  ],
+  "sections": []
+ },
+ {
+  "code": "IDAT7222",
+  "day": 1,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "31/F, HK Plaza",
+  "instructor": "Dr. C.K. Chan, Dr. Z. Ali",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Advanced CADCAM and AI Driven Manufacturing Systems",
+  "pages": [
+   23
+  ],
+  "n": 1,
+  "rooms": [
+   "31/F, HK Plaza"
+  ],
+  "instructors": [
+   "Dr. C.K. Chan, Dr. Z. Ali"
+  ],
+  "sections": []
+ },
+ {
+  "code": "IDAT7212",
+  "day": 2,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "LE2",
+  "instructor": "Dr. Z. Ali",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Mechatronic systems engineering",
+  "pages": [
+   23
+  ],
+  "n": 1,
+  "rooms": [
+   "LE2"
+  ],
+  "instructors": [
+   "Dr. Z. Ali"
+  ],
+  "sections": []
+ },
+ {
+  "code": "TDLL6024",
+  "day": 2,
+  "start": "14:00",
+  "end": "17:00",
+  "timeText": "2:00pm-5:00pm",
+  "room": "Room 101, Runme Shaw Building",
+  "instructor": "Mr Thomas Underwood",
+  "dateNote": "",
+  "section": "A",
+  "titleEn": "Teaching and learning with digital technology",
+  "pages": [
+   23
+  ],
+  "n": 1,
+  "rooms": [
+   "Room 101, Runme Shaw Building"
+  ],
+  "instructors": [
+   "Mr Thomas Underwood"
+  ],
+  "sections": [
+   "A"
+  ]
+ },
+ {
+  "code": "RECO7605",
+  "day": 2,
+  "start": "18:30",
+  "end": "21:30",
+  "timeText": "6:30pm-9:30pm",
+  "room": "TBC",
+  "instructor": "Dr. Jing Wang",
+  "dateNote": "October 20, 2026",
+  "section": "",
+  "titleEn": "Information Management",
+  "pages": [
+   23
+  ],
+  "n": 1,
+  "rooms": [
+   "TBC"
+  ],
+  "instructors": [
+   "Dr. Jing Wang"
+  ],
+  "sections": []
+ },
+ {
+  "code": "IDAT7213",
+  "day": 3,
+  "start": "12:00",
+  "end": "14:30",
+  "timeText": "12:00pm-2:30pm",
+  "room": "MWT2",
+  "instructor": "Prof. P. Lu, Prof. Fu Zhang",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "UAV design, navigation and control",
+  "pages": [
+   23
+  ],
+  "n": 1,
+  "rooms": [
+   "MWT2"
+  ],
+  "instructors": [
+   "Prof. P. Lu, Prof. Fu Zhang"
+  ],
+  "sections": []
+ },
+ {
+  "code": "URBA6011",
+  "day": 3,
+  "start": "14:00",
+  "end": "16:00",
+  "timeText": "2:00pm-4:00pm",
+  "room": "TBC",
+  "instructor": "Prof. Yimeng Song",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Programming and Foundations in Urban Data Analysis",
+  "pages": [
+   23
+  ],
+  "n": 1,
+  "rooms": [
+   "TBC"
+  ],
+  "instructors": [
+   "Prof. Yimeng Song"
+  ],
+  "sections": []
+ },
+ {
+  "code": "IDAT7220",
+  "day": 3,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "TBC",
+  "instructor": "Mr. Donn Gonda",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "STEM education",
+  "pages": [
+   23
+  ],
+  "n": 1,
+  "rooms": [
+   "TBC"
+  ],
+  "instructors": [
+   "Mr. Donn Gonda"
+  ],
+  "sections": []
+ },
+ {
+  "code": "IDAT7215",
+  "day": 4,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "KKLG109",
+  "instructor": "Dr. Z. Ali",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Computer programming for product development and applications",
+  "pages": [
+   23
+  ],
+  "n": 1,
+  "rooms": [
+   "KKLG109"
+  ],
+  "instructors": [
+   "Dr. Z. Ali"
+  ],
+  "sections": []
+ },
+ {
+  "code": "TDLL6024",
+  "day": 4,
+  "start": "14:00",
+  "end": "17:00",
+  "timeText": "2:00pm-5:00pm",
+  "room": "Room 101, Runme Shaw Building",
+  "instructor": "Mr Thomas Underwood",
+  "dateNote": "",
+  "section": "B",
+  "titleEn": "Teaching and learning with digital technology",
+  "pages": [
+   23
+  ],
+  "n": 1,
+  "rooms": [
+   "Room 101, Runme Shaw Building"
+  ],
+  "instructors": [
+   "Mr Thomas Underwood"
+  ],
+  "sections": [
+   "B"
+  ]
+ },
+ {
+  "code": "IDAT7217",
+  "day": 5,
+  "start": "15:00",
+  "end": "17:30",
+  "timeText": "3:00pm-5:30pm",
+  "room": "MB201",
+  "instructor": "Dr. Z. Ali",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Advanced topics in innovative design and technology A",
+  "pages": [
+   23
+  ],
+  "n": 1,
+  "rooms": [
+   "MB201"
+  ],
+  "instructors": [
+   "Dr. Z. Ali"
+  ],
+  "sections": []
+ },
+ {
+  "code": "IDAT7224",
+  "day": 5,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "KK201",
+  "instructor": "Dr. C.K. Chan",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Deep Learning in Engineering Technology",
+  "pages": [
+   23
+  ],
+  "n": 1,
+  "rooms": [
+   "KK201"
+  ],
+  "instructors": [
+   "Dr. C.K. Chan"
+  ],
+  "sections": []
+ },
+ {
+  "code": "TDLL6334",
+  "day": 5,
+  "start": "18:30",
+  "end": "21:30",
+  "timeText": "6:30pm-9:30pm",
+  "room": "Room 101, Runme Shaw Building",
+  "instructor": "Mr. Donn Gonda",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Educational video and storytelling",
+  "pages": [
+   23
+  ],
+  "n": 1,
+  "rooms": [
+   "Room 101, Runme Shaw Building"
+  ],
+  "instructors": [
+   "Mr. Donn Gonda"
+  ],
+  "sections": []
+ },
+ {
+  "code": "RECO7605",
+  "day": 6,
+  "start": "10:00",
+  "end": "13:00",
+  "timeText": "10:00am-1:00pm",
+  "room": "TBC",
+  "instructor": "Dr. Jing Wang",
+  "dateNote": "October 3, 17, 31; November 7, 14, 21, 28",
+  "section": "",
+  "titleEn": "Information Management",
+  "pages": [
+   23
+  ],
+  "n": 1,
+  "rooms": [
+   "TBC"
+  ],
+  "instructors": [
+   "Dr. Jing Wang"
+  ],
+  "sections": []
+ },
+ {
+  "code": "TDLL6024",
+  "day": 6,
+  "start": "09:00",
+  "end": "12:00",
+  "timeText": "9:00am-12:00pm",
+  "room": "Room 101, Runme Shaw Building",
+  "instructor": "Mr Thomas Underwood",
+  "dateNote": "",
+  "section": "C",
+  "titleEn": "Teaching and learning with digital technology",
+  "pages": [
+   23
+  ],
+  "n": 1,
+  "rooms": [
+   "Room 101, Runme Shaw Building"
+  ],
+  "instructors": [
+   "Mr Thomas Underwood"
+  ],
+  "sections": [
+   "C"
+  ]
+ },
+ {
+  "code": "LATX7517",
+  "day": 2,
+  "start": "13:00",
+  "end": "15:30",
+  "timeText": "1:00pm-3:30pm",
+  "room": "31/F, HK Plaza",
+  "instructor": "Prof. Joseph Chan (Business)",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Aviation Economics: business model and entrepreneurship",
+  "pages": [
+   24
+  ],
+  "n": 1,
+  "rooms": [
+   "31/F, HK Plaza"
+  ],
+  "instructors": [
+   "Prof. Joseph Chan (Business)"
+  ],
+  "sections": []
+ },
+ {
+  "code": "LATX7518",
+  "day": 3,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "KK201",
+  "instructor": "Prof. Yuanwei Liu (EEE)",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Fundamentals of wireless communication and sensing in space",
+  "pages": [
+   24
+  ],
+  "n": 1,
+  "rooms": [
+   "KK201"
+  ],
+  "instructors": [
+   "Prof. Yuanwei Liu (EEE)"
+  ],
+  "sections": []
+ },
+ {
+  "code": "LATX7513",
+  "day": 5,
+  "start": "16:00",
+  "end": "18:30",
+  "timeText": "4:00pm-6:30pm",
+  "room": "CYCP1",
+  "instructor": "Prof. Chuyu Wei, Prof. LX Huang, Prof. MX Huang, Prof. Shijun Guo, Dr. Ziqing Ma",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Fundamentals of aircraft and aviation",
+  "pages": [
+   24
+  ],
+  "n": 1,
+  "rooms": [
+   "CYCP1"
+  ],
+  "instructors": [
+   "Prof. Chuyu Wei, Prof. LX Huang, Prof. MX Huang, Prof. Shijun Guo, Dr. Ziqing Ma"
+  ],
+  "sections": []
+ },
+ {
+  "code": "MECH7020",
+  "day": 1,
+  "start": "13:00",
+  "end": "15:30",
+  "timeText": "1:00pm-3:30pm",
+  "room": "31/F, HK Plaza",
+  "instructor": "Prof. Peng Lu, Dr. Nan Chen",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Autonomous Drones with AI",
+  "pages": [
+   25
+  ],
+  "n": 1,
+  "rooms": [
+   "31/F, HK Plaza"
+  ],
+  "instructors": [
+   "Prof. Peng Lu, Dr. Nan Chen"
+  ],
+  "sections": []
+ },
+ {
+  "code": "MECH7030",
+  "day": 1,
+  "start": "16:00",
+  "end": "18:30",
+  "timeText": "4:00pm-6:30pm",
+  "room": "801A + 801B, MSc Student Commons",
+  "instructor": "Prof. Penghao Duan, Prof. C.H. Liu",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Intelligent computation for aerodynamics and structural mechanics",
+  "pages": [
+   25
+  ],
+  "n": 1,
+  "rooms": [
+   "801A + 801B, MSc Student Commons"
+  ],
+  "instructors": [
+   "Prof. Penghao Duan, Prof. C.H. Liu"
+  ],
+  "sections": []
+ },
+ {
+  "code": "MECH6034",
+  "day": 2,
+  "start": "15:00",
+  "end": "17:30",
+  "timeText": "3:00pm-5:30pm",
+  "room": "CYPP2",
+  "instructor": "Prof. Y.H. Chen, Dr. C.K. Chan",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Computer-aided product development (CAPD) subclass 1A",
+  "pages": [
+   25
+  ],
+  "n": 1,
+  "rooms": [
+   "CYPP2"
+  ],
+  "instructors": [
+   "Prof. Y.H. Chen, Dr. C.K. Chan"
+  ],
+  "sections": []
+ },
+ {
+  "code": "MECH6010",
+  "day": 2,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "CYPP2",
+  "instructor": "Prof. Yue Chen, Prof. Y. Lu",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Service behavior of materials",
+  "pages": [
+   25
+  ],
+  "n": 1,
+  "rooms": [
+   "CYPP2"
+  ],
+  "instructors": [
+   "Prof. Yue Chen, Prof. Y. Lu"
+  ],
+  "sections": []
+ },
+ {
+  "code": "EMEE6007",
+  "day": 2,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "Lecture room 1&2, MSc Student Commons",
+  "instructor": "Dr. M.W.H. Ching, Dr. R.C.L. Fong",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Energy and Carbon audit",
+  "pages": [
+   25
+  ],
+  "n": 1,
+  "rooms": [
+   "Lecture room 1&2, MSc Student Commons"
+  ],
+  "instructors": [
+   "Dr. M.W.H. Ching, Dr. R.C.L. Fong"
+  ],
+  "sections": []
+ },
+ {
+  "code": "MECH7029",
+  "day": 3,
+  "start": "16:00",
+  "end": "18:30",
+  "timeText": "4:00pm-6:30pm",
+  "room": "601A + 601B, MSc Student Commons",
+  "instructor": "Prof. LX Huang",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Aeroacoustics and noise control with machine learning",
+  "pages": [
+   25
+  ],
+  "n": 1,
+  "rooms": [
+   "601A + 601B, MSc Student Commons"
+  ],
+  "instructors": [
+   "Prof. LX Huang"
+  ],
+  "sections": []
+ },
+ {
+  "code": "MECH6045",
+  "day": 3,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "CPD-LG.07",
+  "instructor": "Prof. W.D. Li, Dr. Cuiping Zhang",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Nanotechnology: fundamentals and applications",
+  "pages": [
+   25
+  ],
+  "n": 1,
+  "rooms": [
+   "CPD-LG.07"
+  ],
+  "instructors": [
+   "Prof. W.D. Li, Dr. Cuiping Zhang"
+  ],
+  "sections": []
+ },
+ {
+  "code": "MECH6034",
+  "day": 4,
+  "start": "16:00",
+  "end": "18:30",
+  "timeText": "4:00pm-6:30pm",
+  "room": "TBC",
+  "instructor": "Prof. Y.H. Chen, Dr. C.K. Chan",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Computer-aided product development (CAPD) subclass 1B",
+  "pages": [
+   25
+  ],
+  "n": 1,
+  "rooms": [
+   "TBC"
+  ],
+  "instructors": [
+   "Prof. Y.H. Chen, Dr. C.K. Chan"
+  ],
+  "sections": []
+ },
+ {
+  "code": "MECH6019",
+  "day": 4,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "CYPP3",
+  "instructor": "Prof. Y.C.D. Leung, Dr. Raymond Fong",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Sources and control of Air pollution",
+  "pages": [
+   25
+  ],
+  "n": 1,
+  "rooms": [
+   "CYPP3"
+  ],
+  "instructors": [
+   "Prof. Y.C.D. Leung, Dr. Raymond Fong"
+  ],
+  "sections": []
+ },
+ {
+  "code": "MECH6046",
+  "day": 5,
+  "start": "17:00",
+  "end": "19:30",
+  "timeText": "5:00pm-7:30pm",
+  "room": "31/F, HK Plaza",
+  "instructor": "Prof. Dong-Myeong Shin, Prof. Lizhi Xu",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Microsystems for energy, biomedical and consumer electronics applications",
+  "pages": [
+   25
+  ],
+  "n": 1,
+  "rooms": [
+   "31/F, HK Plaza"
+  ],
+  "instructors": [
+   "Prof. Dong-Myeong Shin, Prof. Lizhi Xu"
+  ],
+  "sections": []
+ },
+ {
+  "code": "MECH7010",
+  "day": 5,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "MWT1",
+  "instructor": "Prof. Y.H. Chen, Prof. Fu Zhang",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Contemporary robotics",
+  "pages": [
+   25
+  ],
+  "n": 1,
+  "rooms": [
+   "MWT1"
+  ],
+  "instructors": [
+   "Prof. Y.H. Chen, Prof. Fu Zhang"
+  ],
+  "sections": []
+ },
+ {
+  "code": "EMEE6005",
+  "day": 5,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "MB217",
+  "instructor": "Dr. Match Ko, Prof. Y.C.D. Leung",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Renewable Energy technology I: Fundamental",
+  "pages": [
+   25
+  ],
+  "n": 1,
+  "rooms": [
+   "MB217"
+  ],
+  "instructors": [
+   "Dr. Match Ko, Prof. Y.C.D. Leung"
+  ],
+  "sections": []
+ },
+ {
+  "code": "MECH7016",
+  "day": 6,
+  "start": "10:00",
+  "end": "12:30",
+  "timeText": "10:00am-12:30pm",
+  "room": "MWT1",
+  "instructor": "Prof. K. M. Leung, Mr. Andy Pang",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Railway Project Management",
+  "pages": [
+   25
+  ],
+  "n": 1,
+  "rooms": [
+   "MWT1"
+  ],
+  "instructors": [
+   "Prof. K. M. Leung, Mr. Andy Pang"
+  ],
+  "sections": []
+ },
+ {
+  "code": "MECH7014",
+  "day": 6,
+  "start": "14:30",
+  "end": "17:00",
+  "timeText": "2:30pm-5:00pm",
+  "room": "MWT1",
+  "instructor": "Prof. K. M. Leung",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Railway Engineering – Metro and High- Speed Rail",
+  "pages": [
+   25
+  ],
+  "n": 1,
+  "rooms": [
+   "MWT1"
+  ],
+  "instructors": [
+   "Prof. K. M. Leung"
+  ],
+  "sections": []
+ },
+ {
+  "code": "MEST7418",
+  "day": 1,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "KKLG109",
+  "instructor": "Prof. Wen Di Li, Prof. Nicholas Fang",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Nanophotonics",
+  "pages": [
+   26
+  ],
+  "n": 1,
+  "rooms": [
+   "KKLG109"
+  ],
+  "instructors": [
+   "Prof. Wen Di Li, Prof. Nicholas Fang"
+  ],
+  "sections": []
+ },
+ {
+  "code": "MEST7419",
+  "day": 2,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "CPD-LG.10",
+  "instructor": "Dr. Cuiping Zhang",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Safety Training and Microelectronics Process",
+  "pages": [
+   26
+  ],
+  "n": 1,
+  "rooms": [
+   "CPD-LG.10"
+  ],
+  "instructors": [
+   "Dr. Cuiping Zhang"
+  ],
+  "sections": []
+ },
+ {
+  "code": "ELEC7029",
+  "day": 2,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "CBA",
+  "instructor": "Dr. David CW Ng",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Analog IC Design, Computing & Memories",
+  "pages": [
+   26
+  ],
+  "n": 1,
+  "rooms": [
+   "CBA"
+  ],
+  "instructors": [
+   "Dr. David CW Ng"
+  ],
+  "sections": []
+ },
+ {
+  "code": "MEST7420",
+  "day": 3,
+  "start": "15:00",
+  "end": "17:30",
+  "timeText": "3:00pm-5:30pm",
+  "room": "31/F, HK Plaza",
+  "instructor": "Dr. Cuiping Zhang",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "CMOS Analog circuit design: Basic circuits",
+  "pages": [
+   26
+  ],
+  "n": 1,
+  "rooms": [
+   "31/F, HK Plaza"
+  ],
+  "instructors": [
+   "Dr. Cuiping Zhang"
+  ],
+  "sections": []
+ },
+ {
+  "code": "MEST7421",
+  "day": 4,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "KK202",
+  "instructor": "Dr. Cuiping Zhang",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Thin film transistor technology and applications",
+  "pages": [
+   26
+  ],
+  "n": 1,
+  "rooms": [
+   "KK202"
+  ],
+  "instructors": [
+   "Dr. Cuiping Zhang"
+  ],
+  "sections": []
+ },
+ {
+  "code": "MEST7412",
+  "day": 5,
+  "start": "19:00",
+  "end": "21:30",
+  "timeText": "7:00pm-9:30pm",
+  "room": "LE2",
+  "instructor": "Prof. Yue Chen",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Solid-state materials and physics",
+  "pages": [
+   26
+  ],
+  "n": 1,
+  "rooms": [
+   "LE2"
+  ],
+  "instructors": [
+   "Prof. Yue Chen"
+  ],
+  "sections": []
+ },
+ {
+  "code": "ELEC7029",
+  "day": 5,
+  "start": "19:00",
+  "end": "22:00",
+  "timeText": "7:00pm-10:00pm",
+  "room": "Lecture room 1, MSc Student Commons",
+  "instructor": "Dr. David CW Ng",
+  "dateNote": "",
+  "section": "",
+  "titleEn": "Analog IC Design, Computing & Memories",
+  "pages": [
+   26
+  ],
+  "n": 1,
+  "rooms": [
+   "Lecture room 1, MSc Student Commons"
+  ],
+  "instructors": [
+   "Dr. David CW Ng"
+  ],
+  "sections": []
+ }
+]
