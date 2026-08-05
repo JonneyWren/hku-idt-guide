@@ -63,7 +63,7 @@ export const TIMETABLE = {
   ],
   MECH6034: [
     { term: 1, section: '', day: 'TUE', start: '15:00', end: '17:30', venue: 'CYPP2', instructor: 'Prof. Y.H. Chen, Dr. C.K. Chan', dateNote: '' },
-    { term: 1, section: '', day: 'THU', start: '16:00', end: '18:30', venue: 'TBC', instructor: 'Prof. Y.H. Chen, Dr. C.K. Chan', dateNote: '' }
+    { term: 1, section: '', day: 'THU', start: '19:00', end: '21:30', venue: 'TBC', instructor: 'Prof. Y.H. Chen, Dr. C.K. Chan', dateNote: '' }
   ],
   MECH6046: [
     { term: 1, section: 'A', day: 'FRI', start: '17:00', end: '19:30', venue: '31/F, HK Plaza', instructor: 'Prof. Dong-Myeong Shin, Prof. Lizhi Xu', dateNote: '' }
