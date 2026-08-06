@@ -7,14 +7,107 @@ import { renderTabbar } from '../components/tabbar.js';
 let keyword = '';
 let listFilter = 'all';
 let semFilter = 'all';
+let creditFilter = null;
 
 const TAG_CLASS = { A: '', B: 'tag-gray', XC: 'tag-xc', XD: 'tag-xd', capstone: 'tag-warn' };
 const countOf = (k) => COURSES.filter((c) => c.list === k).length;
 
+const CREDIT_META = {
+  'A': 'List A',
+  'AB': '学科课(A+B)',
+  'XCXD': '外学科选修',
+  'all-selected': '课程学分',
+  'capstone': '毕业论文'
+};
+
+function matchCredit(c) {
+  if (creditFilter === 'A') return c.list === 'A';
+  if (creditFilter === 'AB') return c.list === 'A' || c.list === 'B';
+  if (creditFilter === 'XCXD') return isElective(c.list);
+  if (creditFilter === 'capstone') return c.list === 'capstone';
+  return true;
+}
+
+function toView(c, selection, ratings) {
+  const rs = ratings[c.code] || [];
+  const avg = rs.length ? Math.round((rs.reduce((s, r) => s + (r.rating || 0), 0) / rs.length) * 10) / 10 : 0;
+  return { ...c, semText: semesterText(c.semester), timeText: timeSummary(c.code), ratingAvg: avg, ratingCount: rs.length, selected: selection.indexOf(c.code) >= 0 };
+}
+
+function filteredCourses() {
+  const selection = store.getSelection();
+  const ratings = store.getAllReviews();
+  if (creditFilter) {
+    return selection
+      .map(code => COURSES.find(x => x.code === code))
+      .filter(c => c && matchCredit(c))
+      .map(c => toView(c, selection, ratings));
+  }
+  const kw = keyword.trim().toLowerCase();
+  return COURSES.filter(c => {
+    if (listFilter !== 'all' && c.list !== listFilter) return false;
+    if (semFilter !== 'all' && c.semester !== '1&2' && c.semester !== 'full' && c.semester !== semFilter) return false;
+    if (kw) { const hay = (c.code + c.title + c.titleZh).toLowerCase(); if (hay.indexOf(kw) < 0) return false; }
+    return true;
+  }).map(c => toView(c, selection, ratings));
+}
+
+function courseCard(c) {
+  return `
+      <div class="card course-card" data-code="${c.code}">
+        <div style="display:flex;align-items:center;flex-wrap:wrap">
+          <span class="course-code">${c.code}</span>
+          <span class="tag ${TAG_CLASS[c.list] || ''}">${(LIST_META[c.list] || {}).label || ''}</span>
+          ${c.isNew2026 ? '<span class="tag tag-new">26级新增</span>' : ''}
+          ${c.movedToB2026 ? '<span class="tag tag-warn">26级转List B</span>' : ''}
+        </div>
+        <div class="course-title">${c.titleZh}</div>
+        <div class="course-en">${c.title}</div>
+        <div class="course-meta">${c.credits} 学分 · ${c.semText}${c.sections && c.sections.length ? ' · 班次 ' + c.sections.join('/') : ''}${c.cef ? ' · <span style="color:#b8741a">CEF 可报销</span>' : ''}</div>
+        <div class="course-time">${c.timeText ? '🕒 ' + c.timeText : c.semester === '1' ? '🕒 官方课表未列出排课' : '🕒 排课待官方公布'}</div>
+        <div class="course-foot">
+          <div>${c.ratingCount > 0 ? `<span class="star star-on">★</span> <span style="font-size:13px;font-weight:600;color:#f5a623;margin:0 4px">${c.ratingAvg}</span><span style="font-size:11px;color:#8a8f99">(${c.ratingCount} 条评价)</span>` : '<span style="font-size:11px;color:#8a8f99">暂无评价,去抢沙发</span>'}</div>
+          <div class="select-btn ${c.selected ? 'selected' : ''}" data-toggle="${c.code}">${c.selected ? '已选 ✓' : '+ 选课'}</div>
+        </div>
+      </div>`;
+}
+
+function bindListEvents() {
+  const listEl = document.getElementById('course-list');
+  if (!listEl) return;
+  listEl.querySelectorAll('[data-toggle]').forEach(el => {
+    el.onclick = (e) => {
+      e.stopPropagation();
+      const code = el.dataset.toggle;
+      if (store.isSelected(code)) unenrollCourse(code, render);
+      else enrollCourse(code, render);
+    };
+  });
+  listEl.querySelectorAll('.course-card').forEach(el => {
+    el.onclick = () => navigate(`/course-detail?code=${el.dataset.code}`);
+  });
+  const banner = document.getElementById('credit-banner');
+  if (banner) banner.onclick = () => { creditFilter = null; render(); };
+}
+
+// 局部刷新课程列表,避免整页重建导致搜索框失焦
+function renderList() {
+  const listEl = document.getElementById('course-list');
+  if (!listEl) return;
+  const courses = filteredCourses();
+  let html = '';
+  if (creditFilter) {
+    html += `<div class="card" id="credit-banner" style="cursor:pointer;border-left:4px solid #00573f;font-size:12px;color:#14312a">正在查看「${CREDIT_META[creditFilter]}」的已选课程（${courses.length} 门）· 点击收起 ✕</div>`;
+  }
+  const emptyMsg = creditFilter ? '你还没有选择该类别的课程,去列表中选课后再来看吧' : '没有匹配的课程,换个关键词试试';
+  html += courses.length ? courses.map(courseCard).join('') : `<div class="card" style="text-align:center;color:#8a8f99;font-size:12px">${emptyMsg}</div>`;
+  listEl.innerHTML = html;
+  bindListEvents();
+}
+
 function render() {
   const container = document.getElementById('page-container');
   const selection = store.getSelection();
-  const ratings = store.getAllReviews();
 
   // Credit calc
   let listA = 0, discipline = 0, elective = 0, total = 0;
@@ -25,19 +118,6 @@ function render() {
     if (c.list === 'A') listA += c.credits;
     if (c.list === 'A' || c.list === 'B') discipline += c.credits;
     if (isElective(c.list)) elective += c.credits;
-  });
-
-  // Filter
-  const kw = keyword.trim().toLowerCase();
-  const courses = COURSES.filter(c => {
-    if (listFilter !== 'all' && c.list !== listFilter) return false;
-    if (semFilter !== 'all' && c.semester !== '1&2' && c.semester !== 'full' && c.semester !== semFilter) return false;
-    if (kw) { const hay = (c.code + c.title + c.titleZh).toLowerCase(); if (hay.indexOf(kw) < 0) return false; }
-    return true;
-  }).map(c => {
-    const rs = ratings[c.code] || [];
-    const avg = rs.length ? Math.round((rs.reduce((s, r) => s + (r.rating || 0), 0) / rs.length) * 10) / 10 : 0;
-    return { ...c, semText: semesterText(c.semester), timeText: timeSummary(c.code), ratingAvg: avg, ratingCount: rs.length, selected: selection.indexOf(c.code) >= 0 };
   });
 
   const listTabs = [
@@ -70,7 +150,9 @@ function render() {
       .select-btn.selected{background:#00573f;color:#fff}
       .credit-bar{position:fixed;left:0;right:0;bottom:calc(56px + env(safe-area-inset-bottom, 0px));background:#fff;border-top:1px solid #e8eaee;display:flex;align-items:center;padding:10px 16px;z-index:20}
       .credit-info{display:flex;flex:1;justify-content:space-around}
-      .cc{text-align:center}
+      .cc{text-align:center;cursor:pointer;border-radius:8px;padding:2px 4px;transition:background .15s}
+      .cc:active{background:#eef5f1}
+      .cc.cc-active{background:#eef5f1;outline:2px solid #00573f}
       .cc-num{font-size:15px;font-weight:700;color:#c0392b}
       .cc-req{font-size:10px;color:#8a8f99}
       .cc.ok .cc-num{color:#00573f}
@@ -103,32 +185,15 @@ function render() {
     <div class="search-bar"><input class="search-input" id="course-search" placeholder="搜索课程代码 / 中英文名称" value="${keyword}" /></div>
     <div class="tabs">${listTabs.map(t => `<span class="ftab ${listFilter === t.key ? 'active' : ''}" data-list="${t.key}">${t.label}</span>`).join('')}</div>
     <div class="tabs">${semTabs.map(t => `<span class="ftab ${semFilter === t.key ? 'active' : ''}" data-sem="${t.key}">${t.label}</span>`).join('')}</div>
-    ${courses.length ? courses.map(c => `
-      <div class="card course-card" data-code="${c.code}">
-        <div style="display:flex;align-items:center;flex-wrap:wrap">
-          <span class="course-code">${c.code}</span>
-          <span class="tag ${TAG_CLASS[c.list] || ''}">${(LIST_META[c.list] || {}).label || ''}</span>
-          ${c.isNew2026 ? '<span class="tag tag-new">26级新增</span>' : ''}
-          ${c.movedToB2026 ? '<span class="tag tag-warn">26级转List B</span>' : ''}
-        </div>
-        <div class="course-title">${c.titleZh}</div>
-        <div class="course-en">${c.title}</div>
-        <div class="course-meta">${c.credits} 学分 · ${c.semText}${c.sections && c.sections.length ? ' · 班次 ' + c.sections.join('/') : ''}${c.cef ? ' · <span style="color:#b8741a">CEF 可报销</span>' : ''}</div>
-        <div class="course-time">${c.timeText ? '🕒 ' + c.timeText : c.semester === '1' ? '🕒 官方课表未列出排课' : '🕒 排课待官方公布'}</div>
-        <div class="course-foot">
-          <div>${c.ratingCount > 0 ? `<span class="star star-on">★</span> <span style="font-size:13px;font-weight:600;color:#f5a623;margin:0 4px">${c.ratingAvg}</span><span style="font-size:11px;color:#8a8f99">(${c.ratingCount} 条评价)</span>` : '<span style="font-size:11px;color:#8a8f99">暂无评价,去抢沙发</span>'}</div>
-          <div class="select-btn ${c.selected ? 'selected' : ''}" data-toggle="${c.code}">${c.selected ? '已选 ✓' : '+ 选课'}</div>
-        </div>
-      </div>
-    `).join('') : '<div class="card" style="text-align:center;color:#8a8f99;font-size:12px">没有匹配的课程,换个关键词试试</div>'}
+    <div id="course-list"></div>
     ${selection.length ? `
       <div class="credit-bar">
         <div class="credit-info">
-          <div class="cc ${listA >= rules.listAMin ? 'ok' : ''}"><span class="cc-num">${listA}</span><span class="cc-req">/${rules.listAMin}</span><div class="cc-label">List A</div></div>
-          <div class="cc ${discipline >= rules.disciplineMin ? 'ok' : ''}"><span class="cc-num">${discipline}</span><span class="cc-req">/${rules.disciplineMin}</span><div class="cc-label">学科课</div></div>
-          <div class="cc ${elective <= rules.electiveMax ? 'ok' : ''}"><span class="cc-num">${elective}</span><span class="cc-req">/${rules.electiveMax}</span><div class="cc-label">外学科选修</div></div>
-          <div class="cc ${total >= rules.courseCredits ? 'ok' : ''}"><span class="cc-num">${total}</span><span class="cc-req">/${rules.courseCredits}</span><div class="cc-label">课程学分</div></div>
-          <div class="cc fixed"><span class="cc-num">+${rules.dissertation}</span><div class="cc-label">毕业论文</div></div>
+          <div class="cc ${listA >= rules.listAMin ? 'ok' : ''} ${creditFilter === 'A' ? 'cc-active' : ''}" data-credit="A" title="点击查看已选 List A 课程"><span class="cc-num">${listA}</span><span class="cc-req">/${rules.listAMin}</span><div class="cc-label">List A</div></div>
+          <div class="cc ${discipline >= rules.disciplineMin ? 'ok' : ''} ${creditFilter === 'AB' ? 'cc-active' : ''}" data-credit="AB" title="点击查看已选学科课"><span class="cc-num">${discipline}</span><span class="cc-req">/${rules.disciplineMin}</span><div class="cc-label">学科课</div></div>
+          <div class="cc ${elective <= rules.electiveMax ? 'ok' : ''} ${creditFilter === 'XCXD' ? 'cc-active' : ''}" data-credit="XCXD" title="点击查看已选外学科选修课"><span class="cc-num">${elective}</span><span class="cc-req">/${rules.electiveMax}</span><div class="cc-label">外学科选修</div></div>
+          <div class="cc ${total >= rules.courseCredits ? 'ok' : ''} ${creditFilter === 'all-selected' ? 'cc-active' : ''}" data-credit="all-selected" title="点击查看全部已选课程"><span class="cc-num">${total}</span><span class="cc-req">/${rules.courseCredits}</span><div class="cc-label">课程学分</div></div>
+          <div class="cc fixed ${creditFilter === 'capstone' ? 'cc-active' : ''}" data-credit="capstone" title="点击查看已选毕业论文"><span class="cc-num">+${rules.dissertation}</span><div class="cc-label">毕业论文</div></div>
         </div>
         <div class="credit-action" id="go-schedule">排课表 ›</div>
       </div>
@@ -137,26 +202,24 @@ function render() {
   `;
 
   // Events
-  document.getElementById('course-search').oninput = (e) => { keyword = e.target.value; render(); };
-  container.querySelectorAll('[data-list]').forEach(el => { el.onclick = () => { listFilter = el.dataset.list; render(); }; });
-  container.querySelectorAll('[data-sem]').forEach(el => { el.onclick = () => { semFilter = el.dataset.sem; render(); }; });
-  container.querySelectorAll('[data-toggle]').forEach(el => {
-    el.onclick = (e) => {
-      e.stopPropagation();
-      const code = el.dataset.toggle;
-      if (store.isSelected(code)) unenrollCourse(code, render);
-      else enrollCourse(code, render);
+  document.getElementById('course-search').oninput = (e) => { keyword = e.target.value; renderList(); };
+  container.querySelectorAll('[data-list]').forEach(el => { el.onclick = () => { listFilter = el.dataset.list; creditFilter = null; render(); }; });
+  container.querySelectorAll('[data-sem]').forEach(el => { el.onclick = () => { semFilter = el.dataset.sem; creditFilter = null; render(); }; });
+  container.querySelectorAll('[data-credit]').forEach(el => {
+    el.onclick = () => {
+      const k = el.dataset.credit;
+      creditFilter = creditFilter === k ? null : k;
+      if (creditFilter) window.scrollTo(0, 0);
+      render();
     };
-  });
-  container.querySelectorAll('.course-card').forEach(el => {
-    el.onclick = () => navigate(`/course-detail?code=${el.dataset.code}`);
   });
   const goSched = document.getElementById('go-schedule');
   if (goSched) goSched.onclick = () => navigate('/schedule');
 
+  renderList();
   renderTabbar();
-  const disc=document.createElement('div');
-  disc.innerHTML='    <div style="background:#fafbfc;border-top:1px solid #e8eaee;padding:12px 16px;margin-top:16px;font-size:10px;color:#8a8f99;line-height:1.7;text-align:center">\\n      📋 所有信息均来自 2026.8.4 的 HKU 官方数据。本站仅作为公益开放工具。使用时如有出入请登录官方系统并以官方最新公布信息为准。\\n    </div>';
+  const disc = document.createElement('div');
+  disc.innerHTML = '<div style="background:#fafbfc;border-top:1px solid #e8eaee;padding:12px 16px;margin-top:16px;font-size:10px;color:#8a8f99;line-height:1.7;text-align:center">📋 所有信息均来自 2026.8.4 的 HKU 官方数据。本站仅作为公益开放工具。使用时如有出入请登录官方系统并以官方最新公布信息为准。</div>';
   container.appendChild(disc);
 }
 
