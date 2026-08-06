@@ -1,4 +1,4 @@
-import { TYPE_META } from '../data/calendar.js';
+import { TYPE_META, EVENTS } from '../data/calendar.js';
 import { COURSES, DEGREE_RULES } from '../data/courses.js';
 import { upcomingEvents, getSemesterWeek, todayStr, daysUntil } from '../utils/date.js';
 import { navigate } from '../router.js';
@@ -24,9 +24,18 @@ export default function homePage() {
     dateText: ev.endDate ? `${ev.date} 至 ${ev.endDate}` : ev.date
   }));
 
-  const heroWeek = weekInfo
+  const fallbackHero = weekInfo
     ? `${weekInfo.name} · 第 ${weekInfo.week} 周`
     : (ups.length ? `距「${ups[0].title}」还有 ${ups[0].days} 天` : '假期中,好好充电');
+
+  // 选课结束倒计时:取校历中「硕士课程选课时间(Course Selection)」的结束日期
+  const csEvent = EVENTS.find(ev => ev.type === 'adddrop' && ev.title.indexOf('Course Selection') >= 0);
+  const csLeft = csEvent ? daysUntil(csEvent.endDate || csEvent.date) : null;
+  const heroWeek = csLeft !== null && csLeft > 0
+    ? `距「硕士课程选课时间(Course Selection)结束」还有 ${csLeft} 天`
+    : csLeft === 0
+      ? '今天是「硕士课程选课时间(Course Selection)」最后一天,抓紧选课'
+      : fallbackHero;
 
   container.innerHTML = `
     <div class="hero" style="background:linear-gradient(135deg,#00573f,#0a7a56);border-radius:0 0 16px 16px;padding:24px 16px 20px;color:#fff">
@@ -90,7 +99,7 @@ export default function homePage() {
   });
 
   renderTabbar();
-  const disc=document.createElement('div');
-  disc.innerHTML='    <div style="background:#fafbfc;border-top:1px solid #e8eaee;padding:12px 16px;margin-top:16px;font-size:10px;color:#8a8f99;line-height:1.7;text-align:center">\\n      📋 所有信息均来自 2026.8.4 的 HKU 官方数据。本站仅作为公益开放工具。使用时如有出入请登录官方系统并以官方最新公布信息为准。\\n    </div>';
+  const disc = document.createElement('div');
+  disc.innerHTML = '<div style="background:#fafbfc;border-top:1px solid #e8eaee;padding:12px 16px;margin-top:16px;font-size:10px;color:#8a8f99;line-height:1.7;text-align:center">📋 所有信息均来自 2026.8.4 的 HKU 官方数据。本站仅作为公益开放工具。使用时如有出入请登录官方系统并以官方最新公布信息为准。</div>';
   container.appendChild(disc);
 }
