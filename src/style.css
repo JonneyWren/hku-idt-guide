@@ -248,4 +248,4 @@ html, body {
 /* ===== Page-specific: will be imported per page ===== */
 
 /* 温馨提示横幅 */
-.warm-notice{background:#fff8ec;border-top:1px solid #f0e2c4;border-bottom:1px solid #f0e2c4;padding:10px 16px;font-size:11px;line-height:1.8;color:#7a6a4f;text-align:justify}.warm-notice:last-of-type{margin-bottom:130px}
+.warm-notice{background:#fff8ec;border-top:1px solid #f0e2c4;border-bottom:1px solid #f0e2c4;padding:10px 16px;font-size:11px;line-height:1.8;color:#7a6a4f;text-align:justify}.warm-notice:last-of-type{margin-bottom:130px}.warm-notice:first-of-type{margin-top:var(--nav-height)}
