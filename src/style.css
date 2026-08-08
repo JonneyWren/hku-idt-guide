@@ -45,7 +45,7 @@ html, body {
 
 .view-badge {
   position: absolute;
-  right: 12px;
+  left: 12px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 10px;
@@ -246,3 +246,15 @@ html, body {
 .star.big { font-size: 24px; }
 
 /* ===== Page-specific: will be imported per page ===== */
+
+/* 温馨提示横幅 */
+
+
+/* ===== 须知 Notice 按钮与气泡 ===== */
+.notice-btn{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.38);color:#fff;font-size:11px;font-weight:500;padding:4px 10px;border-radius:12px;cursor:pointer;line-height:1;white-space:nowrap;z-index:2}
+.notice-btn:hover,.notice-btn.active{background:rgba(255,255,255,.3)}
+.notice-pop{position:fixed;top:calc(var(--nav-height) + 8px);right:10px;z-index:200;width:min(300px,calc(100vw - 20px));background:#fff;border:1px solid #e2e5ea;border-radius:10px;box-shadow:0 6px 24px rgba(0,0,0,.16)}
+.notice-pop-head{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-bottom:1px solid #eef0f3;font-size:12px;font-weight:600;color:#333}
+.notice-pop-head button{border:none;background:none;font-size:12px;color:#8a8f99;cursor:pointer;padding:2px 4px}
+.notice-pop-body{padding:12px;font-size:12px;line-height:1.9;color:#5b5f66}
+.notice-pop-body div+div{margin-top:4px}
