@@ -31,6 +31,7 @@ export function start() {
   const render = () => {
     const path = currentPath();
     const handler = routes[path];
+    document.title = 'HKU IDT 学习指南'; // 复位标题(课程详情页会随后自行覆盖)
     if (currentCleanup) { currentCleanup(); currentCleanup = null; }
     if (handler) {
       currentCleanup = handler() || null;
