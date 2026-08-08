@@ -6,22 +6,25 @@
   <meta name="theme-color" content="#00573F" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <title>HKU IDT 学习指南</title>
-  <script type="module" crossorigin src="/hku-idt-guide/assets/index-nYOiREOP.js"></script>
-  <link rel="stylesheet" crossorigin href="/hku-idt-guide/assets/index-BodTGLkr.css">
+  <title>HKU IDT 学习指南</title>
+  <script type="module" crossorigin src="/hku-idt-guide/assets/index-BKNNVpZL.js"></script>
+  <link rel="stylesheet" crossorigin href="/hku-idt-guide/assets/index-CY1tN0b-.css">
 </head>
 <body>
   <div id="app">
     <header class="nav-bar">
       <span class="nav-title">HKU IDT 学习指南</span>
       <span id="view-badge" class="view-badge"></span>
+      <button id="notice-btn" class="notice-btn" type="button">须知 - Notice</button>
     </header>
-        <div class="warm-notice">本工具系26级IDTer为方便选课与信息查询而自建的非官方平台，完全开源，永久免费。使用前及使用过程中，请以香港大学工程学院公布的最新权威信息为准。经公共渠道获知本网站的同学，建议同时向信息转发人申请入群（以应对设计者间歇性怠于更新的情况），以便第一时间掌握课程变动及网站使用要领。因依赖本站信息而产生的任何偏差或损失，设计者不承担相关责任。</div>
+    <div id="notice-pop" class="notice-pop" hidden>
+      <div class="notice-pop-head"><span>须知 - Notice</span><button id="notice-close" type="button">✕</button></div>
+      <div class="notice-pop-body"><div>本工具系26级IDTer为方便选课与信息查询而自建的非官方平台，完全开源，永久免费。使用前及使用过程中，请以香港大学工程学院公布的最新权威信息为准。经公共渠道获知本网站的同学，建议同时向信息转发人申请入群（以应对设计者间歇性怠于更新的情况），以便第一时间掌握课程变动及网站使用要领。因依赖本站信息而产生的任何偏差或损失，设计者不承担相关责任。</div></div>
+    </div>
     <main id="page-container"></main>
-    <div class="warm-notice">本工具系26级IDTer为方便选课与信息查询而自建的非官方平台，完全开源，永久免费。使用前及使用过程中，请以香港大学工程学院公布的最新权威信息为准。经公共渠道获知本网站的同学，建议同时向信息转发人申请入群（以应对设计者间歇性怠于更新的情况），以便第一时间掌握课程变动及网站使用要领。因依赖本站信息而产生的任何偏差或损失，设计者不承担相关责任。</div>
     <nav id="tabbar" class="tabbar"></nav>
   </div>
   <div id="toast-container"></div>
-  <div id="modal-container"></div>
+  <div id="modal-container"></div>
 </body>
 </html>
