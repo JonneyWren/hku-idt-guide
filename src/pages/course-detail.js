@@ -83,13 +83,7 @@ function render(code) {
       </div>
       <div class="hero-btn ${selected ? 'selected' : ''}" id="toggle-select">${selected ? '已加入我的选课 ✓' : '+ 加入我的选课'}</div>
     </div>
-    <div class="card">
-      <div class="card-title">课程简介</div>
-      <div style="font-size:12px;color:#5b5f66;line-height:1.8">${course.desc || NO_DESC_TEXT}</div>
-      ${course.prereq ? `<div style="margin-top:8px;font-size:11px"><span style="color:#00573f;font-weight:600">先修要求</span> ${course.prereq}</div>` : ''}
-      ${course.exclusive ? `<div style="margin-top:4px;font-size:11px"><span style="color:#c0392b;font-weight:600">互斥课程</span> ${course.exclusive}</div>` : ''}
-      ${course.zhOfficial ? '' : '<div style="margin-top:8px;font-size:10px;color:#8a8f99">中文课名为本站译名（非官方），选课与成绩单请以英文原名为准。</div>'}
-    </div>
+    <div style="background:#fff;border-radius:12px;margin:12px 16px 0;padding:14px 16px;font-size:13px;font-weight:700;color:#8a8f99;line-height:1.4;box-shadow:0 2px 8px rgba(0,45,32,0.04)">· 课程信息中标 "TBC" 处为HKU未发布的待定项<br><span style="font-size:15px;font-weight:800;color:#8a8f99">· TBC = To Be Confirmed</span><br>· 如使用过程中发现timetable作出相应更新，烦请用户在群内告知开发人维护处理</div>
     ${sections.length ? `
     <div class="section-title">2026-27 第一学期开课安排(官方课表)</div>
     <div class="card">
@@ -166,7 +160,7 @@ function render(code) {
 
   renderTabbar();
   const disc=document.createElement('div');
-  disc.innerHTML='    <div style="background:#fafbfc;border-top:1px solid #e8eaee;padding:12px 16px;margin-top:16px;font-size:10px;color:#8a8f99;line-height:1.7;text-align:center">\\n      📋 所有信息均来自 2026.8.4 的 HKU 官方数据。本站仅作为公益开放工具。使用时如有出入请登录官方系统并以官方最新公布信息为准。\\n    </div>';
+  disc.innerHTML='    <div style="background:#fafbfc;border-top:1px solid #e8eaee;padding:12px 16px;margin-top:16px;font-size:10px;color:#8a8f99;line-height:1.7;text-align:center">\\n      感谢使用<br>Thank you for using\\n    </div>';
   container.appendChild(disc);
 }
 

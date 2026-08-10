@@ -100,6 +100,6 @@ export default function homePage() {
 
   renderTabbar();
   const disc = document.createElement('div');
-  disc.innerHTML = '<div style="background:#fafbfc;border-top:1px solid #e8eaee;padding:12px 16px;margin-top:16px;font-size:10px;color:#8a8f99;line-height:1.7;text-align:center">📋 所有信息均来自 2026.8.4 的 HKU 官方数据。本站仅作为公益开放工具。使用时如有出入请登录官方系统并以官方最新公布信息为准。</div>';
+  disc.innerHTML = '<div style="background:#fafbfc;border-top:1px solid #e8eaee;padding:12px 16px;margin-top:16px;font-size:10px;color:#8a8f99;line-height:1.7;text-align:center">感谢使用<br>Thank you for using</div>';
   container.appendChild(disc);
 }
