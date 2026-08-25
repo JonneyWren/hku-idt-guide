@@ -182,6 +182,14 @@ function render() {
         <div class="tt-dl-zh">下载第一学期课程时间表（共 27 页）</div>
       </a>
     </div>
+    <div class="tt-card">
+      <div class="tt-title">IDT可选CDS课程名目将在选课系统开启后再次更新，敬请期待</div>
+      <div class="tt-note">2026-2027 semester 1 time-table for CDS courses (25 August 2026)</div>
+      <a class="tt-dl" href="${base}2026-Sem1-CDS.pdf" download="2026-Sem1-CDS.pdf">
+        <div class="tt-dl-en">⭳ Sem 1 Time-table for CDS Courses (25 Aug 2026)</div>
+        <div class="tt-dl-zh">下载 CDS 课程第一学期时间表（2026年8月25日更新）</div>
+      </a>
+    </div>
     <div class="search-bar"><input class="search-input" id="course-search" placeholder="搜索课程代码 / 中英文名称" value="${keyword}" /></div>
     <div class="tabs">${listTabs.map(t => `<span class="ftab ${listFilter === t.key ? 'active' : ''}" data-list="${t.key}">${t.label}</span>`).join('')}</div>
     <div class="tabs">${semTabs.map(t => `<span class="ftab ${semFilter === t.key ? 'active' : ''}" data-sem="${t.key}">${t.label}</span>`).join('')}</div>

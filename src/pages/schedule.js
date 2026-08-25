@@ -96,6 +96,7 @@ function render() {
       </div>
     </div>
     <div class="muted" style="text-align:center;padding:10px 16px">点击课程块可删除时段;「导出日历」生成 .ics 文件可导入任意日历应用</div>
+    <div style="font-size:11px;color:#8a8f99;line-height:1.6;text-align:center;padding:0 16px 12px">本站为静态页面，课程数据随网站更新发布。日常使用时请刷新页面以获取最新版本；如官方 timetable 有调整，请在课表中删除相关课程时段并重新添加，以同步最新上课时间。</div>
     ${showAddModal ? `
       <div class="modal-mask" id="add-mask">
         <div class="modal" style="padding:20px">
