@@ -174,7 +174,7 @@ function render() {
       .tt-dl-zh{font-size:11px;opacity:0.85;margin-top:2px}
     </style>
     <div class="tt-card">
-      <div class="tt-title">请时刻关注选课系统与院方邮件通知</div>
+      <div class="tt-title">本站最近更新时间：8.31日 11:00 · 请时刻关注选课系统与院方邮件通知</div>
       <div class="tt-note">Instructor information provided herein (mainly for UG courses) are for reference only and subject to changes. Students should consult the offering department(s) concerned for the latest update.</div>
       <div class="tt-note-zh">本站课程与排课数据取自以下官方时间表文件。文件所载教师信息仅供参考，可能随时调整；请以开课院系发布的最新信息为准。</div>
       <a class="tt-dl" href="${base}MSc-Eng-Timetable-2026-27-Sem1.pdf" download="MSc(Eng) Class Timetable 2026-27 Sem1.pdf">
