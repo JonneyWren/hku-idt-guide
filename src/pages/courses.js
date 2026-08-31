@@ -44,12 +44,16 @@ function filteredCourses() {
       .map(c => toView(c, selection, ratings));
   }
   const kw = keyword.trim().toLowerCase();
-  return COURSES.filter(c => {
+  const base = COURSES.filter(c => {
     if (listFilter !== 'all' && c.list !== listFilter) return false;
     if (semFilter !== 'all' && c.semester !== '1&2' && c.semester !== 'full' && c.semester !== semFilter) return false;
-    if (kw) { const hay = (c.code + c.title + c.titleZh).toLowerCase(); if (hay.indexOf(kw) < 0) return false; }
     return true;
-  }).map(c => toView(c, selection, ratings));
+  });
+  if (!kw) return base.map(c => toView(c, selection, ratings));
+  // 课程代码前缀优先：搜 COMP 只出 COMP 系列；无前缀命中时回退全文（代码/中英文名）检索
+  const codeHits = base.filter(c => c.code.toLowerCase().startsWith(kw));
+  const hits = codeHits.length ? codeHits : base.filter(c => (c.code + c.title + c.titleZh).toLowerCase().indexOf(kw) >= 0);
+  return hits.map(c => toView(c, selection, ratings));
 }
 
 function courseCard(c) {
@@ -170,24 +174,17 @@ function render() {
       .tt-dl-zh{font-size:11px;opacity:0.85;margin-top:2px}
     </style>
     <div class="tt-card">
-      <div class="tt-title">官方文件<span class="tt-title-en">Official Documents (2026-27 Semester 1)</span></div>
+      <div class="tt-title">请时刻关注选课系统与院方邮件通知</div>
       <div class="tt-note">Instructor information provided herein (mainly for UG courses) are for reference only and subject to changes. Students should consult the offering department(s) concerned for the latest update.</div>
-      <div class="tt-note-zh">本站课程与排课数据全部取自以下两份官方文件（2026-27 第一学期）。文件所载教师信息仅供参考，可能随时调整；请以开课院系发布的最新信息为准。</div>
-      <a class="tt-dl" href="${base}MSc-Eng-Course-List-2026-27-Sem1.pdf" download="MSc(Eng) & MSc Course Enrolment List 2026-27 Sem1.pdf">
-        <div class="tt-dl-en">⭳ Course Enrolment List (2026-27 Sem 1)</div>
-        <div class="tt-dl-zh">下载第一学期选课课程清单（共 109 门）</div>
+      <div class="tt-note-zh">本站课程与排课数据取自以下官方时间表文件。文件所载教师信息仅供参考，可能随时调整；请以开课院系发布的最新信息为准。</div>
+      <a class="tt-dl" href="${base}MSc-Eng-Timetable-2026-27-Sem1.pdf" download="MSc(Eng) Class Timetable 2026-27 Sem1.pdf">
+        <div class="tt-dl-en">⭳ MSc(Eng) Class Timetable (2026-27 Sem 1, 28 Aug 2026)</div>
+        <div class="tt-dl-zh">下载 MSc(Eng) 第一学期课程时间表（共 30 页，2026年8月28日更新）</div>
       </a>
-      <a class="tt-dl alt" href="${base}MSc-Eng-Timetable-2026-27-Sem1.pdf" download="MSc(Eng) Class Timetable 2026-27 Sem1.pdf">
-        <div class="tt-dl-en">⭳ MSc(Eng) Class Timetable (2026-27 Sem 1)</div>
-        <div class="tt-dl-zh">下载第一学期课程时间表（共 27 页）</div>
-      </a>
-    </div>
-    <div class="tt-card">
-      <div class="tt-title">IDT可选CDS课程名目将在选课系统开启后再次更新，敬请期待</div>
-      <div class="tt-note">2026-2027 semester 1 time-table for CDS courses (25 August 2026)</div>
-      <a class="tt-dl" href="${base}2026-Sem1-CDS.pdf" download="2026-Sem1-CDS.pdf">
-        <div class="tt-dl-en">⭳ Sem 1 Time-table for CDS Courses (25 Aug 2026)</div>
-        <div class="tt-dl-zh">下载 CDS 课程第一学期时间表（2026年8月25日更新）</div>
+      <div class="tt-note-zh" style="margin-top:8px">CDS 课表 8 月 28 日已更新：新表已列出 IDT 可选课程名目，本站同步新增 4 门 IDT 专属 List B 课程（COMP7103 / COMP7506 / COMP7802 / COMP7906），选课须经 CDS 学院审批。</div>
+      <a class="tt-dl alt" href="${base}2026-Sem1-CDS.pdf" download="2026-Sem1-CDS.pdf">
+        <div class="tt-dl-en">⭳ Sem 1 Time-table for CDS Courses (28 Aug 2026)</div>
+        <div class="tt-dl-zh">下载 CDS 课程第一学期时间表（2026年8月28日更新）</div>
       </a>
     </div>
     <div class="search-bar"><input class="search-input" id="course-search" placeholder="搜索课程代码 / 中英文名称" value="${keyword}" /></div>

@@ -1,8 +1,12 @@
 // 课程数据 —— 完全以香港大学工程学院官方文件为准
 // 数据源 1:MSc(Eng) & MSc, Faculty of Engineering, HKU.pdf
 //          (2026-27 第一学期在线选课课程清单,共 109 门,含代码 / 分类 / 班次 / 学分 / 英文课名)
-// 数据源 2:2026-Sem1-Engg.pdf(2026-27 第一学期工学院全院课表,共 27 页)
-// 生成时间:2026-08-04
+// 数据源 2:2026-Sem1-Engg.pdf(2026-27 第一学期工学院全院课表,2026-08-28 版)
+// 数据源 3:2026-Sem1-CDS.pdf(CDS 学院 2026-27 第一学期课表,2026-08-28 版)
+// 生成时间:2026-08-04;2026-08-27 按官方选课系统快照补入跨系选修 4 门:
+//          COMP7309 / COMP7507 / COMP7508 / DASC7104(均为第一学期 A 班,6 学分)
+// 2026-08-28 按 CDS 学院课表补入 IDT 专属 List B (Discipline Elective) 课程 4 门:
+//          COMP7103 / COMP7506 / COMP7802 / COMP7906(均为第一学期 A 班,6 学分,名额需 CDS 审批)
 //
 // 字段说明:
 //   list: 'A' = List A 学科核心课, 'B' = List B 学科选修课,
@@ -347,7 +351,7 @@ export const COURSES = [
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
 
-  // ============ 跨系选修 Cross-departmental electives(69 门) ============
+  // ============ 跨系选修 Cross-departmental electives(73 门) ============
   {
     code: 'CIVL6004', title: 'Advanced soil mechanics', titleZh: '高等土力学', zhOfficial: false,
     list: 'XD', credits: 6, semester: '1', sections: ['A'],
@@ -409,6 +413,62 @@ export const COURSES = [
     list: 'XD', credits: 6, semester: '1', sections: ['A'],
     desc: '',
     note: '',
+    prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
+  },
+  {
+    code: 'COMP7309', title: 'Quantum computing and artificial intelligence', titleZh: '量子计算与人工智能', zhOfficial: false,
+    list: 'XD', credits: 6, semester: '1', sections: ['A'],
+    desc: '',
+    note: '官方选课系统(2026-08-27 查询)显示本课程第一轮在线选课已截止(Online enrolment is now closed);第二轮选课时间暂未通知,请时刻关注选课系统。',
+    prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
+  },
+  {
+    code: 'COMP7507', title: 'Visualization and visual analytics', titleZh: '可视化与视觉分析', zhOfficial: false,
+    list: 'XD', credits: 6, semester: '1', sections: ['A'],
+    desc: '',
+    note: '官方选课系统(2026-08-27 查询)显示本课程第一轮在线选课已截止(Online enrolment is now closed);第二轮选课时间暂未通知,请时刻关注选课系统。',
+    prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
+  },
+  {
+    code: 'COMP7508', title: 'Data-driven computer animation', titleZh: '数据驱动的计算机动画', zhOfficial: false,
+    list: 'XD', credits: 6, semester: '1', sections: ['A'],
+    desc: '',
+    note: '官方选课系统(2026-08-27 查询)显示本课程第一轮在线选课已截止(Online enrolment is now closed);第二轮选课时间暂未通知,请时刻关注选课系统。',
+    prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
+  },
+  {
+    code: 'DASC7104', title: 'Advanced database systems', titleZh: '高级数据库系统', zhOfficial: false,
+    list: 'XD', credits: 6, semester: '1', sections: ['A'],
+    desc: '',
+    note: '官方选课系统(2026-08-27 查询)显示本课程第一轮在线选课已截止(Online enrolment is now closed);第二轮选课时间暂未通知,请时刻关注选课系统。',
+    prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
+  },
+  {
+    code: 'COMP7103', title: 'Data mining', titleZh: '数据挖掘', zhOfficial: false,
+    list: 'B', credits: 6, semester: '1', sections: ['A'],
+    desc: '',
+    note: 'CDS 学院面向 MSc(Eng)(IDT) 学生开设,保留少量名额,选课须经计算与数据科学学院审批(官方课表 2026-08-28)。',
+    prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
+  },
+  {
+    code: 'COMP7506', title: 'Smart phone apps development', titleZh: '智能手机应用开发', zhOfficial: false,
+    list: 'B', credits: 6, semester: '1', sections: ['A'],
+    desc: '',
+    note: 'CDS 学院面向 MSc(Eng)(IDT) 学生开设,保留少量名额,选课须经计算与数据科学学院审批(官方课表 2026-08-28)。',
+    prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
+  },
+  {
+    code: 'COMP7802', title: 'Introduction to financial computing', titleZh: '金融计算导论', zhOfficial: false,
+    list: 'B', credits: 6, semester: '1', sections: ['A'],
+    desc: '',
+    note: 'CDS 学院面向 MSc(Eng)(IDT) 学生开设,保留少量名额,选课须经计算与数据科学学院审批(官方课表 2026-08-28)。',
+    prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
+  },
+  {
+    code: 'COMP7906', title: 'Introduction to cyber security', titleZh: '网络安全导论', zhOfficial: false,
+    list: 'B', credits: 6, semester: '1', sections: ['A'],
+    desc: '',
+    note: 'CDS 学院面向 MSc(Eng)(IDT) 学生开设,保留少量名额,选课须经计算与数据科学学院审批(官方课表 2026-08-28)。',
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
   {

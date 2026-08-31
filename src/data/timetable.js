@@ -1,5 +1,6 @@
 // 2026-27 第一学期开课安排
-// 来源:2026-Sem1-Engg.pdf(香港大学工程学院 2026-27 第一学期全院课表,共 27 页)
+// 来源:2026-Sem1-Engg.pdf(香港大学工程学院 2026-27 第一学期全院课表,2026-08-28 版)
+//       2026-Sem1-CDS.pdf(CDS 学院 2026-27 第一学期课表,2026-08-28 版,COMP/DASC 跨系选修)
 // 逐页坐标解析后按「课程代码 + 星期 + 时间 + 班次」去重;同一课程出现在多个专业页时取信息最完整的一份
 // term: 1 = 第一学期。第二学期排课待官方第二学期课表公布,本文件暂不收录
 // section: 课表标注的班次字母;留空表示官方课表未标注班次
@@ -56,14 +57,14 @@ export const TIMETABLE = {
     { term: 1, section: 'A', day: 'FRI', start: '15:00', end: '17:30', venue: 'MB201', instructor: 'Dr. Z. Ali', dateNote: '' }
   ],
   IDAT7220: [
-    { term: 1, section: 'A', day: 'WED', start: '19:00', end: '21:30', venue: 'TBC', instructor: 'Mr. Donn Gonda', dateNote: '' }
+    { term: 1, section: 'A', day: 'MON', start: '19:00', end: '21:30', venue: '31/F, HK Plaza', instructor: 'Mr. Donn Gonda', dateNote: '' }
   ],
   MECH6010: [
     { term: 1, section: 'A', day: 'TUE', start: '19:00', end: '21:30', venue: 'CYPP2', instructor: 'Prof. Yue Chen, Prof. Y. Lu', dateNote: '' }
   ],
   MECH6034: [
     { term: 1, section: '', day: 'TUE', start: '15:00', end: '17:30', venue: 'CYPP2', instructor: 'Prof. Y.H. Chen, Dr. C.K. Chan', dateNote: '' },
-    { term: 1, section: '', day: 'THU', start: '19:00', end: '21:30', venue: 'TBC', instructor: 'Prof. Y.H. Chen, Dr. C.K. Chan', dateNote: '' }
+    { term: 1, section: '', day: 'THU', start: '19:00', end: '21:30', venue: 'CYCP1', instructor: 'Prof. Y.H. Chen, Dr. C.K. Chan', dateNote: '' }
   ],
   MECH6046: [
     { term: 1, section: 'A', day: 'FRI', start: '17:00', end: '19:30', venue: '31/F, HK Plaza', instructor: 'Prof. Dong-Myeong Shin, Prof. Lizhi Xu', dateNote: '' }
@@ -73,7 +74,7 @@ export const TIMETABLE = {
   ],
   RECO7605: [
     { term: 1, section: '', day: 'TUE', start: '18:30', end: '21:30', venue: 'TBC', instructor: 'Dr. Jing Wang', dateNote: 'October 20, 2026' },
-    { term: 1, section: '', day: 'SAT', start: '10:00', end: '13:00', venue: 'TBC', instructor: 'Dr. Jing Wang', dateNote: 'October 3, 17, 31; November 7, 14, 21, 28' }
+    { term: 1, section: '', day: 'SAT', start: '10:00', end: '13:00', venue: 'TBC', instructor: 'Dr. Jing Wang', dateNote: 'October 17, 31; November 7, 14, 21, 28' }
   ],
   TDLL6024: [
     { term: 1, section: 'A', day: 'TUE', start: '14:00', end: '17:00', venue: 'Room 101, Runme Shaw Building', instructor: 'Mr Thomas Underwood', dateNote: '' },
@@ -84,7 +85,7 @@ export const TIMETABLE = {
     { term: 1, section: 'A', day: 'FRI', start: '18:30', end: '21:30', venue: 'Room 101, Runme Shaw Building', instructor: 'Mr. Donn Gonda', dateNote: '' }
   ],
   URBA6011: [
-    { term: 1, section: 'A', day: 'WED', start: '14:00', end: '16:00', venue: 'TBC', instructor: 'Prof. Yimeng Song', dateNote: '' }
+    { term: 1, section: 'A', day: 'WED', start: '14:00', end: '16:00', venue: 'KB720', instructor: 'Prof. Yimeng Song', dateNote: '' }
   ],
   LATX7513: [
     { term: 1, section: 'A', day: 'FRI', start: '16:00', end: '18:30', venue: 'CYCP1', instructor: 'Prof. Chuyu Wei, Prof. LX Huang, Prof. MX Huang, Prof. Shijun Guo, Dr. Ziqing Ma', dateNote: '' }
@@ -93,7 +94,7 @@ export const TIMETABLE = {
     { term: 1, section: 'A', day: 'TUE', start: '13:00', end: '15:30', venue: '31/F, HK Plaza', instructor: 'Prof. Joseph Chan (Business)', dateNote: '' }
   ],
   LATX7518: [
-    { term: 1, section: 'A', day: 'WED', start: '19:00', end: '21:30', venue: 'KK201', instructor: 'Prof. Yuanwei Liu (EEE)', dateNote: '' }
+    { term: 1, section: 'A', day: 'WED', start: '19:00', end: '21:30', venue: 'KK201', instructor: 'Prof. Yuanwei Liu (EEE), Dr. Zhaolin Wang (EEE)', dateNote: '' }
   ],
   MECH6019: [
     { term: 1, section: 'A', day: 'THU', start: '19:00', end: '21:30', venue: 'CYPP3', instructor: 'Prof. Y.C.D. Leung, Dr. Raymond Fong', dateNote: '' }
@@ -251,7 +252,7 @@ export const TIMETABLE = {
     { term: 1, section: 'A', day: 'WED', start: '13:00', end: '16:00', venue: 'Lecture room 1&2, MSc Student Commons, 8/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun', instructor: 'Dr Andrew HC Wu', dateNote: '' }
   ],
   ELEC6026: [
-    { term: 1, section: 'A', day: 'THU', start: '09:00', end: '12:00', venue: 'CPD-3.04', instructor: 'Prof SC Chan', dateNote: '' }
+    { term: 1, section: 'A', day: 'THU', start: '19:00', end: '22:00', venue: 'KB223', instructor: 'Prof SC Chan', dateNote: '' }
   ],
   ELEC6027: [
     { term: 1, section: 'A', day: 'WED', start: '19:00', end: '21:30', venue: 'CYCP1', instructor: 'Dr Albert TL Lee', dateNote: '' }
@@ -309,7 +310,7 @@ export const TIMETABLE = {
     { term: 1, section: 'A', day: 'TUE', start: '19:00', end: '21:30', venue: 'MB142', instructor: 'Dr Herman TW Ching', dateNote: '' }
   ],
   ELEC7403: [
-    { term: 1, section: 'A', day: 'SAT', start: '15:00', end: '18:00', venue: 'CPD3.15', instructor: 'Dr Jason Chow', dateNote: '' }
+    { term: 1, section: 'A', day: 'SAT', start: '15:00', end: '18:00', venue: 'CPD-3.15', instructor: 'Dr Jason Chow', dateNote: '' }
   ],
   ELEC7404: [
     { term: 1, section: 'A', day: 'THU', start: '19:00', end: '22:00', venue: 'KB132', instructor: 'Dr KM Leung', dateNote: '' }
@@ -330,7 +331,7 @@ export const TIMETABLE = {
     { term: 1, section: 'A', day: 'FRI', start: '19:00', end: '21:30', venue: 'MB217', instructor: 'Dr Match WL Ko', dateNote: '' }
   ],
   EMEE6007: [
-    { term: 1, section: 'A', day: 'TUE', start: '19:00', end: '21:30', venue: 'Lecture room 1&2, MSc Student Commons, 6/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun', instructor: 'Dr WWH Ching / Dr Raymond CL Fong', dateNote: '' }
+    { term: 1, section: 'A', day: 'TUE', start: '19:00', end: '21:30', venue: 'MWT7', instructor: 'Dr WWH Ching / Dr Raymond CL Fong', dateNote: '' }
   ],
   EMEE6011: [
     { term: 1, section: 'A', day: 'MON', start: '19:00', end: '21:30', venue: 'CPD-4.17', instructor: 'Prof Anthony HW Choi', dateNote: '' }
@@ -364,7 +365,33 @@ export const TIMETABLE = {
   ],
   MEBS7013: [
     { term: 1, section: 'A', day: 'FRI', start: '19:00', end: '22:00', venue: 'Lecture room 1, MSc Student Commons, 6/F, Pacific Plaza, 418 Des Voeux Road West, Sai Ying Pun', instructor: 'Dr MY Ng', dateNote: '' }
-  ]
+  ],
+  COMP7103: [
+    { term: 1, section: 'A', day: 'SAT', start: '14:00', end: '16:30', venue: 'MWT2', instructor: 'Prof. Ben Kao', dateNote: '5 September 2026, 12 September 2026, 19 September 2026, 3 October 2026, 10 October 2026, 17 October 2026, 31 October 2026, 7 November 2026, 14 November 2026, 21 November 2026, 28 November 2026' },
+    { term: 1, section: 'A', day: 'MON', start: '19:00', end: '21:30', venue: 'CPD-3.28', instructor: 'Prof. Ben Kao', dateNote: '12 October 2026' }
+  ],
+  COMP7309: [
+    { term: 1, section: 'A', day: 'WED', start: '19:00', end: '22:00', venue: 'MWT1', instructor: 'Dr. Daniel Ebler', dateNote: '2 September 2026, 9 September 2026, 16 September 2026, 23 September 2026, 30 September 2026, 7 October 2026, 21 October 2026, 28 October 2026, 4 November 2026, 11 November 2026' }
+  ],
+  COMP7506: [
+    { term: 1, section: 'A', day: 'THU', start: '19:00', end: '22:00', venue: 'CYPP2', instructor: 'Dr. TW Chim', dateNote: '3 September 2026, 10 September 2026, 17 September 2026, 24 September 2026, 8 October 2026, 22 October 2026, 29 October 2026, 5 November 2026, 12 November 2026, 19 November 2026' }
+  ],
+  COMP7507: [
+    { term: 1, section: 'A', day: 'SAT', start: '14:00', end: '17:00', venue: 'KB223', instructor: 'Dr. Loretta Choi', dateNote: '5 September 2026, 19 September 2026, 3 October 2026, 10 October 2026, 17 October 2026, 31 October 2026, 7 November 2026, 14 November 2026, 21 November 2026, 28 November 2026' }
+  ],
+  COMP7508: [
+    { term: 1, section: 'A', day: 'FRI', start: '19:00', end: '22:00', venue: 'MWT2', instructor: 'Prof. Taku Koruma', dateNote: '4 September 2026, 18 September 2026, 25 September 2026, 2 October 2026, 9 October 2026, 30 October 2026, 6 November 2026, 13 November 2026, 20 November 2026, 27 November 2026' }
+  ],
+  COMP7802: [
+    { term: 1, section: 'A', day: 'MON', start: '19:00', end: '22:00', venue: 'HW312', instructor: 'Dr. C.D. Shum', dateNote: '7 September 2026, 14 September 2026, 21 September 2026, 28 September 2026, 5 October 2026, 26 October 2026, 2 November 2026, 9 November 2026, 16 November 2026, 23 November 2026' }
+  ],
+  COMP7906: [
+    { term: 1, section: 'A', day: 'TUE', start: '19:00', end: '22:00', venue: 'MWT1', instructor: 'Dr. Russell Yiu', dateNote: '1 September 2026, 8 September 2026, 15 September 2026, 22 September 2026, 29 September 2026, 6 October 2026, 20 October 2026, 27 October 2026, 3 November 2026, 10 November 2026' }
+  ],
+  DASC7104: [
+    { term: 1, section: 'A', day: 'SAT', start: '14:00', end: '17:00', venue: 'CYCP1', instructor: 'Prof. Bogdan Cautis', dateNote: '17 October 2026, 31 October 2026, 7 November 2026, 14 November 2026, 21 November 2026' },
+    { term: 1, section: 'A', day: 'SUN', start: '14:00', end: '17:00', venue: 'CYPP4', instructor: 'Prof. Bogdan Cautis', dateNote: '18 October 2026, 1 November 2026, 8 November 2026, 15 November 2026, 22 November 2026' }
+  ],
 };
 
 const DAY_ZH = { MON: '周一', TUE: '周二', WED: '周三', THU: '周四', FRI: '周五', SAT: '周六', SUN: '周日' };

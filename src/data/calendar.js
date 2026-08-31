@@ -1,6 +1,7 @@
 // HKU 2026-27 学年校历
 export const EVENTS = [
   { date: '2026-08-05', endDate: '2026-08-15', title: '硕士课程选课时间(Course Selection)', type: 'adddrop', tentative: false },
+  { date: '2026-08-27', endDate: '', title: '第一轮选课已截止 · 第二轮选课时间待定(请时刻关注选课系统)', type: 'adddrop', tentative: true },
   { date: '2026-09-01', endDate: '', title: '第一学期开学 · 首日授课', type: 'teaching', tentative: false },
   { date: '2026-09-01', endDate: '2026-09-14', title: '第一学期加退选(Add/Drop)', type: 'adddrop', tentative: false },
   { date: '2026-10-01', endDate: '', title: '国庆节公众假期', type: 'holiday', tentative: false },
