@@ -66,12 +66,12 @@ export default function homePage() {
     <div class="card" style="border-left:4px solid #e6a23c">
       <div class="card-title">课程数据说明(2026-27 第一学期)</div>
       <div style="font-size:12px;color:#5b5f66;line-height:1.8">
-        · 课程库与排课全部取自两份官方文件:MSc(Eng) & MSc 选课课程清单(第一学期共 ${sem1.length} 门)与全院第一学期课程时间表(27 页)<br>
-        · 第一学期清单分五类:List A 学科核心课 ${cnt('A')} 门、List B 学科选修课 ${cnt('B')} 门、跨课程选修 ${cnt('XC')} 门、跨系选修 ${cnt('XD')} 门、毕业论文 ${cnt('capstone')} 门<br>
+        · 课程库与排课全部取自两份官方文件:MSc(Eng) & MSc 选课课程清单(第一学期共 ${sem1.length} 门)与全院第一学期课程时间表(30 页)<br>
+        · 第一学期清单分五类:List A 学科核心课 ${cnt('A')} 门、List B 学科选修课 ${cnt('B')} 门、List C ${cnt('XC')} 门、List D ${cnt('XD')} 门、毕业论文 ${cnt('capstone')} 门<br>
         · 另保留 ${sem2Count} 门本专业课程(第二学期 / 全年),其 List 归属与排课待官方第二学期文件公布后再核对<br>
         · 总学分要求统一为 72 学分(课程 48 + 毕业论文 24)
       </div>
-      <div style="margin-top:10px;text-align:center"><span class="btn-plain" id="go-courses-2">查看课程库 / 下载官方 PDF</span></div>
+      <div style="margin-top:10px;text-align:center"><span class="btn-plain" id="go-courses-2">查看课程库</span></div>
     </div>
     <div class="section-title">近期关键节点</div>
     ${ups.map(ev => `

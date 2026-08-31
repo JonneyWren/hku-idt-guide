@@ -10,8 +10,8 @@
 //
 // 字段说明:
 //   list: 'A' = List A 学科核心课, 'B' = List B 学科选修课,
-//         'XC' = 跨课程选修(Cross-curriculum electives),
-//         'XD' = 跨系选修(Cross-departmental electives), 'capstone' = 毕业论文 / 毕业项目
+//         'XC' = List C 跨课程选修 (Cross-curriculum electives),
+//         'XD' = List D 跨系选修 (Cross-departmental electives), 'capstone' = 毕业论文 / 毕业项目
 //   semester: '1' = 第一学期(官方清单课程一律为第一学期) | '2' = 第二学期 | 'full' = 全年
 //   sections: 官方选课清单列出的班次
 //   zhOfficial: false = 中文名为本站翻译(非官方译名)
@@ -22,8 +22,8 @@
 export const LIST_META = {
   A: { label: 'List A 核心', full: 'List A 学科核心课', color: '#00573f' },
   B: { label: 'List B 选修', full: 'List B 学科选修课', color: '#31597f' },
-  XC: { label: '跨课程选修', full: '跨课程选修 Cross-curriculum electives', color: '#6b5b95' },
-  XD: { label: '跨系选修', full: '跨系选修 Cross-departmental electives', color: '#8a6d3b' },
+  XC: { label: 'List C', full: 'List C 跨课程选修 (Cross-curriculum electives)', color: '#6b5b95' },
+  XD: { label: 'List D', full: 'List D 跨系选修 (Cross-departmental electives)', color: '#8a6d3b' },
   capstone: { label: '毕业论文', full: '毕业论文 / 毕业项目', color: '#9c4f4f' }
 };
 

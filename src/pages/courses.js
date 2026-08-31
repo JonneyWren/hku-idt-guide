@@ -15,8 +15,8 @@ const TAG_CLASS = { A: '', B: 'tag-gray', XC: 'tag-xc', XD: 'tag-xd', capstone: 
 const countOf = (k) => COURSES.filter((c) => c.list === k).length;
 
 const DAYS = [
-  { key: 'MON', label: '周一' }, { key: 'TUE', label: '周二' }, { key: 'WED', label: '周三' },
-  { key: 'THU', label: '周四' }, { key: 'FRI', label: '周五' }, { key: 'SAT', label: '周六' }, { key: 'SUN', label: '周日' }
+  { key: 'MON', label: 'Mon.' }, { key: 'TUE', label: 'Tue.' }, { key: 'WED', label: 'Wed.' },
+  { key: 'THU', label: 'Thu.' }, { key: 'FRI', label: 'Fri.' }, { key: 'SAT', label: 'Sat.' }, { key: 'SUN', label: 'Sun.' }
 ];
 // 各星期有排课的课程代码集合(星期搜索用)
 const DAY_CODES = DAYS.reduce((m, d) => {
@@ -141,13 +141,12 @@ function render() {
     { key: 'all', label: `全部 ${COURSES.length}` },
     { key: 'A', label: `List A 核心 ${countOf('A')}` },
     { key: 'B', label: `List B 选修 ${countOf('B')}` },
-    { key: 'XC', label: `跨课程选修 ${countOf('XC')}` },
-    { key: 'XD', label: `跨系选修 ${countOf('XD')}` },
+    { key: 'XC', label: `List C ${countOf('XC')}` },
+    { key: 'XD', label: `List D ${countOf('XD')}` },
     { key: 'capstone', label: `毕业论文 ${countOf('capstone')}` }
   ];
   const semTabs = [{ key: 'all', label: '全部学期' }, { key: '1', label: '第一学期' }, { key: '2', label: '第二学期' }];
   const rules = DEGREE_RULES;
-  const base = import.meta.env.BASE_URL;
 
   container.innerHTML = `
     <style>
@@ -177,30 +176,7 @@ function render() {
       .cc.fixed .cc-num{color:#6b7280}
       .cc-label{font-size:10px;color:#8a8f99}
       .credit-action{font-size:13px;color:#00573f;font-weight:600;padding:8px 0 8px 12px;cursor:pointer}
-      .tt-card{margin:12px 16px 0;background:#fff;border-radius:12px;padding:14px 16px;box-shadow:0 2px 8px rgba(0,45,32,0.06)}
-      .tt-title{font-size:14px;font-weight:700;color:#14312a}
-      .tt-title-en{font-size:11px;color:#8a8f99;font-weight:400;margin-left:6px}
-      .tt-note{font-size:11px;color:#6b7280;line-height:1.6;margin-top:6px}
-      .tt-note-zh{font-size:11px;color:#8a8f99;line-height:1.6;margin-top:4px}
-      .tt-dl{display:block;margin-top:10px;text-align:center;background:#00573f;color:#fff;border-radius:10px;padding:9px 12px;text-decoration:none}
-      .tt-dl.alt{background:#31597f}
-      .tt-dl-en{font-size:12px;font-weight:600}
-      .tt-dl-zh{font-size:11px;opacity:0.85;margin-top:2px}
     </style>
-    <div class="tt-card">
-      <div class="tt-title">本站最近更新时间：8.31日 11:00 · 请时刻关注选课系统与院方邮件通知</div>
-      <div class="tt-note">Instructor information provided herein (mainly for UG courses) are for reference only and subject to changes. Students should consult the offering department(s) concerned for the latest update.</div>
-      <div class="tt-note-zh">本站课程与排课数据取自以下官方时间表文件。文件所载教师信息仅供参考，可能随时调整；请以开课院系发布的最新信息为准。</div>
-      <a class="tt-dl" href="${base}MSc-Eng-Timetable-2026-27-Sem1.pdf" download="MSc(Eng) Class Timetable 2026-27 Sem1.pdf">
-        <div class="tt-dl-en">⭳ MSc(Eng) Class Timetable (2026-27 Sem 1, 28 Aug 2026)</div>
-        <div class="tt-dl-zh">下载 MSc(Eng) 第一学期课程时间表（共 30 页，2026年8月28日更新）</div>
-      </a>
-      <div class="tt-note-zh" style="margin-top:8px">CDS 课表 8 月 28 日已更新：新表已列出 IDT 可选课程名目，本站同步新增 4 门 IDT 专属 List B 课程（COMP7103 / COMP7506 / COMP7802 / COMP7906），选课须经 CDS 学院审批。</div>
-      <a class="tt-dl alt" href="${base}2026-Sem1-CDS.pdf" download="2026-Sem1-CDS.pdf">
-        <div class="tt-dl-en">⭳ Sem 1 Time-table for CDS Courses (28 Aug 2026)</div>
-        <div class="tt-dl-zh">下载 CDS 课程第一学期时间表（2026年8月28日更新）</div>
-      </a>
-    </div>
     <div class="search-bar"><input class="search-input" id="course-search" placeholder="搜索课程代码 / 中英文名称" value="${keyword}" /></div>
     <div class="tabs">${listTabs.map(t => `<span class="ftab ${listFilter === t.key ? 'active' : ''}" data-list="${t.key}">${t.label}</span>`).join('')}</div>
     <div class="tabs">${semTabs.map(t => `<span class="ftab ${semFilter === t.key ? 'active' : ''}" data-sem="${t.key}">${t.label}</span>`).join('')}</div>
