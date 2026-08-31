@@ -4,6 +4,9 @@ import { upcomingEvents, getSemesterWeek, todayStr, daysUntil } from '../utils/d
 import { navigate } from '../router.js';
 import { renderTabbar } from '../components/tabbar.js';
 
+// 首页说明卡折叠状态(默认收起)
+const foldState = { credits: false, data: false };
+
 export default function homePage() {
   const container = document.getElementById('page-container');
   const t = todayStr();
@@ -49,8 +52,12 @@ export default function homePage() {
       <div class="entry-card" data-path="/courses" style="background:#6b5b95"><div class="ec-name">选课评价</div><div class="ec-sub">${sem1.length} 门官方课程</div></div>
       <div class="entry-card" data-path="/schedule" style="background:#8a6d3b"><div class="ec-name">每周课表</div><div class="ec-sub">同步手机日历</div></div>
     </div>
-    <div class="card">
-      <div class="card-title">毕业学分结构(26 级起统一 72 学分)</div>
+    <div class="card" style="padding:0;overflow:hidden">
+      <div class="fold-bar" data-fold="credits">
+        <div class="card-title" style="margin:0">毕业学分结构(26 级起统一 72 学分)</div>
+        <span class="fold-arrow ${foldState.credits ? 'open' : ''}">›</span>
+      </div>
+      <div class="fold-body ${foldState.credits ? 'open' : ''}">
       <div style="display:flex;align-items:baseline;margin-bottom:12px">
         <span style="font-size:28px;font-weight:700;color:#00573f;margin-right:8px">${rules.total}</span>
         <span style="font-size:12px;color:#6b7280">学分 = 课程 ${rules.courseCredits} + 毕业论文 ${rules.dissertation}</span>
@@ -62,9 +69,14 @@ export default function homePage() {
         <div style="flex:1;text-align:center"><div style="font-size:15px;font-weight:600;color:#00573f">${rules.dissertation}</div><div style="font-size:10px;color:#6b7280;margin-top:2px">毕业论文</div></div>
       </div>
       <div style="margin-top:12px;text-align:center"><span class="btn-plain" id="go-courses">去选课,自动算学分</span></div>
+      </div>
     </div>
-    <div class="card" style="border-left:4px solid #e6a23c">
-      <div class="card-title">课程数据说明(2026-27 第一学期)</div>
+    <div class="card" style="border-left:4px solid #e6a23c;padding:0;overflow:hidden">
+      <div class="fold-bar" data-fold="data">
+        <div class="card-title" style="margin:0">课程数据说明(2026-27 第一学期)</div>
+        <span class="fold-arrow ${foldState.data ? 'open' : ''}">›</span>
+      </div>
+      <div class="fold-body ${foldState.data ? 'open' : ''}">
       <div style="font-size:12px;color:#5b5f66;line-height:1.8">
         · 课程库与排课全部取自两份官方文件:MSc(Eng) & MSc 选课课程清单(第一学期共 ${sem1.length} 门)与全院第一学期课程时间表(30 页)<br>
         · 第一学期清单分五类:List A 学科核心课 ${cnt('A')} 门、List B 学科选修课 ${cnt('B')} 门、List C ${cnt('XC')} 门、List D ${cnt('XD')} 门、毕业论文 ${cnt('capstone')} 门<br>
@@ -72,6 +84,7 @@ export default function homePage() {
         · 总学分要求统一为 72 学分(课程 48 + 毕业论文 24)
       </div>
       <div style="margin-top:10px;text-align:center"><span class="btn-plain" id="go-courses-2">查看课程库</span></div>
+      </div>
     </div>
     <div class="section-title">近期关键节点</div>
     ${ups.map(ev => `
@@ -86,10 +99,13 @@ export default function homePage() {
 
   // Styles for entry cards
   const style = document.createElement('style');
-  style.textContent = `.entry-card{width:calc(50% - 12px);margin:4px 6px;border-radius:12px;padding:14px 12px;color:#fff;cursor:pointer}.ec-name{font-size:16px;font-weight:600}.ec-sub{font-size:11px;opacity:0.9;margin-top:4px}`;
+  style.textContent = `.entry-card{width:calc(50% - 12px);margin:4px 6px;border-radius:12px;padding:14px 12px;color:#fff;cursor:pointer}.ec-name{font-size:16px;font-weight:600}.ec-sub{font-size:11px;opacity:0.9;margin-top:4px}.fold-bar{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;cursor:pointer}.fold-arrow{color:#8a8f99;font-size:14px;transition:transform .2s;transform:rotate(90deg)}.fold-arrow.open{transform:rotate(-90deg)}.fold-body{display:none;padding:0 16px 14px}.fold-body.open{display:block}`;
   container.prepend(style);
 
   // Events
+  container.querySelectorAll('.fold-bar').forEach(el => {
+    el.onclick = () => { foldState[el.dataset.fold] = !foldState[el.dataset.fold]; homePage(); };
+  });
   container.querySelectorAll('.entry-card').forEach(el => {
     el.onclick = () => navigate(el.dataset.path);
   });
