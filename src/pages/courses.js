@@ -1,4 +1,5 @@
 import { COURSES, DEGREE_RULES, LIST_META, semesterText, isElective } from '../data/courses.js';
+import { TIMETABLE } from '../data/timetable.js';
 import * as store from '../utils/store.js';
 import { enrollCourse, unenrollCourse, timeSummary } from '../utils/enroll.js';
 import { navigate } from '../router.js';
@@ -8,9 +9,20 @@ let keyword = '';
 let listFilter = 'all';
 let semFilter = 'all';
 let creditFilter = null;
+let dayFilter = 'all';
 
 const TAG_CLASS = { A: '', B: 'tag-gray', XC: 'tag-xc', XD: 'tag-xd', capstone: 'tag-warn' };
 const countOf = (k) => COURSES.filter((c) => c.list === k).length;
+
+const DAYS = [
+  { key: 'MON', label: '周一' }, { key: 'TUE', label: '周二' }, { key: 'WED', label: '周三' },
+  { key: 'THU', label: '周四' }, { key: 'FRI', label: '周五' }, { key: 'SAT', label: '周六' }, { key: 'SUN', label: '周日' }
+];
+// 各星期有排课的课程代码集合(星期搜索用)
+const DAY_CODES = DAYS.reduce((m, d) => {
+  m[d.key] = COURSES.filter(cc => (TIMETABLE[cc.code] || []).some(s => s.day === d.key)).map(cc => cc.code);
+  return m;
+}, {});
 
 const CREDIT_META = {
   'A': 'List A',
@@ -47,6 +59,7 @@ function filteredCourses() {
   const base = COURSES.filter(c => {
     if (listFilter !== 'all' && c.list !== listFilter) return false;
     if (semFilter !== 'all' && c.semester !== '1&2' && c.semester !== 'full' && c.semester !== semFilter) return false;
+    if (dayFilter !== 'all' && DAY_CODES[dayFilter].indexOf(c.code) < 0) return false;
     return true;
   });
   if (!kw) return base.map(c => toView(c, selection, ratings));
@@ -143,6 +156,7 @@ function render() {
       .tabs{display:flex;padding:12px 16px 0;flex-wrap:wrap;gap:8px}
       .ftab{font-size:12px;color:#4b5563;background:#fff;border-radius:999px;padding:5px 14px;cursor:pointer}
       .ftab.active{background:#00573f;color:#fff;font-weight:600}
+      .day-n{font-size:10px;opacity:.65;margin-left:2px}
       .course-card{cursor:pointer}
       .course-code{font-size:14px;font-weight:700;color:#00573f;margin-right:8px}
       .course-title{font-size:15px;font-weight:600;color:#1f2430;margin-top:6px}
@@ -190,6 +204,7 @@ function render() {
     <div class="search-bar"><input class="search-input" id="course-search" placeholder="搜索课程代码 / 中英文名称" value="${keyword}" /></div>
     <div class="tabs">${listTabs.map(t => `<span class="ftab ${listFilter === t.key ? 'active' : ''}" data-list="${t.key}">${t.label}</span>`).join('')}</div>
     <div class="tabs">${semTabs.map(t => `<span class="ftab ${semFilter === t.key ? 'active' : ''}" data-sem="${t.key}">${t.label}</span>`).join('')}</div>
+    <div class="tabs"><span class="ftab ${dayFilter === 'all' ? 'active' : ''}" data-day="all">全部星期</span>${DAYS.map(d => `<span class="ftab ${dayFilter === d.key ? 'active' : ''}" data-day="${d.key}">${d.label}<span class="day-n">${DAY_CODES[d.key].length}</span></span>`).join('')}</div>
     <div id="course-list"></div>
     ${selection.length ? `
       <div class="credit-bar">
@@ -210,6 +225,7 @@ function render() {
   document.getElementById('course-search').oninput = (e) => { keyword = e.target.value; renderList(); };
   container.querySelectorAll('[data-list]').forEach(el => { el.onclick = () => { listFilter = el.dataset.list; creditFilter = null; render(); }; });
   container.querySelectorAll('[data-sem]').forEach(el => { el.onclick = () => { semFilter = el.dataset.sem; creditFilter = null; render(); }; });
+  container.querySelectorAll('[data-day]').forEach(el => { el.onclick = () => { dayFilter = el.dataset.day; creditFilter = null; render(); }; });
   container.querySelectorAll('[data-credit]').forEach(el => {
     el.onclick = () => {
       const k = el.dataset.credit;
