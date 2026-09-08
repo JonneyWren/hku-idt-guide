@@ -4,7 +4,7 @@
 // 数据源 2:2026-Sem1-Engg.pdf(2026-27 第一学期工学院全院课表,2026-08-28 版)
 // 数据源 3:2026-Sem1-CDS.pdf(CDS 学院 2026-27 第一学期课表,2026-08-28 版)
 // 生成时间:2026-08-04;2026-08-27 按官方选课系统快照补入跨系选修 4 门:
-//          COMP7309 / COMP7507 / COMP7508 / DASC7104(均为第一学期 A 班,6 学分)
+//          COMP7309 / COMP7507 / COMP7508 / COMP7104(均为第一学期 A 班,6 学分)
 // 2026-08-28 按 CDS 学院课表补入 IDT 专属 List B (Discipline Elective) 课程 4 门:
 //          COMP7103 / COMP7506 / COMP7802 / COMP7906(均为第一学期 A 班,6 学分,名额需 CDS 审批)
 //
@@ -437,7 +437,7 @@ export const COURSES = [
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   },
   {
-    code: 'DASC7104', title: 'Advanced database systems', titleZh: '高级数据库系统', zhOfficial: false,
+    code: 'COMP7104', title: 'Advanced database systems', titleZh: '高级数据库系统', zhOfficial: false,
     list: 'XD', credits: 6, semester: '1', sections: ['A'],
     desc: '',
     note: '官方选课系统(2026-08-27 查询)显示本课程第一轮在线选课已截止(Online enrolment is now closed);第二轮选课时间暂未通知,请时刻关注选课系统。',

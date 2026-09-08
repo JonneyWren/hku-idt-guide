@@ -388,7 +388,7 @@ export const TIMETABLE = {
   COMP7906: [
     { term: 1, section: 'A', day: 'TUE', start: '19:00', end: '22:00', venue: 'MWT1', instructor: 'Dr. Russell Yiu', dateNote: '1 September 2026, 8 September 2026, 15 September 2026, 22 September 2026, 29 September 2026, 6 October 2026, 20 October 2026, 27 October 2026, 3 November 2026, 10 November 2026' }
   ],
-  DASC7104: [
+  COMP7104: [
     { term: 1, section: 'A', day: 'SAT', start: '14:00', end: '17:00', venue: 'CYCP1', instructor: 'Prof. Bogdan Cautis', dateNote: '17 October 2026, 31 October 2026, 7 November 2026, 14 November 2026, 21 November 2026' },
     { term: 1, section: 'A', day: 'SUN', start: '14:00', end: '17:00', venue: 'CYPP4', instructor: 'Prof. Bogdan Cautis', dateNote: '18 October 2026, 1 November 2026, 8 November 2026, 15 November 2026, 22 November 2026' }
   ],
