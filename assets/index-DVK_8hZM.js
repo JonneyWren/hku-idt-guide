@@ -412,12 +412,12 @@ CALSCALE:GREGORIAN\r
         <div class="days-wrap" style="height:${g}px">
           ${Y.map((a,i)=>`<div class="day-col" style="left:${i*100/7}%;width:${100/7}%"></div>`).join("")}
           ${m.map((a,i)=>`<div class="h-line" style="top:${i*60}px"></div>`).join("")}
-          ${p.map(a=>`<div class="block ${a.dated?"dated":""}" data-id="${a.id}" style="left:${((a.dayIdx-1)*100/7+a.colIdx*100/7/a.colTotal).toFixed(4)}%;width:calc(${(100/7/a.colTotal).toFixed(4)}% - 2px);top:${a.top}px;height:${a.height}px;background:${a.color}"><div class="block-code">${a.code}</div>${a.dateText?`<div class="block-date">📅 ${a.dateText}</div>`:""}${a.name?`<div class="block-name">${a.name}</div>`:""}<div class="block-time">${a.term?`S${a.term} `:""}${a.timeText}</div>${a.location?`<div class="block-loc">${a.location}</div>`:""}${a.instructor?`<div class="block-loc">${a.instructor}</div>`:""}</div>`).join("")}
+          ${p.map(a=>`<div class="block ${a.dated?"dated":""}" data-id="${a.id}" style="left:${((a.dayIdx-1)*100/7+a.colIdx*100/7/a.colTotal).toFixed(4)}%;width:calc(${(100/7/a.colTotal).toFixed(4)}% - 2px);top:${a.top}px;height:${a.height}px;background:${a.color}"><div class="block-code">${a.code}</div>${a.dateText?`<div class="block-date">${a.dateText}</div>`:""}${a.name?`<div class="block-name">${a.name}</div>`:""}<div class="block-time">${a.term?`S${a.term} `:""}${a.timeText}</div>${a.location?`<div class="block-loc">${a.location}</div>`:""}${a.instructor?`<div class="block-loc">${a.instructor}</div>`:""}</div>`).join("")}
           ${p.length===0?'<div class="empty-hint"><div>课表还是空的</div><div class="empty-sub">在「课程」页点「+ 选课」自动同步,或点右上角「+ 添加」手动录入</div></div>':""}
         </div>
       </div>
     </div>
-    <div class="muted" style="text-align:center;padding:10px 16px">点击课程块可删除时段;「导出日历」生成 .ics 文件可导入任意日历应用。块内标有 📅 日期的时段为一次性活动(如必修培训),仅在所列日期上课,日历按实际日期逐次导出,不每周重复</div>
+    <div class="muted" style="text-align:center;padding:10px 16px">点击课程块可删除时段;「导出日历」生成 .ics 文件可导入任意日历应用。块内标有日期的时段为一次性活动(如必修培训),仅在所列日期上课,日历按实际日期逐次导出,不每周重复</div>
     <div style="font-size:11px;color:#8a8f99;line-height:1.6;text-align:center;padding:0 16px 12px">本站为静态页面，课程数据随网站更新发布。日常使用时请刷新页面以获取最新版本；如官方 timetable 有调整，请在课表中删除相关课程时段并重新添加，以同步最新上课时间。</div>
     ${I?`
       <div class="modal-mask" id="add-mask">
