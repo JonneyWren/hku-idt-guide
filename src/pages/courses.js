@@ -152,10 +152,9 @@ function render() {
     <style>
       .search-bar{padding:12px 16px 0}
       .search-input{width:100%;background:#fff;border:none;border-radius:999px;padding:10px 16px;font-size:13px;box-shadow:0 2px 8px rgba(0,45,32,0.06);outline:none}
-      .tabs{display:flex;padding:12px 16px 0;flex-wrap:wrap;gap:8px}
-      .ftab{font-size:12px;color:#4b5563;background:#fff;border-radius:999px;padding:5px 14px;cursor:pointer}
-      .ftab.active{background:#00573f;color:#fff;font-weight:600}
-      .day-n{font-size:10px;opacity:.65;margin-left:2px}
+      .filter-row{display:flex;gap:8px;padding:12px 16px 0}
+      .fsel{flex:1;min-width:0;background:#fff;border:none;border-radius:10px;padding:8px 6px;font-size:12px;color:#4b5563;box-shadow:0 2px 8px rgba(0,45,32,0.06);outline:none;cursor:pointer}
+      .fsel.on{color:#00573f;font-weight:600}
       .course-card{cursor:pointer}
       .course-code{font-size:14px;font-weight:700;color:#00573f;margin-right:8px}
       .course-title{font-size:15px;font-weight:600;color:#1f2430;margin-top:6px}
@@ -178,9 +177,11 @@ function render() {
       .credit-action{font-size:13px;color:#00573f;font-weight:600;padding:8px 0 8px 12px;cursor:pointer}
     </style>
     <div class="search-bar"><input class="search-input" id="course-search" placeholder="搜索课程代码 / 中英文名称" value="${keyword}" /></div>
-    <div class="tabs">${listTabs.map(t => `<span class="ftab ${listFilter === t.key ? 'active' : ''}" data-list="${t.key}">${t.label}</span>`).join('')}</div>
-    <div class="tabs">${semTabs.map(t => `<span class="ftab ${semFilter === t.key ? 'active' : ''}" data-sem="${t.key}">${t.label}</span>`).join('')}</div>
-    <div class="tabs"><span class="ftab ${dayFilter === 'all' ? 'active' : ''}" data-day="all">全部星期</span>${DAYS.map(d => `<span class="ftab ${dayFilter === d.key ? 'active' : ''}" data-day="${d.key}">${d.label}<span class="day-n">${DAY_CODES[d.key].length}</span></span>`).join('')}</div>
+    <div class="filter-row">
+      <select class="fsel ${listFilter !== 'all' ? 'on' : ''}" data-list>${listTabs.map(t => `<option value="${t.key}" ${listFilter === t.key ? 'selected' : ''}>${t.label}</option>`).join('')}</select>
+      <select class="fsel ${semFilter !== 'all' ? 'on' : ''}" data-sem>${semTabs.map(t => `<option value="${t.key}" ${semFilter === t.key ? 'selected' : ''}>${t.label}</option>`).join('')}</select>
+      <select class="fsel ${dayFilter !== 'all' ? 'on' : ''}" data-day><option value="all" ${dayFilter === 'all' ? 'selected' : ''}>全部星期</option>${DAYS.map(d => `<option value="${d.key}" ${dayFilter === d.key ? 'selected' : ''}>${d.label} ${DAY_CODES[d.key].length}</option>`).join('')}</select>
+    </div>
     <div id="course-list"></div>
     ${selection.length ? `
       <div class="credit-bar">
@@ -199,9 +200,15 @@ function render() {
 
   // Events
   document.getElementById('course-search').oninput = (e) => { keyword = e.target.value; renderList(); };
-  container.querySelectorAll('[data-list]').forEach(el => { el.onclick = () => { listFilter = el.dataset.list; creditFilter = null; render(); }; });
-  container.querySelectorAll('[data-sem]').forEach(el => { el.onclick = () => { semFilter = el.dataset.sem; creditFilter = null; render(); }; });
-  container.querySelectorAll('[data-day]').forEach(el => { el.onclick = () => { dayFilter = el.dataset.day; creditFilter = null; render(); }; });
+  container.querySelectorAll('.fsel').forEach(el => {
+    el.onchange = () => {
+      if (el.hasAttribute('data-list')) listFilter = el.value;
+      if (el.hasAttribute('data-sem')) semFilter = el.value;
+      if (el.hasAttribute('data-day')) dayFilter = el.value;
+      creditFilter = null;
+      render();
+    };
+  });
   container.querySelectorAll('[data-credit]').forEach(el => {
     el.onclick = () => {
       const k = el.dataset.credit;
