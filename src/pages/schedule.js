@@ -1,4 +1,5 @@
 import { getCourse } from '../data/courses.js';
+import { shortDates } from '../data/timetable.js';
 import { SEMESTERS } from '../data/calendar.js';
 import * as store from '../utils/store.js';
 import { minToTime, timeToMin, WEEKDAYS_ZH, getSemesterWeek, todayStr } from '../utils/date.js';
@@ -29,7 +30,7 @@ function render() {
     if (!(s.code in colorMap)) { colorMap[s.code] = COLORS[ci % COLORS.length]; ci++; }
     return {
       id: s.id, code: s.code, dayIdx: s.day, colIdx: 0, colTotal: 1, name: c ? c.titleZh : '', location: s.location,
-      instructor: s.instructor || '', term: s.term || 0, section: s.section || '', dated: !!(s.dates && s.dates.length),
+      instructor: s.instructor || '', term: s.term || 0, section: s.section || '', dated: !!(s.dates && s.dates.length), dateText: shortDates(s),
       top: s.startMin - DAY_START, height: Math.max(s.endMin - s.startMin, 40),
       color: colorMap[s.code], timeText: `${minToTime(s.startMin)}-${minToTime(s.endMin)}`
     };
@@ -77,6 +78,7 @@ function render() {
       .h-line{position:absolute;left:0;right:0;height:1px;background:#f5f6f8}
       .block{position:absolute;border-radius:6px;padding:3px 4px;overflow:hidden;cursor:pointer;color:#fff;font-size:10px}
       .block.dated{box-shadow:inset 0 0 0 1px rgba(255,255,255,0.65)}
+      .block-date{font-size:9px;font-weight:700;line-height:1.35;letter-spacing:-0.2px}
       .block-code{font-weight:600;font-size:10px;word-break:break-all;line-height:1.25}
       .block-name{font-size:9px;opacity:0.9;line-height:1.3}
       .block-time{opacity:0.85;font-size:9px}
@@ -107,12 +109,12 @@ function render() {
         <div class="days-wrap" style="height:${gridHeight}px">
           ${WEEKDAYS_ZH.map((_, i) => `<div class="day-col" style="left:${(i*100/7)}%;width:${100/7}%"></div>`).join('')}
           ${hours.map((_, i) => `<div class="h-line" style="top:${i * 60}px"></div>`).join('')}
-          ${blocks.map(b => `<div class="block ${b.dated ? 'dated' : ''}" data-id="${b.id}" style="left:${((b.dayIdx - 1) * 100 / 7 + b.colIdx * 100 / 7 / b.colTotal).toFixed(4)}%;width:calc(${(100 / 7 / b.colTotal).toFixed(4)}% - 2px);top:${b.top}px;height:${b.height}px;background:${b.color}"><div class="block-code">${b.code}</div>${b.name ? `<div class="block-name">${b.name}</div>` : ''}<div class="block-time">${b.term ? `S${b.term} ` : ''}${b.timeText}</div>${b.location ? `<div class="block-loc">${b.location}</div>` : ''}${b.dated ? '<div class="block-loc">仅指定日期</div>' : ''}${b.instructor ? `<div class="block-loc">${b.instructor}</div>` : ''}</div>`).join('')}
+          ${blocks.map(b => `<div class="block ${b.dated ? 'dated' : ''}" data-id="${b.id}" style="left:${((b.dayIdx - 1) * 100 / 7 + b.colIdx * 100 / 7 / b.colTotal).toFixed(4)}%;width:calc(${(100 / 7 / b.colTotal).toFixed(4)}% - 2px);top:${b.top}px;height:${b.height}px;background:${b.color}"><div class="block-code">${b.code}</div>${b.dateText ? `<div class="block-date">📅 ${b.dateText}</div>` : ''}${b.name ? `<div class="block-name">${b.name}</div>` : ''}<div class="block-time">${b.term ? `S${b.term} ` : ''}${b.timeText}</div>${b.location ? `<div class="block-loc">${b.location}</div>` : ''}${b.instructor ? `<div class="block-loc">${b.instructor}</div>` : ''}</div>`).join('')}
           ${blocks.length === 0 ? '<div class="empty-hint"><div>课表还是空的</div><div class="empty-sub">在「课程」页点「+ 选课」自动同步,或点右上角「+ 添加」手动录入</div></div>' : ''}
         </div>
       </div>
     </div>
-    <div class="muted" style="text-align:center;padding:10px 16px">点击课程块可删除时段;「导出日历」生成 .ics 文件可导入任意日历应用。标注「仅指定日期」的时段为一次性活动(如必修培训),日历按实际日期导出,不每周重复</div>
+    <div class="muted" style="text-align:center;padding:10px 16px">点击课程块可删除时段;「导出日历」生成 .ics 文件可导入任意日历应用。块内标有 📅 日期的时段为一次性活动(如必修培训),仅在所列日期上课,日历按实际日期逐次导出,不每周重复</div>
     <div style="font-size:11px;color:#8a8f99;line-height:1.6;text-align:center;padding:0 16px 12px">本站为静态页面，课程数据随网站更新发布。日常使用时请刷新页面以获取最新版本；如官方 timetable 有调整，请在课表中删除相关课程时段并重新添加，以同步最新上课时间。</div>
     ${showAddModal ? `
       <div class="modal-mask" id="add-mask">
@@ -163,9 +165,11 @@ function render() {
   // Block tap to delete
   container.querySelectorAll('.block').forEach(el => {
     el.onclick = () => {
+      const b = blocks.filter(x => String(x.id) === el.dataset.id)[0];
+      const info = b ? `<div style="margin:2px 0 8px;font-size:12px;color:#4b5563;line-height:1.7">${b.code}${b.name ? ' ' + b.name : ''}${b.section ? '<br/>班次:' + b.section : ''}<br/>${WEEKDAYS_ZH[b.dayIdx - 1]} ${b.timeText}${b.dateText ? '<br/>上课日期:' + b.dateText : ''}${b.location ? '<br/>地点:' + b.location : ''}</div>` : '';
       showModal({
         title: '删除该上课时段?',
-        content: '删除后不影响「我的选课」',
+        content: info + '删除后不影响「我的选课」',
         onConfirm: () => { store.removeSlot(el.dataset.id); render(); }
       });
     };

@@ -459,3 +459,16 @@ export function datesText(sec) {
 export function isDated(sec) {
   return !!(sec && sec.dates && sec.dates.length);
 }
+
+// 场次日期的紧凑文本(周课表小方块用):月/日,与前一次同年同月时只写日
+// 例 ['2026-09-15','2026-09-22','2026-09-29'] -> 9/15·22·29;['2026-10-03'] -> 10/3
+export function shortDates(sec) {
+  if (!sec || !sec.dates || !sec.dates.length) return '';
+  let prev = null;
+  return sec.dates.map(iso => {
+    const p = iso.split('-').map(Number);
+    const txt = (prev && prev[0] === p[0] && prev[1] === p[1]) ? String(p[2]) : p[1] + '/' + p[2];
+    prev = p;
+    return txt;
+  }).join('·');
+}
