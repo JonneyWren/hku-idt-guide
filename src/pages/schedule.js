@@ -28,12 +28,28 @@ function render() {
     const c = getCourse(s.code);
     if (!(s.code in colorMap)) { colorMap[s.code] = COLORS[ci % COLORS.length]; ci++; }
     return {
-      id: s.id, code: s.code, name: c ? c.titleZh : '', location: s.location,
-      instructor: s.instructor || '', term: s.term || 0, section: s.section || '',
-      leftPct: Math.round(((s.day - 1) * 100) / 7 * 1000) / 1000,
+      id: s.id, code: s.code, dayIdx: s.day, colIdx: 0, colTotal: 1, name: c ? c.titleZh : '', location: s.location,
+      instructor: s.instructor || '', term: s.term || 0, section: s.section || '', dated: !!(s.dates && s.dates.length),
       top: s.startMin - DAY_START, height: Math.max(s.endMin - s.startMin, 40),
       color: colorMap[s.code], timeText: `${minToTime(s.startMin)}-${minToTime(s.endMin)}`
     };
+  });
+
+  // 同一天内时段重叠的块分栏并排,避免一次性活动与每周课程互相遮挡
+  const dayGroups = {};
+  blocks.forEach(b => { (dayGroups[b.dayIdx] = dayGroups[b.dayIdx] || []).push(b); });
+  Object.keys(dayGroups).forEach(k => {
+    const arr = dayGroups[k].sort((a, b) => a.top - b.top || a.height - b.height);
+    let groups = [];
+    arr.forEach(b => {
+      const hit = groups.filter(g => g.some(x => !(x.top + x.height <= b.top || b.top + b.height <= x.top)));
+      if (!hit.length) { groups.push([b]); return; }
+      const merged = [b];
+      hit.forEach(g => g.forEach(x => merged.push(x)));
+      groups = groups.filter(g => hit.indexOf(g) < 0);
+      groups.push(merged);
+    });
+    groups.forEach(g => g.forEach((b, i) => { b.colIdx = i; b.colTotal = g.length; }));
   });
 
   const hours = [];
@@ -59,7 +75,8 @@ function render() {
       .days-wrap{position:relative;flex:1;border-left:1px solid #eef0f2}
       .day-col{position:absolute;top:0;bottom:0;border-right:1px solid #f5f6f8}
       .h-line{position:absolute;left:0;right:0;height:1px;background:#f5f6f8}
-      .block{position:absolute;width:calc(100%/7 - 2px);border-radius:6px;padding:3px 4px;overflow:hidden;cursor:pointer;color:#fff;font-size:10px}
+      .block{position:absolute;border-radius:6px;padding:3px 4px;overflow:hidden;cursor:pointer;color:#fff;font-size:10px}
+      .block.dated{box-shadow:inset 0 0 0 1px rgba(255,255,255,0.65)}
       .block-code{font-weight:600;font-size:10px;word-break:break-all;line-height:1.25}
       .block-name{font-size:9px;opacity:0.9;line-height:1.3}
       .block-time{opacity:0.85;font-size:9px}
@@ -90,12 +107,12 @@ function render() {
         <div class="days-wrap" style="height:${gridHeight}px">
           ${WEEKDAYS_ZH.map((_, i) => `<div class="day-col" style="left:${(i*100/7)}%;width:${100/7}%"></div>`).join('')}
           ${hours.map((_, i) => `<div class="h-line" style="top:${i * 60}px"></div>`).join('')}
-          ${blocks.map(b => `<div class="block" data-id="${b.id}" style="left:${b.leftPct}%;top:${b.top}px;height:${b.height}px;background:${b.color}"><div class="block-code">${b.code}</div>${b.name ? `<div class="block-name">${b.name}</div>` : ''}<div class="block-time">${b.term ? `S${b.term} ` : ''}${b.timeText}</div>${b.location ? `<div class="block-loc">${b.location}</div>` : ''}${b.instructor ? `<div class="block-loc">${b.instructor}</div>` : ''}</div>`).join('')}
+          ${blocks.map(b => `<div class="block ${b.dated ? 'dated' : ''}" data-id="${b.id}" style="left:${((b.dayIdx - 1) * 100 / 7 + b.colIdx * 100 / 7 / b.colTotal).toFixed(4)}%;width:calc(${(100 / 7 / b.colTotal).toFixed(4)}% - 2px);top:${b.top}px;height:${b.height}px;background:${b.color}"><div class="block-code">${b.code}</div>${b.name ? `<div class="block-name">${b.name}</div>` : ''}<div class="block-time">${b.term ? `S${b.term} ` : ''}${b.timeText}</div>${b.location ? `<div class="block-loc">${b.location}</div>` : ''}${b.dated ? '<div class="block-loc">仅指定日期</div>' : ''}${b.instructor ? `<div class="block-loc">${b.instructor}</div>` : ''}</div>`).join('')}
           ${blocks.length === 0 ? '<div class="empty-hint"><div>课表还是空的</div><div class="empty-sub">在「课程」页点「+ 选课」自动同步,或点右上角「+ 添加」手动录入</div></div>' : ''}
         </div>
       </div>
     </div>
-    <div class="muted" style="text-align:center;padding:10px 16px">点击课程块可删除时段;「导出日历」生成 .ics 文件可导入任意日历应用</div>
+    <div class="muted" style="text-align:center;padding:10px 16px">点击课程块可删除时段;「导出日历」生成 .ics 文件可导入任意日历应用。标注「仅指定日期」的时段为一次性活动(如必修培训),日历按实际日期导出,不每周重复</div>
     <div style="font-size:11px;color:#8a8f99;line-height:1.6;text-align:center;padding:0 16px 12px">本站为静态页面，课程数据随网站更新发布。日常使用时请刷新页面以获取最新版本；如官方 timetable 有调整，请在课表中删除相关课程时段并重新添加，以同步最新上课时间。</div>
     ${showAddModal ? `
       <div class="modal-mask" id="add-mask">
@@ -159,7 +176,7 @@ function render() {
   if (copyBtn) copyBtn.onclick = () => {
     const lines = store.getSlots().slice().sort((a, b) => a.day - b.day || a.startMin - b.startMin).map(s => {
       const c = getCourse(s.code);
-      return `${WEEKDAYS_ZH[s.day - 1]} ${minToTime(s.startMin)}-${minToTime(s.endMin)} ${s.code} ${c ? c.titleZh : ''}${s.location ? ' @' + s.location : ''}`;
+      return `${WEEKDAYS_ZH[s.day - 1]} ${minToTime(s.startMin)}-${minToTime(s.endMin)} ${s.code} ${c ? c.titleZh : ''}${s.location ? ' @' + s.location : ''}${s.dates && s.dates.length ? ' (' + s.dates.join(' / ') + ')' : ''}`;
     });
     navigator.clipboard.writeText(lines.join('\n')).then(() => showToast('已复制到剪贴板')).catch(() => showToast('复制失败'));
   };

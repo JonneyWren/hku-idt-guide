@@ -11,7 +11,7 @@ let semFilter = 'all';
 let creditFilter = null;
 let dayFilter = 'all';
 
-const TAG_CLASS = { A: '', B: 'tag-gray', XC: 'tag-xc', XD: 'tag-xd', capstone: 'tag-warn' };
+const TAG_CLASS = { A: '', B: 'tag-gray', XC: 'tag-xc', XD: 'tag-xd', capstone: 'tag-warn', training: 'tag-training' };
 const countOf = (k) => COURSES.filter((c) => c.list === k).length;
 
 const DAYS = [
@@ -80,7 +80,7 @@ function courseCard(c) {
         </div>
         <div class="course-title">${c.titleZh}</div>
         <div class="course-en">${c.title}</div>
-        <div class="course-meta">${c.credits} 学分 · ${c.semText}${c.sections && c.sections.length ? ' · 班次 ' + c.sections.join('/') : ''}${c.cef ? ' · <span style="color:#b8741a">CEF 可报销</span>' : ''}</div>
+        <div class="course-meta">${c.list === 'training' ? '非学分必修活动' : c.credits + ' 学分'} · ${c.semText}${c.sections && c.sections.length ? ' · 班次 ' + c.sections.join('/') : ''}${c.cef ? ' · <span style="color:#b8741a">CEF 可报销</span>' : ''}</div>
         <div class="course-time">${c.timeText ? '🕒 ' + c.timeText : c.semester === '1' ? '🕒 官方课表未列出排课' : '🕒 排课待官方公布'}</div>
         <div class="course-foot">
           <div>${c.ratingCount > 0 ? `<span class="star star-on">★</span> <span style="font-size:13px;font-weight:600;color:#f5a623;margin:0 4px">${c.ratingAvg}</span><span style="font-size:11px;color:#8a8f99">(${c.ratingCount} 条评价)</span>` : '<span style="font-size:11px;color:#8a8f99">暂无评价,去抢沙发</span>'}</div>
@@ -130,7 +130,7 @@ function render() {
   let listA = 0, discipline = 0, elective = 0, total = 0;
   selection.forEach(code => {
     const c = COURSES.find(x => x.code === code);
-    if (!c || c.list === 'capstone') return;
+    if (!c || c.list === 'capstone' || c.list === 'training') return;
     total += c.credits;
     if (c.list === 'A') listA += c.credits;
     if (c.list === 'A' || c.list === 'B') discipline += c.credits;
@@ -143,7 +143,8 @@ function render() {
     { key: 'B', label: `List B 选修 ${countOf('B')}` },
     { key: 'XC', label: `List C ${countOf('XC')}` },
     { key: 'XD', label: `List D ${countOf('XD')}` },
-    { key: 'capstone', label: `毕业论文 ${countOf('capstone')}` }
+    { key: 'capstone', label: `毕业论文 ${countOf('capstone')}` },
+    { key: 'training', label: `必修培训 ${countOf('training')}` }
   ];
   const semTabs = [{ key: 'all', label: '全部学期' }, { key: '1', label: '第一学期' }, { key: '2', label: '第二学期' }];
   const rules = DEGREE_RULES;

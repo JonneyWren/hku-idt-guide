@@ -16,7 +16,8 @@ export default function homePage() {
   const weekInfo = getSemesterWeek(t);
   const rules = DEGREE_RULES;
 
-  const sem1 = COURSES.filter(c => c.semester === '1');
+  const sem1 = COURSES.filter(c => c.semester === '1' && c.list !== 'training');
+  const trainingCount = COURSES.filter(c => c.list === 'training').length;
   const cnt = (list) => sem1.filter(c => c.list === list).length;
   const sem2Count = COURSES.filter(c => c.semester !== '1').length;
 
@@ -80,6 +81,7 @@ export default function homePage() {
       <div style="font-size:12px;color:#5b5f66;line-height:1.8">
         · 课程库与排课全部取自两份官方文件:MSc(Eng) & MSc 选课课程清单(第一学期共 ${sem1.length} 门)与全院第一学期课程时间表(30 页)<br>
         · 第一学期清单分五类:List A 学科核心课 ${cnt('A')} 门、List B 学科选修课 ${cnt('B')} 门、List C ${cnt('XC')} 门、List D ${cnt('XD')} 门、毕业论文 ${cnt('capstone')} 门<br>
+        · 另收录非学分必修培训活动 ${trainingCount} 条(英语工作坊、实验室安全培训讲座与考试),按学院公布的具体日期开展,不计入 72 学分<br>
         · 另保留 ${sem2Count} 门本专业课程(第二学期 / 全年),其 List 归属与排课待官方第二学期文件公布后再核对<br>
         · 总学分要求统一为 72 学分(课程 48 + 毕业论文 24)
       </div>

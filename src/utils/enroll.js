@@ -1,6 +1,6 @@
 // 选课与课表联动:选课时自动把官方课表的时间/星期/地点/教师同步到每周课表
 import { getCourse } from '../data/courses.js';
-import { getSections, dayText } from '../data/timetable.js';
+import { getSections, dayText, datesText } from '../data/timetable.js';
 import { timeToMin, minToTime } from './date.js';
 import * as store from './store.js';
 import { showModal } from '../components/modal.js';
@@ -22,13 +22,15 @@ function toSlot(code, sec) {
     startMin: timeToMin(sec.start),
     endMin: timeToMin(sec.end),
     location: sec.venue || '',
-    instructor: sec.instructor || ''
+    instructor: sec.instructor || '',
+    dates: sec.dates || null
   };
 }
 
 function secText(s) {
   const sec = s.section ? ` · 班次 ${s.section}` : '';
-  const dn = s.dateNote ? ` · 指定日期 ${s.dateNote}` : '';
+  const dnt = datesText(s);
+  const dn = dnt ? ` · 指定日期 ${dnt}` : '';
   return `Sem ${s.term}${sec} · ${dayText(s.day)} ${s.start}-${s.end}${s.venue ? ' · ' + s.venue : ''}${s.instructor ? ' · ' + s.instructor : ''}${dn}`;
 }
 
@@ -53,20 +55,43 @@ function commitEnroll(code, slot, onDone) {
   const clashes = findClashes(slot);
   if (!clashes.length) { doAdd(code, slot); onDone && onDone(); return; }
 
-  const codes = [];
-  clashes.forEach(s => { if (codes.indexOf(s.code) < 0) codes.push(s.code); });
-  const names = codes.map(c => { const cc = getCourse(c); return cc ? `${c} ${cc.titleZh}` : c; });
-  const clashLines = clashes.map(s =>
-    `<div style="padding:4px 0;color:#c0392b">· ${s.code} ${dayTextNum(s.day)} ${minToTime(s.startMin)}-${minToTime(s.endMin)}${s.location ? ' @' + s.location : ''}</div>`
-  ).join('');
+  const datedNew = !!(slot.dates && slot.dates.length);
+  // 指定日期场次(必修培训等)只在当日占用,永不参与取代;新课自身为指定日期场次时也不移除任何既有安排
+  const replaceable = datedNew ? [] : clashes.filter(s => !(s.dates && s.dates.length));
+  const coexist = datedNew ? clashes : clashes.filter(s => s.dates && s.dates.length);
 
+  const codesOf = (list) => { const a = []; list.forEach(s => { if (a.indexOf(s.code) < 0) a.push(s.code); }); return a; };
+  const nameOf = (c) => { const cc = getCourse(c); return cc ? `${c} ${cc.titleZh}` : c; };
+  const lineOf = (s) => {
+    const tag = s.dates && s.dates.length ? ` <span style="color:#8a6d3b">(仅 ${s.dates.join(' / ')})</span>` : '';
+    return `<div style="padding:4px 0;color:#c0392b">· ${s.code} ${dayTextNum(s.day)} ${minToTime(s.startMin)}-${minToTime(s.endMin)}${s.location ? ' @' + s.location : ''}${tag}</div>`;
+  };
+
+  // 仅与指定日期活动重叠:两者并存,不移除任何课程
+  if (!replaceable.length) {
+    showModal({
+      title: '该时段已有安排',
+      content: `<b>${code}</b> ${datedNew ? `仅在指定日期上课(${datesText(slot)})` : '为每周上课课程'},与以下安排的时段重叠:<div style="margin:8px 0">${coexist.map(lineOf).join('')}</div>涉及:<b>${codesOf(coexist).map(nameOf).join('、')}</b><br/>两者可并存,不会互相移除;周课表上并排显示,请留意当日实际安排。`,
+      confirmText: '仍要加入',
+      cancelText: '取消',
+      onConfirm: () => { doAdd(code, slot); onDone && onDone(); },
+      onCancel: () => { showToast('已取消,课表未变动'); onDone && onDone(); }
+    });
+    return;
+  }
+
+  // 存在每周硬冲突:确认后取代这些课程;同时段的指定日期活动不被移除,与新课并存
+  const rmCodes = codesOf(replaceable);
+  const keepNote = coexist.length
+    ? `<br/>另有指定日期活动同时段,<b>不会</b>被移除,将与 ${code} 并存:<div style="margin:8px 0">${coexist.map(lineOf).join('')}</div>`
+    : '';
   showModal({
     title: '上课时间冲突',
-    content: `以下已添加课程与 <b>${code}</b> 时间重叠:<div style="margin:8px 0">${clashLines}</div>冲突课程:<b>${names.join('、')}</b><br/>确认后将移除上述课程(含选课与课表时段),改为添加 ${code}。`,
+    content: `以下已添加课程与 <b>${code}</b> 时间重叠:<div style="margin:8px 0">${replaceable.map(lineOf).join('')}</div>冲突课程:<b>${rmCodes.map(nameOf).join('、')}</b><br/>确认后将移除上述课程(含选课与课表时段),改为添加 ${code}。${keepNote}`,
     confirmText: '取代旧课程',
     cancelText: '保留原课表',
     onConfirm: () => {
-      codes.forEach(c => {
+      rmCodes.forEach(c => {
         if (c !== code) store.removeCourse(c);
         store.removeSlotsByCode(c);
       });

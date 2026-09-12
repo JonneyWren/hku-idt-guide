@@ -24,6 +24,25 @@ export function generateICS() {
   let ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//HKU IDT Guide//EN\r\nCALSCALE:GREGORIAN\r\n';
 
   slots.forEach(s => {
+    // 指定日期场次(非学分必修培训等):按 dates 逐日期生成单次事件,不做每周循环
+    if (s.dates && s.dates.length) {
+      const dc = getCourse(s.code);
+      const dTitle = `${s.code} ${dc ? dc.titleZh : '课程'}${s.section ? ' (' + s.section + ')' : ''}`;
+      s.dates.forEach(iso => {
+        const p = iso.split('-').map(Number);
+        const sd = new Date(p[0], p[1] - 1, p[2], Math.floor(s.startMin / 60), s.startMin % 60);
+        const ed = new Date(p[0], p[1] - 1, p[2], Math.floor(s.endMin / 60), s.endMin % 60);
+        ics += 'BEGIN:VEVENT\r\n';
+        ics += `DTSTART:${toICSDate(sd)}\r\n`;
+        ics += `DTEND:${toICSDate(ed)}\r\n`;
+        ics += `SUMMARY:${dTitle}\r\n`;
+        ics += `LOCATION:${s.location || '香港大学'}\r\n`;
+        ics += `DESCRIPTION:${iso} 指定日期场次 - HKU IDT Guide\r\n`;
+        ics += 'END:VEVENT\r\n';
+      });
+      return;
+    }
+
     const target = s.day % 7; // JS getDay: 0=Sun
     const d = new Date(semStart);
     while (d.getDay() !== target) d.setDate(d.getDate() + 1);

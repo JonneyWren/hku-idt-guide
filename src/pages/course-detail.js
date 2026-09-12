@@ -1,5 +1,5 @@
 import { getCourse, semesterText, LIST_META, NO_DESC_TEXT } from '../data/courses.js';
-import { getSections, dayText } from '../data/timetable.js';
+import { getSections, dayText, datesText } from '../data/timetable.js';
 import { fmtDate } from '../utils/date.js';
 import * as store from '../utils/store.js';
 import { enrollCourse, unenrollCourse } from '../utils/enroll.js';
@@ -75,7 +75,7 @@ function render(code) {
       <div class="hero-title-zh">${course.titleZh}${course.zhOfficial ? '' : '<span class="hero-zh-note">非官方译名</span>'}</div>
       <div class="hero-en">${course.title}</div>
       <div class="hero-chips">
-        <span class="hero-chip">${course.credits} 学分</span>
+        <span class="hero-chip">${course.list === 'training' ? '非学分必修活动' : course.credits + ' 学分'}</span>
         <span class="hero-chip">${semText}</span>
         ${course.sections && course.sections.length ? `<span class="hero-chip">班次 ${course.sections.join('/')}</span>` : ''}
         ${course.cef ? '<span class="hero-chip">CEF 可报销</span>' : ''}
@@ -85,7 +85,7 @@ function render(code) {
     </div>
     <div style="background:#fff;border-radius:12px;margin:12px 16px 0;padding:14px 16px;font-size:13px;font-weight:700;color:#8a8f99;line-height:1.4;box-shadow:0 2px 8px rgba(0,45,32,0.04)">· 课程信息中标 "TBC" 处为HKU未发布的待定项<br><span style="font-size:15px;font-weight:800;color:#8a8f99">· TBC = To Be Confirmed</span><br>· 如使用过程中发现timetable作出相应更新，烦请用户在群内告知开发人维护处理</div>
     ${sections.length ? `
-    <div class="section-title">2026-27 第一学期开课安排(官方课表)</div>
+    <div class="section-title">${course.list === 'training' ? '2026-27 第一学期活动安排(学院公布)' : '2026-27 第一学期开课安排(官方课表)'}</div>
     <div class="card">
       ${sections.map(s => `
         <div class="sec-item">
@@ -96,11 +96,11 @@ function render(code) {
           </div>
           ${s.venue ? `<div class="sec-line">📍 ${s.venue}</div>` : ''}
           ${s.instructor ? `<div class="sec-line">👤 ${s.instructor}</div>` : ''}
-          ${s.dateNote ? `<div class="sec-date">🗓 指定日期:${s.dateNote}</div>` : ''}
+          ${datesText(s) ? `<div class="sec-date">🗓 指定日期:${datesText(s)}</div>` : ''}
         </div>
       `).join('')}
       ${course.note ? `<div class="note-box">${course.note}</div>` : ''}
-      <div style="margin-top:8px;font-size:10px;color:#8a8f99">数据取自官方《MSc(Eng) Class Timetable 2026-27 Sem 1》,教师信息仅供参考且可能调整,以选课系统与开课院系公布为准</div>
+      <div style="margin-top:8px;font-size:10px;color:#8a8f99">${course.list === 'training' ? '数据取自学院公布的必修培训活动安排,场次日期与地点以学院最新通知为准' : '数据取自官方《MSc(Eng) Class Timetable 2026-27 Sem 1》,教师信息仅供参考且可能调整,以选课系统与开课院系公布为准'}</div>
     </div>` : `
     <div class="section-title">2026-27 开课安排</div>
     <div class="card">

@@ -5,6 +5,8 @@
 // term: 1 = 第一学期。第二学期排课待官方第二学期课表公布,本文件暂不收录
 // section: 课表标注的班次字母;留空表示官方课表未标注班次
 // dateNote: 官方课表标注的指定上课日期(密集课程 / 分段授课)
+// dates: 场次的实际上课日期(ISO 数组);非学分必修培训等按具体日期开展的活动使用本字段,
+//        课表与日历导出按日期逐次生成,不做每周循环(与 dateNote 二选一,datesText() 统一取文本)
 
 export const TIMETABLE = {
   IDAT7211: [
@@ -392,6 +394,40 @@ export const TIMETABLE = {
     { term: 1, section: 'A', day: 'SAT', start: '14:00', end: '17:00', venue: 'CYCP1', instructor: 'Prof. Bogdan Cautis', dateNote: '17 October 2026, 31 October 2026, 7 November 2026, 14 November 2026, 21 November 2026' },
     { term: 1, section: 'A', day: 'SUN', start: '14:00', end: '17:00', venue: 'CYPP4', instructor: 'Prof. Bogdan Cautis', dateNote: '18 October 2026, 1 November 2026, 8 November 2026, 15 November 2026, 22 November 2026' }
   ],
+  // ============ 必修培训活动(非学分,按学院公布的具体日期开展) ============
+  // dates: 场次的实际上课日期;课表与日历导出按日期逐次生成,不做每周循环
+  ENGWSHOP: [
+    { term: 1, section: 'DW and PS 1', day: 'TUE', start: '16:00', end: '18:30', venue: '3113 & 3114, 31/F, Hong Kong Plaza', instructor: '', dates: ['2026-09-15', '2026-09-22', '2026-09-29'] },
+    { term: 1, section: 'DW and PS 2', day: 'TUE', start: '16:00', end: '18:30', venue: '3113 & 3114, 31/F, Hong Kong Plaza', instructor: '', dates: ['2026-10-20', '2026-10-27', '2026-11-03'] },
+    { term: 1, section: 'DW and PS 3', day: 'TUE', start: '16:00', end: '18:30', venue: '3113 & 3114, 31/F, Hong Kong Plaza', instructor: '', dates: ['2026-11-10', '2026-11-17', '2026-11-24'] },
+    { term: 1, section: 'DW and PS 4', day: 'THU', start: '10:00', end: '12:30', venue: '3113 & 3114, 31/F, Hong Kong Plaza', instructor: '', dates: ['2026-09-17', '2026-09-24', '2026-10-08'] },
+    { term: 1, section: 'DW and PS 5', day: 'THU', start: '10:00', end: '12:30', venue: '3113 & 3114, 31/F, Hong Kong Plaza', instructor: '', dates: ['2026-10-22', '2026-10-29', '2026-11-05'] },
+    { term: 1, section: 'DW and PS 6', day: 'SAT', start: '10:00', end: '12:30', venue: '3113 & 3114, 31/F, Hong Kong Plaza', instructor: '', dates: ['2026-10-31', '2026-11-07', '2026-11-14'] }
+  ],
+  'LABSAFE-L': [
+    { term: 1, section: 'Lecture 1', day: 'THU', start: '14:00', end: '16:00', venue: '31/F, HK Plaza', instructor: '', dates: ['2026-09-17'] },
+    { term: 1, section: 'Lecture 2', day: 'FRI', start: '10:30', end: '12:30', venue: '31/F, HK Plaza', instructor: '', dates: ['2026-09-18'] },
+    { term: 1, section: 'Lecture 3', day: 'MON', start: '16:00', end: '18:00', venue: '31/F, HK Plaza', instructor: '', dates: ['2026-09-21'] },
+    { term: 1, section: 'Lecture 4', day: 'TUE', start: '10:30', end: '12:30', venue: '31/F, HK Plaza', instructor: '', dates: ['2026-09-22'] },
+    { term: 1, section: 'Lecture 5', day: 'WED', start: '10:00', end: '12:00', venue: '31/F, HK Plaza', instructor: '', dates: ['2026-09-23'] },
+    { term: 1, section: 'Lecture 6', day: 'THU', start: '17:00', end: '19:00', venue: '31/F, HK Plaza', instructor: '', dates: ['2026-09-24'] },
+    { term: 1, section: 'Lecture 7', day: 'MON', start: '16:00', end: '18:00', venue: '31/F, HK Plaza', instructor: '', dates: ['2026-09-28'] },
+    { term: 1, section: 'Lecture 8', day: 'TUE', start: '10:30', end: '12:30', venue: '31/F, HK Plaza', instructor: '', dates: ['2026-09-29'] },
+    { term: 1, section: 'Lecture 9', day: 'WED', start: '10:00', end: '12:00', venue: '31/F, HK Plaza', instructor: '', dates: ['2026-09-30'] },
+    { term: 1, section: 'Lecture 10', day: 'FRI', start: '14:00', end: '16:00', venue: '31/F, HK Plaza', instructor: '', dates: ['2026-10-02'] },
+    { term: 1, section: 'Lecture 11', day: 'MON', start: '17:00', end: '19:00', venue: '31/F, HK Plaza', instructor: '', dates: ['2026-10-05'] },
+    { term: 1, section: 'Lecture 12', day: 'TUE', start: '18:00', end: '20:00', venue: '31/F, HK Plaza', instructor: '', dates: ['2026-10-06'] },
+    { term: 1, section: 'Lecture 13', day: 'WED', start: '10:00', end: '12:00', venue: '31/F, HK Plaza', instructor: '', dates: ['2026-10-07'] },
+    { term: 1, section: 'Lecture 14', day: 'THU', start: '18:00', end: '20:00', venue: '31/F, HK Plaza', instructor: '', dates: ['2026-10-08'] },
+    { term: 1, section: 'Lecture 15', day: 'FRI', start: '14:00', end: '16:00', venue: '31/F, HK Plaza', instructor: '', dates: ['2026-10-09'] }
+  ],
+  'LABSAFE-E': [
+    { term: 1, section: 'Exam 1', day: 'SAT', start: '13:00', end: '14:00', venue: 'MWT1', instructor: '', dates: ['2026-10-03'] },
+    { term: 1, section: 'Exam 2', day: 'TUE', start: '18:30', end: '19:30', venue: 'LE1', instructor: '', dates: ['2026-10-13'] },
+    { term: 1, section: 'Exam 3', day: 'THU', start: '18:30', end: '19:30', venue: 'LE1', instructor: '', dates: ['2026-10-15'] },
+    { term: 1, section: 'Exam 4', day: 'SAT', start: '10:30', end: '11:30', venue: 'LE4', instructor: '', dates: ['2026-10-17'] },
+    { term: 1, section: 'Exam 5', day: 'SAT', start: '12:30', end: '13:30', venue: 'LE1', instructor: '', dates: ['2026-10-17'] }
+  ],
 };
 
 const DAY_ZH = { MON: '周一', TUE: '周二', WED: '周三', THU: '周四', FRI: '周五', SAT: '周六', SUN: '周日' };
@@ -402,4 +438,24 @@ export function getSections(code) {
 
 export function dayText(day) {
   return DAY_ZH[day] || '';
+}
+
+
+const MONTH_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+// 场次指定日期文本:优先用官方 dateNote,否则由 dates(ISO 数组)生成英文全称日期
+export function datesText(sec) {
+  if (!sec) return '';
+  if (sec.dateNote) return sec.dateNote;
+  if (!sec.dates || !sec.dates.length) return '';
+  return sec.dates.map(iso => {
+    const p = iso.split('-').map(Number);
+    const d = new Date(p[0], p[1] - 1, p[2]);
+    return d.getDate() + ' ' + MONTH_EN[d.getMonth()] + ' ' + d.getFullYear();
+  }).join(', ');
+}
+
+// 是否为按指定日期开展的场次(一次性 / 少次数活动,非全学期每周循环)
+export function isDated(sec) {
+  return !!(sec && sec.dates && sec.dates.length);
 }

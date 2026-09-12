@@ -7,11 +7,14 @@
 //          COMP7309 / COMP7507 / COMP7508 / COMP7104(均为第一学期 A 班,6 学分)
 // 2026-08-28 按 CDS 学院课表补入 IDT 专属 List B (Discipline Elective) 课程 4 门:
 //          COMP7103 / COMP7506 / COMP7802 / COMP7906(均为第一学期 A 班,6 学分,名额需 CDS 审批)
+// 2026-09-12 按学院公布的培训活动安排补入非学分必修培训 3 条:
+//          ENGWSHOP 英语工作坊(6 个组别) / LABSAFE-L 实验室安全培训讲座(15 场) / LABSAFE-E 实验室安全培训考试(5 场)
 //
 // 字段说明:
 //   list: 'A' = List A 学科核心课, 'B' = List B 学科选修课,
 //         'XC' = List C 跨课程选修 (Cross-curriculum electives),
-//         'XD' = List D 跨系选修 (Cross-departmental electives), 'capstone' = 毕业论文 / 毕业项目
+//         'XD' = List D 跨系选修 (Cross-departmental electives), 'capstone' = 毕业论文 / 毕业项目,
+//         'training' = 必修培训活动(非学分,不计入 72 学分要求)
 //   semester: '1' = 第一学期(官方清单课程一律为第一学期) | '2' = 第二学期 | 'full' = 全年
 //   sections: 官方选课清单列出的班次
 //   zhOfficial: false = 中文名为本站翻译(非官方译名)
@@ -24,7 +27,8 @@ export const LIST_META = {
   B: { label: 'List B 选修', full: 'List B 学科选修课', color: '#31597f' },
   XC: { label: 'List C', full: 'List C 跨课程选修 (Cross-curriculum electives)', color: '#6b5b95' },
   XD: { label: 'List D', full: 'List D 跨系选修 (Cross-departmental electives)', color: '#8a6d3b' },
-  capstone: { label: '毕业论文', full: '毕业论文 / 毕业项目', color: '#9c4f4f' }
+  capstone: { label: '毕业论文', full: '毕业论文 / 毕业项目', color: '#9c4f4f' },
+  training: { label: '必修培训', full: '必修培训活动 (非学分)', color: '#b8741a' }
 };
 
 export const NO_DESC_TEXT = '本课程暂无官方中文简介,请查阅开课院系公布的课程大纲。';
@@ -905,6 +909,29 @@ export const COURSES = [
     list: 'capstone', credits: 24, semester: 'full', sections: ['A'],
     desc: '毕业项目:在导师指导下完成综合性项目研究与实践,无固定上课时间。学分与适用入学年级以学院最终公布的课程规程为准。',
     note: '全年课程。本次更新的官方文件仅覆盖 2026-27 第一学期,其中未列出本课程,排课与学分安排待官方第二学期文件公布后再核对。',
+    prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
+  },
+
+  // ============ 必修培训活动(非学分,不计入 72 学分要求) ============
+  {
+    code: 'ENGWSHOP', title: 'English Workshop', titleZh: '英语工作坊', zhOfficial: false,
+    list: 'training', credits: 0, semester: '1', sections: [],
+    desc: '非学分必修英语工作坊,按 DW and PS 1 至 DW and PS 6 六个组别开班,每组连续三次课,星期与时段固定:周二班(DW and PS 1-3)16:00-18:30、周四班(DW and PS 4-5)10:00-12:30、周六班(DW and PS 6)10:00-12:30。全部场次于 3113 & 3114, 31/F, Hong Kong Plaza 举行。',
+    note: '非学分必修培训活动,不计入 72 学分要求。请先确认自己所属组别再加入对应场次;各组别上课日期不同,以学院最新通知为准。',
+    prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
+  },
+  {
+    code: 'LABSAFE-L', title: 'Laboratory Safety Training Session (Lecture)', titleZh: '实验室安全培训(讲座)', zhOfficial: false,
+    list: 'training', credits: 0, semester: '1', sections: [],
+    desc: '非学分必修实验室安全培训讲座,共 15 场,日期、星期与时间各不相同,全部于 31/F, HK Plaza 举行,集中在 2026 年 9 月 17 日至 10 月 9 日。通常参加其中一场即可,具体以学院通知为准。',
+    note: '非学分必修培训活动,不计入 72 学分要求。讲座与考试为两个独立环节,需分别选择场次;完成要求以学院通知为准。',
+    prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
+  },
+  {
+    code: 'LABSAFE-E', title: 'Laboratory Safety Training Session (Exam)', titleZh: '实验室安全培训(考试)', zhOfficial: false,
+    list: 'training', credits: 0, semester: '1', sections: [],
+    desc: '非学分必修实验室安全培训考试,共 5 场,日期、时间与地点各不相同:10 月 3 日于 MWT1,10 月 13 日、15 日与 17 日下午场于 LE1,10 月 17 日上午场于 LE4。通常参加其中一场即可,具体以学院通知为准。',
+    note: '非学分必修培训活动,不计入 72 学分要求。考试场次 2 至 5(10 月 13 / 15 / 17 日)落在阅读周(10 月 12-17 日停课期间)内,请按学院通知准时参加。',
     prereq: '', exclusive: '', cef: false, isNew2026: false, movedToB2026: false
   }
 ];
